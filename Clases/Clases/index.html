@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tienda Online</title>
+</head>
+<body>
+    <h1>Tienda online</h1>
+    <form id="form">
+        <h2>Datos Cliente</h2>
+        <input type="text" id="nombre" placeholder="Nombre" required />
+        <input type="text" id="telefono" placeholder="Telefono" required />
+
+        <h2>Productos</h2>
+        <select id="select">
+            <option value="Camiseta" data-precio="20">Camiseta 20€</option>
+            <option value="Pantalon" data-precio="35">Pantalon 35€</option>
+            <option value="Zapatillas" data-precio="60">Zapatillas 60€</option>
+            <option value="Gorra" data-precio="15">Gorra 15€</option>
+        </select>
+        <button type="button" id="btnAgregar">Agregar Productos</button>
+        <button type="submit" id="submit">Finalizar Compra</button>
+    </form>
+    <div id="contenedor"></div>
+</body>
+</html>
+<script src="tienda.js" ></script>

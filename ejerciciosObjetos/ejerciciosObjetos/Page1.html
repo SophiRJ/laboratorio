@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    const persona = {
+        nombre: "Sofia",
+        edad: 35,
+        ciudad:"Madrid"
+    }
+    console.log(JSON.stringify(persona))
+    const estudiante= {
+        nombre: "Maria",
+        curso: "DAM",
+        asignaturas:["Programacion","Base de Datos","Sistemas"]
+    }
+    estudiante.asignaturas.forEach((item, index) => { console.log(`Asignatura ${index + 1}: ${item}`) })
+    const producto = {
+        nombre: "Movil",
+        precio: 1200,
+        proveedor: {
+            nombre: "Apple",
+            pais: "Estados Unidos"
+        }
+    }
+    console.log(JSON.stringify(producto))
+    console.log(`Producto: ${producto.nombre}, Precio: ${producto.precio}, Proveedor: ${producto.proveedor.nombre}, Pais: ${producto.proveedor.pais}`)
+    const array = [
+        { titulo: "Cien años de soledad", autor: "Gabriel Garcia Marquez", año: "1652" },
+        { titulo: "Volar sobre el pantano", autor: "Nicolas Fleur", año: "1452" },
+        { titulo: "Mis Zonas Erroneas", autor:"Gabriela Mistral", año:"1823" }
+    ]
+    console.log(JSON.stringify(array))
+
+
+    //conversion de un string a objeto json
+    const jsonString = '{"nombre":"Ana","apellido":"Gonzales","telefono":234567,"edad":34}'
+    const obj = JSON.parse(jsonString);
+    console.log(obj.apellido)
+    console.log(obj.edad)
+
+
+    const empresa = {
+        nombre: "Nedgia",
+        añoFundacion: 1889,
+        empleados: [
+            { nombre: "Marco", apellido: "Merida", edad: 43 },
+            { nombre: "Tania", apellido: "Tandazo", edad: 21 },
+            { nombre: "Laura", apellido: "Gibraltar", edad: 28 }
+        ]
+    }
+    const objJson = JSON.stringify(empresa)//convertimos de js a json-> txt plano
+
+    const nuevoOjeto = JSON.parse(objJson)
+    console.log(empresa.nombre)
+    console.log(empresa.añoFundacion)
+    empresa.empleados.forEach((item, index) => {console.log(`Empleado ${index+1}: ${item.nombre} ${item.apellido} ${item.edad}`) })
+
+    let biblioteca = {
+        nombre: "Municipal",
+        libros: [
+            { titulo:"El cafe de los pequeños milagros", autor: "Nicolas Barreau" },
+            { titulo: "Dias de Otoño", autor: "Mercedes Blanco" },
+        ],
+        buscarLibro : function (tituloBuscado) {
+            let encontrado = this.libros.find(libro => libro.titulo === tituloBuscado)
+            if (encontrado) {
+                console.log(`Libro encontrado ${encontrado.titulo} - ${encontrado.autor}`)
+            } else {
+                console.log(`Libro no encontrado`)
+            }
+        }
+    }
+    biblioteca.buscarLibro("Dias de Otoño");
+    const carrito = {
+        productos:[
+            { nombre: "Patata", precio: 32.4 },
+            { nombre: "Cebolla", precio: 23.2 },
+            { nombre: "Zanahoria", precio: 2.01 },
+
+        ],
+        calcularTotal: function () {
+            return this.productos.reduce((acumulador, elementoActual) => acumulador + elementoActual.precio, 0).toFixed(2);
+        }
+    }
+    console.log(carrito.calcularTotal())
+
+    const clase = {
+        alumnos: [
+            { nombre: "Maria", nota: 10 },
+            { nombre: "Juana", nota: 9 },
+            { nombre: "Carmen", nota: 8 }
+        ],
+        obtener_nombres: function () {
+            let nombres = this.alumnos.map(item => item.nombre)
+            nombres.forEach(item=>console.log(item))
+        }
+    }
+    clase.obtener_nombres()
+
+    const biblioteca1 = {
+        libros: [
+            { titulo: "Cien años de soledad", autor: "Gabriel Garcia Marquez", año: "1652" },
+            { titulo: "Volar sobre el pantano", autor: "Nicolas Fleur", año: "1452" },
+            { titulo: "Mis Zonas Erroneas", autor: "Gabriela Mistral", año: "1823" }
+        ],
+        obtenerLibro: function (libroBuscado) {
+            let encontrado = this.libros.find(item => item.titulo === libroBuscado)
+            if (encontrado) {
+                console.log(`Libro encontrado, detalles: ${encontrado.autor} - ${encontrado.titulo} - ${encontrado.año}`)
+            } else {
+                console.log(`Libro no encontrado`)
+            }
+        }
+        
+    }
+    biblioteca1.obtenerLibro("La niña de mis ojos")
+
+</script>

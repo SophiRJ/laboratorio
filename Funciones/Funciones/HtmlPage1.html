@@ -1,0 +1,109 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Empresa Negocio1</h1>
+    <h2>Datos Cliente</h2>
+    <form id="cliente">
+        Nombre: <input type="text" id="name" /><br><br>
+        Direccion: <input type="text" id="direccion" /><br><br>
+        Telefono: <input type="text" id="telefono" /><br><br>
+        <input type="button" value="Agregar Cliente" onclick="agregarCliente()" />
+    </form>
+    <br><br>
+
+    <form id="productos">
+        <h2>Productos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Producto 1</td>
+                    <td>10 €</td>
+                    <td><input type="number" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Producto 2</td>
+                    <td>15 €</td>
+                    <td><input type="number" min="0" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Producto 3</td>
+                    <td>18 €</td>
+                    <td><input type="number" min="0" value="0"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <input type="button" id="comprar" value="Comprar" onclick="calcularPrecio()" />
+    </form>
+    <br><br>
+    <input type="button" id="generarFactura" value="Generar Factura" onclick="mostrarFactura()" /><br><br>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    let factura= {
+        empresa: {
+            nombre: "Negocio",
+            direccion: "Av Badajoz 7",
+            telefono: "1452369",
+            NIF: "145223-E"
+        },
+        cliente: {
+
+        },
+        productos: [
+            { descripcion: "Producto 1", precio:10, cantidad:0 },
+            { descripcion: "Producto 2", precio:15, cantidad:0 },
+            { descripcion: "Producto 3", precio:18, cantidad:0 }
+        ],
+        importeIva: 0.21,
+        importeTotal: 0
+
+    }
+    function agregarCliente() {
+        factura.cliente.nombre = document.getElementById("name").value;
+        factura.cliente.direccion = document.querySelector('#direccion').value
+        factura.cliente.telefono = document.querySelector('#telefono').value
+    }
+    function calcularPrecio() {
+        document.querySelectorAll("#productos tbody input").forEach((input, index) => {
+            factura.productos[index].cantidad = parseInt(input.value);
+        });
+        let productosSeleccionados = factura.productos.filter(p => p.cantidad > 0);
+        let precioTotal = productosSeleccionados.reduce((prev, item) => prev + (item.cantidad * item.precio), 0);
+        factura.importeTotal = precioTotal + (precioTotal * factura.importeIva)
+    }
+    function mostrarFactura() {
+        let contenedor = document.getElementById("resultado")
+        contenedor.innerHTML = "<h1>Factura</h1>"
+        contenedor.innerHTML += "<h2>Datos Empresa</h2>"
+        contenedor.innerHTML += `<p><strong>Nombre: </strong>${factura.empresa.nombre}</p>`
+        contenedor.innerHTML += `<p><strong>Direccion: </strong>${factura.empresa.direccion}<p>`
+        contenedor.innerHTML += `<p><strong>NIF:</strong>${factura.empresa.NIF}<p>`
+        contenedor.innerHTML += `<h2>Datos Cliente</h2>`
+        contenedor.innerHTML += `<p><strong>Nombre: </strong>${factura.cliente.nombre}</p>`
+        contenedor.innerHTML += `<p><strong>Direccion: </strong>${factura.cliente.direccion}</p>`
+        contenedor.innerHTML += `<p><strong>Telefono: </strong>${factura.cliente.telefono}</p>`
+        contenedor.innerHTML += `<h2>Detalle Factura</h2>`
+        let html = `<ul>`
+        factura.productos.forEach((item) => {
+            html += `<li>${item.descripcion} ---> ${item.cantidad} == ${item.cantidad * item.precio} €</li>`;
+        })
+        html += `</ul>`
+        contenedor.innerHTML += html
+        contenedor.innerHTML += `<h2>Importe Total</h2>`
+        contenedor.innerHTML += `<p><strong>Importe Total: </strong>${factura.importeTotal.toFixed(2)} €</p>`
+    }
+</script>

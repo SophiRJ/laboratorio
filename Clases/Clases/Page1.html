@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            display: block;
+            padding: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-right: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestion de Usuarios</h1>
+    <form id="formUsuario">
+        <input type="text" id="nombre" placeholder="Nombre" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <button type="submit">Guardar Usuario</button>
+    </form>
+
+    <h2>Usuarios Guardados</h2>
+    <ul id="listaUsuarios"></ul>
+</body>
+</html>
+<script>
+    class UsuarioManager {
+        //Estamos diciendo que su almacenaje sera en local
+        constructor(storage = localStorage) {
+            this.storage = storage;
+            this.clave = 'usuarios';
+            this.usuarios = this.obtenerUsuarios();
+        }
+
+        //recuperamos datos
+        obtenerUsuarios = () => {
+            const datos = this.storage.getItem(this.clave)
+            return datos ? JSON.parse(datos):[];
+        }
+        guardarUsuarios = () => {
+            this.storage.setItem(this.clave, JSON.stringify(this.usuarios));
+        }
+        añadirUsuario = (nombre, email) => {
+            this.usuarios.push({ nombre, email });
+            this.guardarUsuarios();
+            this.mostrarUsuario();
+        }
+        mostrarUsuario = () => {
+            const lista = document.querySelector("#listaUsuarios")
+            if (this.usuarios.length === 0) {
+                lista.innerHTML = '<li>No hay usuarios guardados</li>';
+                return;
+            }
+            lista.innerHTML = this.usuarios.map((u, index) =>
+                `<li>${u.nombre}(${u.email})<button data-index="${index}" class="eliminar"> Eliminar</button></li>`).join('');
+
+            //Añadir evento para eliminacion
+            document.querySelectorAll(".eliminar").forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = btn.getAttribute('data-index');
+                    //eliminar el registro
+                    this.eliminarUsuario(idx)
+                }) })
+        }
+        eliminarUsuario = (index) => {
+            this.usuarios.splice(index, 1)
+            this.guardarUsuarios()
+            this.mostrarUsuario()
+        }
+
+    }
+
+    //crear instancia de localStorage
+    const manager = new UsuarioManager();
+    manager.mostrarUsuario()
+    const form = document.querySelector("#formUsuario");
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const nombre = document.querySelector("#nombre").value
+        const email = document.querySelector("#email").value
+        manager.añadirUsuario(nombre, email);
+        form.reset()
+    })
+</script>

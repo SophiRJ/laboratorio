@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form name="formulario1">
+        <select name="lista1">
+            <option value="">Seleccione</option>
+            <option value="Primero">Primero</option>
+            <option value="Segundo">Segundo</option>
+            <option value="Tercero">Tercero</option>
+            <option value="Cuarto">Cuarto</option>
+        </select>
+        <input type="button" onclick="mostrar()" value="Mostrar"/>
+        <input type="button" onclick="crearNuevo()" value="Crear Nuevo"/>
+        <input type="button" onclick="borrarSeleccionado()" value="Borrar"/>
+        <br />
+        <input type="text" id="salida" readonly placeholder="Aqui se muestra la seleccion"/>
+    </form>
+</body>
+</html>
+<script>
+    function mostrar() {
+        const lista = document.forms['formulario1'].lista1;
+        const seleccion = lista.value;
+        const salida = document.querySelector('#salida')
+        salida.value = seleccion || "Nada Seleccionado";
+    }
+    function crearNuevo() {
+        const lista = document.querySelector('[name="lista1"]');
+        const nuevoTxt = "Cinco"
+        const option = new Option(nuevoTxt, nuevoTxt)
+        lista.add(option);
+    }
+    function borrarSeleccionado() {
+        const lista = document.querySelector('[name="lista1"]');
+        if (lista.selectedIndex > 0) {
+            lista.remove(lista.selectedIndex)
+        } else {
+            alert("Seleccione un elemento")
+        }
+    }
+</script>

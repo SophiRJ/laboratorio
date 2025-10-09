@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h1>Reserva Hotel Plaza</h1>
+    <p><strong>Hotel:</strong> Plaza</p>
+    <p><strong>Dirección:</strong> Av Badajoz 7</p>
+    <p><strong>Teléfono:</strong> 456789123</p>
+
+    <form id="formReserva">
+        <h2>Datos del Cliente</h2>
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="text" id="apellidos" placeholder="Apellidos" required>
+        <input type="text" id="telefono" placeholder="Teléfono" required>
+
+        <h2>Habitación</h2>
+        <label for="tipoHabitacion">Tipo de habitación:</label>
+        <select id="tipoHabitacion">
+            <option value="50">Suite: 50€/noche</option>
+            <option value="30">Doble: 30€/noche</option>
+            <option value="20">Individual: 20€/noche</option>
+        </select>
+
+        <label for="noches">Número de noches:</label>
+        <input type="number" id="noches" min="1" value="1" required>
+
+        <h2>Extras</h2>
+        <label><input type="checkbox" class="extra" value="10" data-descripcion="Desayuno"> Desayuno 10€</label>
+        <label><input type="checkbox" class="extra" value="20" data-descripcion="Spa"> Spa 20€</label>
+        <label><input type="checkbox" class="extra" value="5" data-descripcion="Parking"> Parking 5€</label>
+        <br /><br />
+        <button type="submit">Crear Reserva</button>
+    </form>
+
+    <div id="contenedor"></div>
+
+</body>
+</html>
+<script src="hotel.js"></script>

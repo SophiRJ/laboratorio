@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\laboratorio\\Funciones\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|c:\\laboratorio\\funciones\\funciones\\htmlpage1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|solutionrelative:funciones\\htmlpage1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|c:\\laboratorio\\funciones\\funciones\\ejerciciofactura1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|solutionrelative:funciones\\ejerciciofactura1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|c:\\laboratorio\\funciones\\funciones\\page2.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|solutionrelative:funciones\\page2.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|C:\\laboratorio\\Funciones\\funciones\\mathutils.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|solutionrelative:funciones\\mathutils.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|C:\\laboratorio\\Funciones\\funciones\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|solutionrelative:funciones\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|c:\\laboratorio\\funciones\\funciones\\page1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{350665F5-2AA6-4A83-B6CF-DB69F88AB11A}|Funciones\\Funciones.csproj|solutionrelative:funciones\\page1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HtmlPage1.html",
+              "DocumentMoniker": "C:\\laboratorio\\Funciones\\Funciones\\HtmlPage1.html",
+              "RelativeDocumentMoniker": "Funciones\\HtmlPage1.html",
+              "ToolTip": "C:\\laboratorio\\Funciones\\Funciones\\HtmlPage1.html",
+              "RelativeToolTip": "Funciones\\HtmlPage1.html",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-05T18:34:52.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EjercicioFactura1.html",
+              "DocumentMoniker": "C:\\laboratorio\\Funciones\\Funciones\\EjercicioFactura1.html",
+              "RelativeDocumentMoniker": "Funciones\\EjercicioFactura1.html",
+              "ToolTip": "C:\\laboratorio\\Funciones\\Funciones\\EjercicioFactura1.html",
+              "RelativeToolTip": "Funciones\\EjercicioFactura1.html",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-05T17:48:15.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Page2.html",
+              "DocumentMoniker": "C:\\laboratorio\\Funciones\\Funciones\\Page2.html",
+              "RelativeDocumentMoniker": "Funciones\\Page2.html",
+              "ToolTip": "C:\\laboratorio\\Funciones\\Funciones\\Page2.html",
+              "RelativeToolTip": "Funciones\\Page2.html",
+              "ViewState": "AgIAABYAAAAAAAAAAAAUwB8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-05T15:15:38.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Page1.html",
+              "DocumentMoniker": "C:\\laboratorio\\Funciones\\Funciones\\Page1.html",
+              "RelativeDocumentMoniker": "Funciones\\Page1.html",
+              "ToolTip": "C:\\laboratorio\\Funciones\\Funciones\\Page1.html",
+              "RelativeToolTip": "Funciones\\Page1.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-04T17:18:08.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "app.js",
+              "DocumentMoniker": "C:\\laboratorio\\Funciones\\Funciones\\app.js",
+              "RelativeDocumentMoniker": "Funciones\\app.js",
+              "ToolTip": "C:\\laboratorio\\Funciones\\Funciones\\app.js",
+              "RelativeToolTip": "Funciones\\app.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-05T01:04:46.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MathUtils.js",
+              "DocumentMoniker": "C:\\laboratorio\\Funciones\\Funciones\\MathUtils.js",
+              "RelativeDocumentMoniker": "Funciones\\MathUtils.js",
+              "ToolTip": "C:\\laboratorio\\Funciones\\Funciones\\MathUtils.js",
+              "RelativeToolTip": "Funciones\\MathUtils.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-05T01:01:42.286Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

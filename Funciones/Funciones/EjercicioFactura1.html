@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="resultado"></div>
+</body>
+</html>
+<script>
+    let factura = {
+        empresa: {
+            nombre: "Mercado",
+            direccion: "Calle Alustante 1",
+            telefono: 58695445212,
+            nif: "123456T"
+        },
+        cliente: {},
+        elementos: [],
+        importeTotal: 0,
+        tipoIva: 0.21,
+        formaPago: "transferencia",
+        agregarCliente: function () {
+            this.cliente.nombre = prompt("Nombre del cliente:");
+            this.cliente.direccion = prompt("Dirección:");
+            this.cliente.telefono = prompt("Teléfono:");
+        },
+        agregarProducto: function () {
+            let descripcion = prompt("Producto:");
+            let precio = parseFloat(prompt("Precio:"));
+            let cantidad = parseInt(prompt("Cantidad:"));
+            this.elementos.push({ descripcion, precio, cantidad });
+        },
+        calcularTotal: function () {
+            this.importeTotal = this.elementos.reduce((prev, item) => prev + (item.precio * item.cantidad),0)
+            
+        },
+        muestraTotal: function () {
+            const contenedor = document.getElementById("resultado");
+            contenedor.innerHTML = `<h1>Factura</h1>`
+
+            contenedor.innerHTML += '<h2>Empresa</h2>'
+            contenedor.innerHTML += `<p><strong>Empresa:</strong> ${factura.empresa.nombre}</p>`
+            contenedor.innerHTML += `<p><strong>Direccion:</strong> ${this.empresa.direccion}</p>`
+            contenedor.innerHTML += `<p><strong>Nif:</strong> ${this.empresa.nif}</p>`
+
+            contenedor.innerHTML += '<h2>Cliente</h2>'
+            contenedor.innerHTML += `<p><strong>Nombre:</strong> ${this.cliente.nombre}</p>`;
+            contenedor.innerHTML += `<p><strong>Dirección:</strong> ${this.cliente.direccion}</p>`;
+            contenedor.innerHTML += `<p><strong>Teléfono:</strong> ${this.cliente.telefono}</p>`;
+
+            contenedor.innerHTML += '<h2>Detalle Factura</h2>'
+            let html = `<ul>`
+            this.elementos.forEach((item) => {
+                html += `<li>${item.descripcion} ---> ${item.cantidad} == ${item.cantidad * item.precio} €</li>`;
+            })
+            html += `</ul>`
+            contenedor.innerHTML += html;
+            contenedor.innerHTML += '<h2>Importe Total</h2>'
+            contenedor.innerHTML += `<p><strong>Importe Total: </strong> ${this.importeTotal} € </p>`
+        }
+    }
+
+    factura.agregarCliente();
+    factura.agregarProducto();
+    factura.agregarProducto();
+    factura.calcularTotal();
+    factura.muestraTotal();
+
+</script>

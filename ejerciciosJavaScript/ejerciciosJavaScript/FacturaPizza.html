@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedidos de Pizzas Acumulativos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        select, input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 200px;
+            display: block;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-right: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .pedido-item {
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+        }
+
+        .eliminar {
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pedidos de Pizzas</h1>
+
+    <form id="formPedido">
+        <label for="pizza">Selecciona pizza:</label>
+        <select id="pizza">
+            <option value="4">Queso: $4</option>
+            <option value="6">Jamón y Queso: $6</option>
+            <option value="10">Especial: $10</option>
+        </select>
+
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" min="1" value="1">
+
+        <button type="submit">Añadir Pedido</button>
+    </form>
+
+    <h2>Lista de Pedidos</h2>
+    <ul id="listaPedidos"></ul>
+    <h3>Total Acumulado: $<span id="totalAcumulado">0.00</span></h3>
+
+
+
+</body>
+</html>
+<script>
+    class Pedido {
+        constructor(pizza,cantidad,precio) {
+            this.pizza = pizza
+            this.cantidad = parseInt(cantidad)
+            this.precio = parseFloat(precio)
+            this.total = parseFloat(cantidad * precio);
+        }
+    }
+    class Pedidos {
+        constructor() {
+            this.pedidos = [];
+        }
+        agregarPedido() {
+            let pizzaElegida = document.getElementById("pizza");
+            let pizza = pizzaElegida.options[pizzaElegida.selectedIndex].text
+            let precio = pizzaElegida.value;
+            let cantidad = document.getElementById("cantidad").value
+
+            const nuevoPEdido = new Pedido(pizza, cantidad,precio);
+            this.pedidos.push(nuevoPEdido);
+            console.log(pizza)
+            console.log(precio)
+
+
+        }
+        añadirLista() {
+            const lista = document.querySelector("#listaPedidos");
+            lista.innerHTML = this.pedidos.map((p, index) =>
+                `<li>${p.pizza} ${p.cantidad} ${p.total}<button data-index=${index} class="eliminar">Eliminar</button></li>`).join('');
+
+
+            document.querySelectorAll(".eliminar").forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const indx = btn.getAttribute("data-index");
+                    this.eliminarPedido(indx)
+
+                })
+            })
+        }
+        eliminarPedido(index) {
+            this.pedidos.splice(index,1);
+            this.añadirLista()
+            this.actualizarTotal()
+        }
+        actualizarTotal() {
+            let total = this.pedidos.reduce((acumulador, p) => acumulador + p.total, 0);
+            document.getElementById("totalAcumulado").textContent = total.toFixed(2);
+        }
+
+    }
+    const pedido = new Pedidos()
+
+    const form = document.querySelector("#formPedido")
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+
+        pedido.agregarPedido()
+        pedido.añadirLista()
+        pedido.actualizarTotal()
+        form.reset()
+    })
+</script>

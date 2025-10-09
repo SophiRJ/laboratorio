@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pedido Pizza</title>
+</head>
+<body>
+    <form id="form1">
+        <select name="lista">
+            <option value="">Selecciona una pizza</option>
+            <option value="Queso">Queso: $4</option>
+            <option value="Jamon y Queso">Jamon y Queso: $6</option>
+            <option value="Especial">Especial: $10</option>
+        </select>
+        <br />
+        Cantidad: <input type="text" id="cantidad" /><br />
+        <input type="button" value="Calcular total" onclick="total_pago()" /><br />
+        Total a pagar: <input type="text" id="pago" />
+    </form>
+
+    <script>
+        function total_pago() {
+            const lista = document.querySelector('[name="lista"]');
+            const seleccion = lista.value;
+            const cantidad = parseInt(document.getElementById("cantidad").value) || 0;
+            let total_pago = 0;
+
+            if (seleccion === "Queso") {
+                total_pago = cantidad * 4;
+            } else if (seleccion === "Jamon y Queso") {
+                total_pago = cantidad * 6;
+            } else if (seleccion === "Especial") {
+                total_pago = cantidad * 10;
+            }
+
+            document.getElementById("pago").value = `El precio total es $${total_pago}`;
+        }
+    </script>
+</body>
+</html>

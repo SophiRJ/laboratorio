@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body >
+    
+</body >
+</html>
+<script>
+    let nombre = "Javier"
+    let nombre1 = new String('Javier Vazquez')
+    nombre1.lenght; //propiedad
+
+    //Metodos
+    //indexOf
+    var str = "Hola desde el universo javascript";
+    var n = str.indexOf('universo');
+    //alert(n)
+
+    //slice
+    var str1 = "all good boys do fine"
+    var slice1 = str1.slice(0)
+    //alert(slice1);
+
+    var slice2 = str1.slice(0, -1)
+    //alert(slice2);
+
+    var slice3 = str1.slice(4);
+    //alert(slice3);
+
+    var slice4 = str1.slice(4, 8);//extrae desde el carcater 4 hasta el 8 incluido
+
+    //substring
+    var str2 = "Hello world";
+    var inicio = str.indexOf("world");
+    var final = str.length;
+    var substring = str2.substring(inicio, final);
+    //alert(substring);
+
+    //split
+    var diasSemana = "Domingo,Lunes,Martes,Miércoles,Jueves,Viernes,Sábado";
+    let arraySplit = diasSemana.split(',');
+    for (let cont = 0; cont < arraySplit.length; cont++) {
+        alert(arraySplit[cont]);
+    }
+</script>
