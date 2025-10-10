@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "C:\\laboratorio\\boopstrap\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\gestortareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\gestortareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\main.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\main.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|C:\\laboratorio\\boopstrap\\boopstrap\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
@@ -18,11 +22,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "gestorTareas.html",
+              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\gestorTareas.html",
+              "RelativeDocumentMoniker": "boopstrap\\gestorTareas.html",
+              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\gestorTareas.html*",
+              "RelativeToolTip": "boopstrap\\gestorTareas.html*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-10T08:25:03.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "main.js",
               "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\main.js",
               "RelativeDocumentMoniker": "boopstrap\\main.js",
@@ -30,18 +47,17 @@
               "RelativeToolTip": "boopstrap\\main.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-09T22:53:19.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-09T22:53:19.888Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.html",
               "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\main.html",
               "RelativeDocumentMoniker": "boopstrap\\main.html",
               "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\main.html",
               "RelativeToolTip": "boopstrap\\main.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-10-09T22:49:19.409Z",
               "EditorCaption": ""

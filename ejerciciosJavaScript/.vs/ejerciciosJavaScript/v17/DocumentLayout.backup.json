@@ -22,8 +22,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "hotel.js",
+              "DocumentMoniker": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\hotel.js",
+              "RelativeDocumentMoniker": "ejerciciosJavaScript\\hotel.js",
+              "ToolTip": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\hotel.js",
+              "RelativeToolTip": "ejerciciosJavaScript\\hotel.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-07T19:08:32.694Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -34,19 +47,7 @@
               "RelativeToolTip": "ejerciciosJavaScript\\FacturaPizza.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-07T19:04:28.937Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "hotel.js",
-              "DocumentMoniker": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\hotel.js",
-              "RelativeDocumentMoniker": "ejerciciosJavaScript\\hotel.js",
-              "ToolTip": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\hotel.js",
-              "RelativeToolTip": "ejerciciosJavaScript\\hotel.js",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAEcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-07T19:08:32.694Z",
+              "WhenOpened": "2025-10-07T19:04:28.937Z",
               "EditorCaption": ""
             },
             {
@@ -61,9 +62,10 @@
               "RelativeDocumentMoniker": "ejerciciosJavaScript\\Hotel.html",
               "ToolTip": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\Hotel.html",
               "RelativeToolTip": "ejerciciosJavaScript\\Hotel.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-07T19:07:09.882Z"
+              "WhenOpened": "2025-10-07T19:07:09.882Z",
+              "EditorCaption": ""
             }
           ]
         }
