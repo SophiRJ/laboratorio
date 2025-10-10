@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\laboratorio\\boopstrap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\main.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\main.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\solucionejerc1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\solucionejerc1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\solucionejerc2.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\solucionejerc2.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\sulucionejerciciosprofe.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\sulucionejerciciosprofe.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|C:\\laboratorio\\boopstrap\\boopstrap\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SolucionEjerc2.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\SolucionEjerc2.html",
-              "RelativeDocumentMoniker": "boopstrap\\SolucionEjerc2.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\SolucionEjerc2.html",
-              "RelativeToolTip": "boopstrap\\SolucionEjerc2.html",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAowC8AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-10T08:41:11.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SolucionEjerc1.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\SolucionEjerc1.html",
-              "RelativeDocumentMoniker": "boopstrap\\SolucionEjerc1.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\SolucionEjerc1.html",
-              "RelativeToolTip": "boopstrap\\SolucionEjerc1.html",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAowDgAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-10T08:40:33.565Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SulucionEjerciciosProfe.js",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\SulucionEjerciciosProfe.js",
-              "RelativeDocumentMoniker": "boopstrap\\SulucionEjerciciosProfe.js",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\SulucionEjerciciosProfe.js",
-              "RelativeToolTip": "boopstrap\\SulucionEjerciciosProfe.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-10T08:35:05.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "main.js",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\main.js",
-              "RelativeDocumentMoniker": "boopstrap\\main.js",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\main.js",
-              "RelativeToolTip": "boopstrap\\main.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-09T22:53:19.888Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "main.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\main.html",
-              "RelativeDocumentMoniker": "boopstrap\\main.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\main.html",
-              "RelativeToolTip": "boopstrap\\main.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABOAAAAAAAAAA==",
+              "Title": "Gestor_tareas.html",
+              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\Gestor_tareas.html",
+              "RelativeDocumentMoniker": "boopstrap\\Gestor_tareas.html",
+              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Gestor_tareas.html*",
+              "RelativeToolTip": "boopstrap\\Gestor_tareas.html*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-09T22:49:19.409Z",
+              "WhenOpened": "2025-10-10T09:16:43.413Z",
               "EditorCaption": ""
             }
           ]
