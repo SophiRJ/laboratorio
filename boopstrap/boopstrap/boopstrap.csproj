@@ -74,6 +74,7 @@
     <Content Include="Ejercicio5.html" />
     <Content Include="Formularios.html" />
     <Content Include="Gestor_tareas.html" />
+    <Content Include="gestor_tareas.js" />
     <Content Include="image\medellin.jpg" />
     <Content Include="main.html" />
     <Content Include="main.js" />
