@@ -78,6 +78,8 @@
     <Content Include="Gestor_tareas.html" />
     <Content Include="gestor_tareas.js" />
     <Content Include="image\medellin.jpg" />
+    <Content Include="LIstaTareas.html" />
+    <Content Include="listaTareas.js" />
     <Content Include="main.html" />
     <Content Include="main.js" />
     <Content Include="Page1.html" />
