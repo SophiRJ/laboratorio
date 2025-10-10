@@ -74,6 +74,7 @@
     <Content Include="Page1.html" />
     <Content Include="Page2.html" />
     <Content Include="tienda.js" />
+    <Content Include="trycatch.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -3,15 +3,19 @@
   "WorkspaceRootPath": "C:\\laboratorio\\Clases\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|C:\\laboratorio\\Clases\\clases\\factura.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|c:\\laboratorio\\clases\\clases\\trycatch.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|solutionrelative:clases\\trycatch.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|c:\\laboratorio\\clases\\clases\\factura.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|solutionrelative:clases\\factura.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|c:\\laboratorio\\clases\\clases\\tienda.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|C:\\laboratorio\\Clases\\clases\\tienda.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|solutionrelative:clases\\tienda.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|c:\\laboratorio\\clases\\clases\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|C:\\laboratorio\\Clases\\clases\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|solutionrelative:clases\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -27,7 +31,7 @@
       "RelativeMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|solutionrelative:clases\\page1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|c:\\laboratorio\\clases\\clases\\hotel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|C:\\laboratorio\\Clases\\clases\\hotel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{F0C5D7C6-92F1-456E-ABE7-9608237C1BE3}|Clases\\Clases.csproj|solutionrelative:clases\\hotel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
@@ -38,11 +42,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "trycatch.js",
+              "DocumentMoniker": "C:\\laboratorio\\Clases\\Clases\\trycatch.js",
+              "RelativeDocumentMoniker": "Clases\\trycatch.js",
+              "ToolTip": "C:\\laboratorio\\Clases\\Clases\\trycatch.js",
+              "RelativeToolTip": "Clases\\trycatch.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-09T23:56:53.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "tienda.js",
               "DocumentMoniker": "C:\\laboratorio\\Clases\\Clases\\tienda.js",
               "RelativeDocumentMoniker": "Clases\\tienda.js",
@@ -50,12 +67,11 @@
               "RelativeToolTip": "Clases\\tienda.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-08T10:19:04.283Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-08T10:19:04.283Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "index.html",
               "DocumentMoniker": "C:\\laboratorio\\Clases\\Clases\\index.html",
               "RelativeDocumentMoniker": "Clases\\index.html",
@@ -63,12 +79,11 @@
               "RelativeToolTip": "Clases\\index.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-08T10:18:44Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-08T10:18:44Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Factura.html",
               "DocumentMoniker": "C:\\laboratorio\\Clases\\Clases\\Factura.html",
               "RelativeDocumentMoniker": "Clases\\Factura.html",
@@ -81,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "example.js",
               "DocumentMoniker": "C:\\laboratorio\\Clases\\Clases\\example.js",
               "RelativeDocumentMoniker": "Clases\\example.js",
@@ -89,12 +104,11 @@
               "RelativeToolTip": "Clases\\example.js",
               "ViewState": "AgIAAAEAAAAAAAAAAAAUwEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-06T23:03:19.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-06T23:03:19.274Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "hotel.js",
               "DocumentMoniker": "C:\\laboratorio\\Clases\\Clases\\hotel.js",
               "RelativeDocumentMoniker": "Clases\\hotel.js",
@@ -102,16 +116,11 @@
               "RelativeToolTip": "Clases\\hotel.js",
               "ViewState": "AgIAABsAAAAAAAAAAAAAABIAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-07T11:35:04.759Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2025-10-07T11:35:04.759Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Page2.html",
               "DocumentMoniker": "C:\\laboratorio\\Clases\\Clases\\Page2.html",
               "RelativeDocumentMoniker": "Clases\\Page2.html",
@@ -119,12 +128,11 @@
               "RelativeToolTip": "Clases\\Page2.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-07T11:35:57.887Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-07T11:35:57.887Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Page1.html",
               "DocumentMoniker": "C:\\laboratorio\\Clases\\Clases\\Page1.html",
               "RelativeDocumentMoniker": "Clases\\Page1.html",
@@ -132,8 +140,7 @@
               "RelativeToolTip": "Clases\\Page1.html",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAFMAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-06T22:43:57.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-06T22:43:57.526Z"
             }
           ]
         }

@@ -3,32 +3,12 @@
   "WorkspaceRootPath": "C:\\laboratorio\\boopstrap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\ejercicio4.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\ejercicio4.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\main.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\main.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\ejercicio5.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\ejercicio5.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\ejercicio3.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\ejercicio3.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\ejercicio2.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\ejercicio2.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\ejercicio1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\ejercicio1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\page1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\page1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\formularios.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\formularios.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\main.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,101 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Ejercicio5.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\Ejercicio5.html",
-              "RelativeDocumentMoniker": "boopstrap\\Ejercicio5.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Ejercicio5.html",
-              "RelativeToolTip": "boopstrap\\Ejercicio5.html",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAB0AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-09T10:41:43.198Z",
+              "Title": "main.js",
+              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\main.js",
+              "RelativeDocumentMoniker": "boopstrap\\main.js",
+              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\main.js",
+              "RelativeToolTip": "boopstrap\\main.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-09T22:53:19.888Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Ejercicio4.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\Ejercicio4.html",
-              "RelativeDocumentMoniker": "boopstrap\\Ejercicio4.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Ejercicio4.html",
-              "RelativeToolTip": "boopstrap\\Ejercicio4.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-09T10:40:55.352Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Ejercicio3.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\Ejercicio3.html",
-              "RelativeDocumentMoniker": "boopstrap\\Ejercicio3.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Ejercicio3.html",
-              "RelativeToolTip": "boopstrap\\Ejercicio3.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-09T10:40:43.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Ejercicio2.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\Ejercicio2.html",
-              "RelativeDocumentMoniker": "boopstrap\\Ejercicio2.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Ejercicio2.html",
-              "RelativeToolTip": "boopstrap\\Ejercicio2.html",
+              "Title": "main.html",
+              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\main.html",
+              "RelativeDocumentMoniker": "boopstrap\\main.html",
+              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\main.html",
+              "RelativeToolTip": "boopstrap\\main.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-09T09:25:45.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Ejercicio1.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\Ejercicio1.html",
-              "RelativeDocumentMoniker": "boopstrap\\Ejercicio1.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Ejercicio1.html",
-              "RelativeToolTip": "boopstrap\\Ejercicio1.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-09T07:01:36.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Formularios.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\Formularios.html",
-              "RelativeDocumentMoniker": "boopstrap\\Formularios.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Formularios.html",
-              "RelativeToolTip": "boopstrap\\Formularios.html",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-09T06:52:15.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Page1.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\Page1.html",
-              "RelativeDocumentMoniker": "boopstrap\\Page1.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Page1.html",
-              "RelativeToolTip": "boopstrap\\Page1.html",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAUwFEAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-07T14:19:30.194Z",
+              "WhenOpened": "2025-10-09T22:49:19.409Z",
               "EditorCaption": ""
             }
           ]

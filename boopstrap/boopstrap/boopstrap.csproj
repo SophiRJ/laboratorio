@@ -74,6 +74,8 @@
     <Content Include="Ejercicio5.html" />
     <Content Include="Formularios.html" />
     <Content Include="image\medellin.jpg" />
+    <Content Include="main.html" />
+    <Content Include="main.js" />
     <Content Include="Page1.html" />
     <Content Include="Web.config" />
   </ItemGroup>
