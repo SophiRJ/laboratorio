@@ -1,13 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\laboratorio\\boopstrap\\",
+  "WorkspaceRootPath": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratoriogit\\laboratorio\\boopstrap\\boopstrap\\funcionescarrito.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\funcionescarrito.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratoriogit\\laboratorio\\boopstrap\\boopstrap\\carritocompra.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\carritocompra.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratoriogit\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\gestor_tareas.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
@@ -21,30 +29,59 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "gestor_tareas.js",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js",
-              "RelativeDocumentMoniker": "boopstrap\\gestor_tareas.js",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js*",
-              "RelativeToolTip": "boopstrap\\gestor_tareas.js*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-10T09:51:40.805Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "funcionesCarrito.js",
+              "DocumentMoniker": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\funcionesCarrito.js",
+              "RelativeDocumentMoniker": "boopstrap\\funcionesCarrito.js",
+              "ToolTip": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\funcionesCarrito.js*",
+              "RelativeToolTip": "boopstrap\\funcionesCarrito.js*",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-10T14:50:44.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "carritoCompra.html",
+              "DocumentMoniker": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\carritoCompra.html",
+              "RelativeDocumentMoniker": "boopstrap\\carritoCompra.html",
+              "ToolTip": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\carritoCompra.html",
+              "RelativeToolTip": "boopstrap\\carritoCompra.html",
+              "ViewState": "AgIAABUAAAAAAAAAAAAiwIEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-10T14:09:53.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Gestor_tareas.html",
-              "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\Gestor_tareas.html",
+              "DocumentMoniker": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\Gestor_tareas.html",
               "RelativeDocumentMoniker": "boopstrap\\Gestor_tareas.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Gestor_tareas.html",
+              "ToolTip": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\Gestor_tareas.html",
               "RelativeToolTip": "boopstrap\\Gestor_tareas.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-10-10T09:16:43.413Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "gestor_tareas.js",
+              "DocumentMoniker": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js",
+              "RelativeDocumentMoniker": "boopstrap\\gestor_tareas.js",
+              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js*",
+              "RelativeToolTip": "..\\..\\..\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js*",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAC0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-10T09:51:40.805Z"
             }
           ]
         }
