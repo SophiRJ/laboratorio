@@ -33,7 +33,7 @@
 
         li.innerHTML = `<span>${tarea}</span>
             <div>
-                <button class="btn btn-success btn-sm me-1">Completar</button>
+                <button class="btn btn-success btn-sm me-1" data->Completar</button>
                 <button class="btn btn-primary btn-sm me-1">Editar</button>
                 <button class="btn btn-danger btn-sm">Eliminar</button>
             </div>

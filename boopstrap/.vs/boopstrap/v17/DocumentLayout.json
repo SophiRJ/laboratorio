@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\laboratorio\\boopstrap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\gestor_tareas.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,29 +18,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "gestor_tareas.js",
               "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js",
               "RelativeDocumentMoniker": "boopstrap\\gestor_tareas.js",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js*",
-              "RelativeToolTip": "boopstrap\\gestor_tareas.js*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAC0AAAAoAAAAAAAAAA==",
+              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.js",
+              "RelativeToolTip": "boopstrap\\gestor_tareas.js",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-10-10T09:51:40.805Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Gestor_tareas.html",
               "DocumentMoniker": "C:\\laboratorio\\boopstrap\\boopstrap\\Gestor_tareas.html",
               "RelativeDocumentMoniker": "boopstrap\\Gestor_tareas.html",
-              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Gestor_tareas.html*",
-              "RelativeToolTip": "boopstrap\\Gestor_tareas.html*",
+              "ToolTip": "C:\\laboratorio\\boopstrap\\boopstrap\\Gestor_tareas.html",
+              "RelativeToolTip": "boopstrap\\Gestor_tareas.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-10-10T09:16:43.413Z",
