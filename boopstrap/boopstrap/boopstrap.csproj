@@ -83,6 +83,7 @@
     <Content Include="main.html" />
     <Content Include="main.js" />
     <Content Include="Page1.html" />
+    <Content Include="PracticaRejillas.html" />
     <Content Include="SolucionEjerc1.html" />
     <Content Include="SolucionEjerc2.html" />
     <Content Include="SulucionEjerciciosProfe.js" />

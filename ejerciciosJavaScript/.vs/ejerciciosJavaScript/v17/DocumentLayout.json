@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\laboratorio\\ejerciciosJavaScript\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|c:\\laboratorio\\ejerciciosjavascript\\ejerciciosjavascript\\ejerciciosnivel1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|solutionrelative:ejerciciosjavascript\\ejerciciosnivel1.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosjavascript\\facturapizza.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|solutionrelative:ejerciciosjavascript\\facturapizza.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|c:\\laboratorio\\ejerciciosjavascript\\ejerciciosjavascript\\asincronia.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|solutionrelative:ejerciciosjavascript\\asincronia.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|c:\\laboratorio\\ejerciciosjavascript\\ejerciciosjavascript\\hotel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosjavascript\\hotel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|solutionrelative:ejerciciosjavascript\\hotel.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosjavascript\\hotel.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|solutionrelative:ejerciciosjavascript\\hotel.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosjavascript\\facturapizza.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{11FA71D7-0985-45F0-805E-F57316F85845}|ejerciciosJavaScript\\ejerciciosJavaScript.csproj|solutionrelative:ejerciciosjavascript\\facturapizza.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,6 +35,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ejerciciosNivel1.html",
+              "DocumentMoniker": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\ejerciciosNivel1.html",
+              "RelativeDocumentMoniker": "ejerciciosJavaScript\\ejerciciosNivel1.html",
+              "ToolTip": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\ejerciciosNivel1.html*",
+              "RelativeToolTip": "ejerciciosJavaScript\\ejerciciosNivel1.html*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-10-11T20:07:37.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Asincronia.js",
               "DocumentMoniker": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\Asincronia.js",
               "RelativeDocumentMoniker": "ejerciciosJavaScript\\Asincronia.js",
@@ -43,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "hotel.js",
               "DocumentMoniker": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\hotel.js",
               "RelativeDocumentMoniker": "ejerciciosJavaScript\\hotel.js",
@@ -51,24 +68,24 @@
               "RelativeToolTip": "ejerciciosJavaScript\\hotel.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-07T19:08:32.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-07T19:08:32.694Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "FacturaPizza.html",
               "DocumentMoniker": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\FacturaPizza.html",
               "RelativeDocumentMoniker": "ejerciciosJavaScript\\FacturaPizza.html",
               "ToolTip": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\FacturaPizza.html",
               "RelativeToolTip": "ejerciciosJavaScript\\FacturaPizza.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAIgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-07T19:04:28.937Z"
+              "WhenOpened": "2025-10-07T19:04:28.937Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Hotel.html",
               "DocumentMoniker": "C:\\laboratorio\\ejerciciosJavaScript\\ejerciciosJavaScript\\Hotel.html",
               "RelativeDocumentMoniker": "ejerciciosJavaScript\\Hotel.html",

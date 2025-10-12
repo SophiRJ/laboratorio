@@ -9,82 +9,496 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Textos secundarios (text-body-secondary)-->
     <div class="container">
-        <h1>h1. Bootstrap heading <small>Secondary text</small></h1>
-        <h2>h2. Bootstrap heading <small>Secondary text</small></h2>
-        <h3>h3. Bootstrap heading <small>Secondary text</small></h3>
-        <h4>h4. Bootstrap heading <small>Secondary text</small></h4>
-        <h5>h5. Bootstrap heading <small>Secondary text</small></h5>
-        <h6>h6. Bootstrap heading <small>Secondary text</small></h6>
+        <h1> Texto de título<small class="text-body-secondary">Texto secundario</small></h1>
+        <h2> Texto de título<small class="text-body-secondary">Texto secundario</small></h2>
+        <h3> Texto de título<small class="text-body-secondary">Texto secundario</small></h3>
+    </div>
 
-        <p class="lead">
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus
-            dolor auctor. Duis mollis, est non commodo luctus.
-        </p>
-        <p class="text-left">Texto alineado a la izquierda.</p>
-        <p class="text-center">Texto centrado.</p>
-        <p class="text-end">Texto alineado a la derecha.</p>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>FirstName</th>
-                    <th>LastName</th>
-                    <th>Age</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                </tr>
-                <tr class="table-danger">
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>94</td>
-                </tr>
-                <tr>
-                    <td>Guybrush</td>
-                    <td>Threepwood</td>
-                    <td>26</td>
-                </tr>
-            </tbody>
-        </table>
-        <img src="..." alt="..." class="rounded">
-        <img src="..." alt="..." class="circle">
-        <img src="..." alt="..." class="thumbnail">
+    <!-- Parrafos destacados (lead)-->
+    <div class="container">
+        <p>Este es un párrafo largo sin destacar</p>
+        <p class="lead">Este es un párrafo largo destacado a propósito</p>
+    </div>
+
+    <!-- Alineamiento de textos (text-(left,center,end))-->
+    <div class="container">
+        <p class="text-left">Texto alineado a la izquierda</p>
+        <p class="text-center">Texto alineado al centro</p>
+        <p class="text-end">Texto alineado a la derecha</p>
+    </div>
+
+    <!-- Capitalización de textos (text-(lowercase,uppercase,capitalize))-->
+    <div class="container">
+        <p class="text-lowercase">TEXTO EN MINUSCULAS</p>
+        <p class="text-uppercase">texto en mayusculas</p>
+        <p class="text-capitalize">texto con la primera letra de cada palabra en mayusculas</p>
+    </div>
+
+    <!-- Color del texto (text-(warning,success,info,danger,boyd-secondary)-->
+    <div class="container">
+        <p class="text-warning">Texto advertencia</p>
+        <p class="text-primary">Texto primario</p>
+        <p class="text-success">Texto OK</p>
+        <p class="text-info">Texto informativo</p>
+        <p class="text-danger">Texto peligro</p>
+        <p class="text-body-secondary">Texto secundario</p>
+    </div>
+
+    <!-- Listas sin puntos (list-unstyled), elementos de lista en horizontal(list-inline-item)-->
+    <div class="row">
+        <div class="col-md-4 offset-2">
+            <h4>Lista sin estilos</h4>
+            <ul class="list-unstyled">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+            <h2>Vegetales</h2>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <ul class="list-unstyled">
+                <li class="list-inline-item">Item 1</li>
+                <li class="list-inline-item">Item 2</li>
+                <li class="list-inline-item">Item 3</li>
+            </ul>
+        </div>
+
+        <!-- Definición de espacios por columnas (col-md-4), ordenamiento de espacios(offset-1), estilos de tablas(table, table-stripped, table-hover) y
+             diseño de las celdas (tr:table-(danger,warning...) td:table-(success,warinng...), text-(warning,success...))-->
+        <div class="col-md-4 offset-1">
+            <table class="table <!--table-stripped--> table-hover">
+                <thead>
+                    <tr class="table-danger">
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-success">Ruben</td>
+                        <td>Gomez</td>
+                        <td>34</td>
+                    </tr>
+                    <tr class="table-warning">
+                        <td class="table-warning">Pepa</td>
+                        <td>Perez</td>
+                        <td>28</td>
+                    </tr>
+                    <tr class="table-active">
+                        <td class="text-warning">Julian</td>
+                        <td>del Olmo</td>
+                        <td>21</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div>
 
     </div>
-    <form role="form">
-        <div class="form-group">
-            <label for="txtEmail">Email:</label>
-            <input type="email" class="form-control" id="textEmail" />
-        </div>
-        <div class="form-group">
-            <label for="txtPass">Password:</label>
-            <input type="email" class="form-control" id="textEmail" />
-        </div>
-        <div class="form-group">
-            <label for="txtEmail">Email:</label>
-            <input type="email" class="form-control" id="textEmail" />
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-           <div class="mb-3">
-               <label for="txtEmail" class="form-label">Email</label>
-               <input type="email" class="form-control" id="textEmail" placeholder="nombre@ejemplo.com"/>
-           </div>
-           <div class="mb-3">
-               <label for="txtPass" class="form-label">Password</label>
-               <input type="pass" class="form-control" id="textEmail" placeholder="tu password"/>
-           </div>
-           <div class="mb-3">
-               <label for="txtfile" class="form-label">Adjuntar archivo</label>
-               <input type="pass" class="form-control" id="textEmail" placeholder="tu password" />
-           </div>
-    <form>
 
-    </form>
+    <!--fORMULARIO BASICO CENTRADO-->
+    <!-- Contenedor principal centrado -->
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <!-- d-flex: convierte el div en un contenedor flex -->
+        <!-- justify-content-center: centra el contenido horizontalmente -->
+        <!-- align-items-center: centra el contenido verticalmente -->
+        <!-- vh-100: altura del div igual al 100% del viewport, hace que ocupe toda la pantalla -->
+        <!-- Formulario con estilo Bootstrap -->
+        <form role="form" class="border p-5 rounded shadow bg-light">
+            <!-- role="form": indica semánticamente que es un formulario -->
+            <!-- border: añade borde al formulario -->
+            <!-- p-5: padding interno grande -->
+            <!-- rounded: bordes redondeados -->
+            <!-- shadow: sombra para dar profundidad -->
+            <!-- bg-light: fondo claro -->
+            <!-- Campo de email -->
+            <div class="form-group mb-3">
+                <!-- form-group: contenedor de un input y su label -->
+                <!-- mb-3: margen inferior -->
+                <label for="txtEmail">Email:</label>
+                <input type="email" class="form-control" id="txtEmail" />
+                <!-- form-control: aplica estilo Bootstrap y ancho completo -->
+            </div>
+
+            <!-- Campo de password -->
+            <div class="form-group mb-3">
+                <label for="txtPass">Password:</label>
+                <input type="password" class="form-control" id="txtPass" />
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+            <!-- btn: estilo de botón Bootstrap -->
+            <!-- btn-primary: color primario azul -->
+            <!-- w-100: ancho completo (100%) del formulario -->
+        </form>
+    </div>
+
+
+
+
+    <!-- ===============================
+     FORMULARIOS EN BOOTSTRAP 5
+     =============================== -->
+    <!-- Contenedor principal -->
+    <div class="container py-5">
+        <!-- container: centra el contenido y aplica un ancho máximo según pantalla -->
+        <!-- py-5: padding vertical (arriba y abajo) de tamaño grande -->
+        <!-- FORMULARIO BÁSICO -->
+        <form>
+
+            <!-- Campo de formulario con margen inferior -->
+            <div class="mb-3">
+                <!-- mb-3: margin-bottom, separa verticalmente los campos -->
+                <!-- Label del input -->
+                <label for="ejemplo_email" class="form-label">Email:</label>
+                <!-- form-label: aplica estilo Bootstrap al texto de la etiqueta -->
+                <!-- Input de tipo email -->
+                <input type="email" class="form-control" id="ejemplo_email" placeholder="Introduce tu email">
+                <!-- form-control: hace que el input ocupe todo el ancho disponible y aplica estilo Bootstrap -->
+                <!-- type="email": valida que se ingrese un email -->
+            </div>
+
+            <div class="mb-3">
+                <label for="ejemplo_password" class="form-label">Contraseña:</label>
+                <input type="password" class="form-control" id="ejemplo_password" placeholder="Contraseña">
+                <!-- type="password": oculta los caracteres ingresados -->
+            </div>
+
+            <div class="mb-3">
+                <label for="ejemplo_archivo" class="form-label">Adjuntar un archivo:</label>
+                <input type="file" class="form-control" id="ejemplo_archivo">
+                <!-- type="file": permite seleccionar un archivo desde el dispositivo -->
+                <div class="form-text">Ejemplo de texto de ayuda debajo del campo.</div>
+                <!-- form-text: texto de ayuda pequeño, se muestra debajo del input -->
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check mb-3">
+                <!-- form-check: agrupa checkbox o radio junto con su label -->
+                <!-- mb-3: margen inferior -->
+
+                <input class="form-check-input" type="checkbox" id="checkbox1">
+                <!-- form-check-input: aplica estilo Bootstrap al checkbox -->
+
+                <label class="form-check-label" for="checkbox1">Activar esta casilla</label>
+                <!-- form-check-label: aplica estilo Bootstrap al label de checkbox/radio -->
+            </div>
+
+            <!-- Botón de envío -->
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <!-- btn: estilo de botón Bootstrap -->
+            <!-- btn-primary: color principal azul -->
+        </form>
+
+        <hr class="my-5">
+        <!-- hr: línea horizontal -->
+        <!-- my-5: margen vertical (arriba y abajo) grande -->
+        <!-- MENSAJE DE AYUDA -->
+        <div class="mb-3">
+            <label for="inputSuccess1" class="form-label">Input con ayuda</label>
+            <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
+            <!-- aria-describedby: conecta el input con un texto de ayuda para accesibilidad -->
+            <div id="helpBlock2" class="form-text">
+                Un texto de ayuda que puede ser largo, pero sigue viéndose bien.
+                <!-- form-text: texto de ayuda debajo del input -->
+            </div>
+        </div>
+
+        <hr class="my-5">
+
+        <!-- ESTADOS DE VALIDACIÓN -->
+        <!-- Campo válido -->
+        <div class="mb-3">
+            <label for="inputValido" class="form-label">Campo válido</label>
+            <input type="text" class="form-control is-valid" id="inputValido">
+            <!-- is-valid: aplica borde verde al input para indicar que es correcto -->
+            <div class="valid-feedback">¡Se ve bien!</div>
+            <!-- valid-feedback: mensaje de éxito que se muestra cuando el campo es válido -->
+        </div>
+
+        <!-- Campo con advertencia -->
+        <div class="mb-3">
+            <label for="inputWarning" class="form-label">Campo con advertencia</label>
+            <input type="text" class="form-control border-warning" id="inputWarning">
+            <!-- border-warning: cambia el borde del input a color amarillo -->
+            <div class="form-text text-warning">
+                <!-- text-warning: texto de advertencia en color amarillo -->
+                Este campo podría necesitar revisión.
+            </div>
+        </div>
+
+        <!-- Campo con error -->
+        <div class="mb-3">
+            <label for="inputError" class="form-label">Campo con error</label>
+            <input type="text" class="form-control is-invalid" id="inputError" aria-invalid="true">
+            <!-- is-invalid: aplica borde rojo para indicar error -->
+            <!-- aria-invalid="true": accesibilidad para lectores de pantalla -->
+            <div class="invalid-feedback">Por favor, corrige este campo.</div>
+            <!-- invalid-feedback: mensaje de error que se muestra cuando el campo es inválido -->
+        </div>
+
+        <hr class="my-5">
+
+        <!-- GRUPOS DE CAMPOS (Input Group) -->
+        <!-- input-group: agrupa input con texto, iconos o botones antes/después -->
+        <div class="input-group mb-3">
+            <span class="input-group-text">@</span>
+            <!-- input-group-text: elemento visual que aparece antes o después del input -->
+            <input type="text" class="form-control" placeholder="Nombre de usuario">
+        </div>
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Cantidad">
+            <span class="input-group-text">.00</span>
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" placeholder="Precio">
+            <span class="input-group-text">.00</span>
+        </div>
+
+        <hr class="my-5">
+
+        <!-- TAMAÑOS DE INPUT GROUP -->
+        <div class="input-group input-group-lg mb-3">
+            <!-- input-group-lg: input grande -->
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="Grande">
+        </div>
+
+        <div class="input-group mb-3">
+            <!-- tamaño normal por defecto -->
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="Normal">
+        </div>
+
+        <div class="input-group input-group-sm mb-3">
+            <!-- input-group-sm: input pequeño -->
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="Pequeño">
+        </div>
+
+        <hr class="my-5">
+
+        <!-- CHECKBOX Y RADIO DENTRO DE INPUT-GROUP -->
+        <div class="row">
+            <!-- row: fila de Bootstrap para organizar columnas -->
+            <div class="col-lg-6 mb-3">
+                <!-- col-lg-6: ocupa 6/12 columnas en pantallas grandes -->
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <input class="form-check-input mt-0" type="checkbox" aria-label="Checkbox para input">
+                        <!-- form-check-input: aplica estilo Bootstrap al checkbox dentro del input-group -->
+                        <!-- mt-0: elimina margen superior predeterminado del checkbox -->
+                    </span>
+                    <input type="text" class="form-control" placeholder="Texto con checkbox">
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-3">
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <input class="form-check-input mt-0" type="radio" aria-label="Radio para input">
+                    </span>
+                    <input type="text" class="form-control" placeholder="Texto con radio">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!--VENTANAS MODALES-->
+    <!-- Contenedor principal -->
+    <div class="container py-5">
+        <!-- container: centra y limita el ancho del contenido; py-5: padding vertical grande -->
+        <h1>Ejemplo de Panel Modal</h1>
+
+        <!-- Botón que abre el modal -->
+        <!-- data-bs-toggle="modal": indica que al hacer clic abrirá un modal -->
+        <!-- data-bs-target: apunta al id del modal que abrirá -->
+        <button type="button" class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+            Abrir Modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1"
+             aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <!-- modal: indica que es un modal; fade: efecto de desvanecimiento al abrir/cerrar -->
+            <!-- id="exampleModal": identifica el modal; tabindex="-1": permite que reciba foco al abrir -->
+            <!-- aria-labelledby y aria-hidden: mejoran accesibilidad -->
+
+            <div class="modal-dialog">
+                <!-- modal-dialog: contenedor del diálogo del modal, lo centra en pantalla -->
+                <div class="modal-content">
+                    <!-- modal-content: contenedor principal del contenido del modal -->
+                    <!-- Cabecera -->
+                    <div class="modal-header">
+                        <!-- modal-header: sección superior del modal -->
+                        <h5 class="modal-title" id="exampleModalLabel">Título del Modal</h5> <!-- modal-title: título del modal -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                        <!-- btn-close: botón de cierre con estilo Bootstrap; data-bs-dismiss="modal": cierra el modal al hacer clic -->
+                    </div>
+
+                    <!-- Cuerpo -->
+                    <div class="modal-body">
+                        <!-- modal-body: sección principal del contenido del modal -->
+                        Este es el contenido del panel modal. Puedes incluir texto, imágenes, listas o cualquier elemento HTML.
+                        <ul>
+                            <li>Elemento 1</li>
+                            <li>Elemento 2</li>
+                            <li>Elemento 3</li>
+                        </ul>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="modal-footer">
+                        <!-- modal-footer: sección inferior del modal para botones de acción -->
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button> <!-- btn-secondary: botón estilo secundario -->
+                        <button type="button" class="btn btn-primary">Guardar cambios</button> <!-- btn-primary: botón estilo principal -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- bootstrap.bundle.min.js: incluye JavaScript necesario para abrir/cerrar modal y otros componentes -->
+    <!--TOOLTIP-->
+    <!-- Contenedor principal con padding vertical -->
+    <div class="container py-5">
+        <h1>Ejemplo de Tooltips</h1>
+
+        <p>
+            Pasa el cursor sobre los botones para ver los tooltips:
+        </p>
+
+        <!-- Botones con tooltip -->
+        <!-- btn: aplica estilo de botón Bootstrap -->
+        <!-- btn-primary/btn-success/btn-warning/btn-danger: colores diferentes para cada botón -->
+        <!-- data-bs-toggle="tooltip": indica que el elemento tiene un tooltip -->
+        <!-- data-bs-placement="top/right/bottom/left": posición del tooltip respecto al botón -->
+        <!-- title="...": contenido del tooltip -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip arriba">
+            Tooltip arriba
+        </button>
+
+        <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip derecha">
+            Tooltip derecha
+        </button>
+
+        <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip abajo">
+            Tooltip abajo
+        </button>
+
+        <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip izquierda">
+            Tooltip izquierda
+        </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Inicializa todos los tooltips del documento
+        // querySelectorAll('[data-bs-toggle="tooltip"]'): selecciona todos los elementos con tooltip
+        // new bootstrap.Tooltip(el): crea el tooltip con Bootstrap
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+    </script>
+
+
+    <!--POP OVERS-->
+    <!-- Contenedor principal con padding vertical -->
+    <div class="container py-5">
+        <h1>Ejemplo de Popovers</h1>
+
+        <p>
+            Haz clic en los botones para mostrar los popovers:
+        </p>
+
+        <!-- Botones con popover -->
+        <!-- btn: estilo de botón Bootstrap -->
+        <!-- btn-primary/btn-success/btn-warning/btn-danger: colores distintos -->
+        <!-- me-2: margin-end (derecha) de tamaño 2 para separar botones -->
+        <!-- data-bs-toggle="popover": indica que el elemento tiene un popover -->
+        <!-- data-bs-placement="top/right/bottom/left": posición del popover respecto al botón -->
+        <!-- title="...": título del popover -->
+        <!-- data-bs-content="...": contenido del popover -->
+        <button type="button" class="btn btn-primary me-2" data-bs-toggle="popover" data-bs-placement="top" title="Encabezado" data-bs-content="Este es el contenido del popover arriba.">
+            Popover arriba
+        </button>
+
+        <button type="button" class="btn btn-success me-2" data-bs-toggle="popover" data-bs-placement="right" title="Encabezado" data-bs-content="Contenido del popover a la derecha.">
+            Popover derecha
+        </button>
+
+        <button type="button" class="btn btn-warning me-2" data-bs-toggle="popover" data-bs-placement="bottom" title="Encabezado" data-bs-content="Contenido del popover abajo.">
+            Popover abajo
+        </button>
+
+        <button type="button" class="btn btn-danger" data-bs-toggle="popover" data-bs-placement="left" title="Encabezado" data-bs-content="Contenido del popover a la izquierda.">
+            Popover izquierda
+        </button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Inicializa todos los popovers del documento
+        // querySelectorAll('[data-bs-toggle="popover"]'): selecciona todos los elementos con popover
+        // new bootstrap.Popover(el): crea el popover con Bootstrap
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        const popoverList = [...popoverTriggerList].map(el => new bootstrap.Popover(el));
+    </script>
+
+
+
+
+
+    <!--imagenes-->
+    <img src="image/medellin.jpg" alt="..." class="rounded" />
+    <img src="image/medellin.jpg" alt="..." class="rounded-circle" />
+    <img src="image/medellin.jpg" alt="..." class="img-thumbnail" />
+
+
+
+    <div class="mb-3">
+        <label for="txtEmail" class="form-label">Email</label>
+        <input type="email" class="form-control" id="textEmail" placeholder="nombre@ejemplo.com" />
+    </div>
+    <div class="mb-3">
+        <label for="txtPass" class="form-label">Password</label>
+        <input type="text" class="form-control" id="textEmail" placeholder="tu password" />
+    </div>
+    <div class="mb-3">
+        <label for="txtfile" class="form-label">Adjuntar archivo</label>
+        <input type="text" class="form-control" id="textEmail" placeholder="tu password" />
+    </div>
+    <div class="container">
+        <div class="row show-grid">
+
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
