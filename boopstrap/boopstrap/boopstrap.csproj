@@ -73,6 +73,7 @@
     <Content Include="Ejercicio3.html" />
     <Content Include="Ejercicio4.html" />
     <Content Include="Ejercicio5.html" />
+    <Content Include="EjerciciosPropios\GestorContactos.html" />
     <Content Include="Formularios.html" />
     <Content Include="funcionesCarrito.js" />
     <Content Include="Gestor_tareas.html" />
