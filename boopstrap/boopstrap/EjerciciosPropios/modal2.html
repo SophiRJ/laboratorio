@@ -128,8 +128,7 @@
             modalEdad.textContent = estudiante.edad;
             modalCurso.textContent = estudiante.curso;
             modalTelefono.textContent = estudiante.telefono;
-
-            // REEMPLAZAMOS los handlers (no los acumulamos)
+        
             btnEditar.onclick = () => {
                 const nuevoNombre = prompt("Nuevo nombre:", estudiante.nombre);
                 const nuevoTelefono = prompt("Nuevo telefono:", estudiante.telefono);
@@ -142,7 +141,7 @@
                 if (nuevaEdad !== null && nuevaEdad.trim() !== "") estudiante.edad = nuevaEdad.trim();
                 if (nuevoCurso !== null && nuevoCurso.trim() !== "") estudiante.curso = nuevoCurso.trim();
 
-                // actualizamos vista y lista
+                
                 modalNombre.textContent = estudiante.nombre;
                 modalEdad.textContent = estudiante.edad;
                 modalCurso.textContent = estudiante.curso;
@@ -153,7 +152,6 @@
             };
 
             btnEliminar.onclick = () => {
-                // eliminar exactamente ese índice una vez
                 listaEstudiantes.splice(idx, 1);
                 actualizarAlumnos();
                 mostrarLista();

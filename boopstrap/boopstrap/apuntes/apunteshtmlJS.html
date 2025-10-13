@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Apuntes JS + HTML</title>
+</head>
+<body>
+    <h1>📘 Apuntes de JavaScript + HTML</h1>
+    <p>Resumen práctico con los conceptos más usados en exámenes.</p>
+
+    <h2>HTML Básico</h2>
+    <ul>
+        <li>Podemos acceder a elementos desde JS usando <code>querySelector</code>.</li>
+        <li>Podemos usar selectores por ID, clase, etiqueta o atributo.</li>
+    </ul>
+
+    <!-- Ejemplo de etiquetas -->
+    <div id="caja">Caja con id</div>
+    <p class="texto">Texto con clase</p>
+    <button name="btn">Botón con atributo name</button>
+    <span data-id="123">Span con data-id (útil para JS)</span>
+
+    <script>
+    /*********************************************
+     * 🧠 ACCESO AL DOM
+     *********************************************/
+
+    // Por ID → usa "#"
+    const divCaja = document.querySelector("#caja");
+
+    // Por clase → usa "."
+    const parrafo = document.querySelector(".texto");
+
+    // Por etiqueta → directamente el nombre
+    const span = document.querySelector("span");
+
+    // Por atributo → entre corchetes
+    const boton = document.querySelector('[name="btn"]');
+
+    // Atributos personalizados (data-*)
+    console.log(span.dataset.id); // 👉 "123"
+
+    /*********************************************
+     * 🧱 VARIABLES Y TIPOS
+     *********************************************/
+    let nombre = "Javier";
+    const edad = 25;
+    var ciudad = "Madrid";
+
+    /*********************************************
+     * 🧩 OBJETOS Y JSON
+     *********************************************/
+    // Forma tradicional
+    const persona = {
+      nombre: "Ana",
+      edad: 30,
+      ciudad: "Sevilla"
+    };
+
+    // JSON (JavaScript Object Notation)
+    const personaJSON = '{"nombre":"Luis","edad":40,"ciudad":"Valencia"}';
+
+    // Convertir de JSON a objeto
+    const personaObj = JSON.parse(personaJSON);
+
+    // Convertir de objeto a JSON
+    const nuevoJSON = JSON.stringify(persona);
+
+    /*********************************************
+     * 🧮 MÉTODOS DE ARRAYS
+     *********************************************/
+    const numeros = [2, 4, 6, 8, 10];
+
+    // forEach → recorre
+    numeros.forEach(num => console.log("forEach:", num));
+
+    // map → crea un nuevo array
+    const dobles = numeros.map(num => num * 2);
+
+    // filter → filtra elementos
+    const mayores5 = numeros.filter(num => num > 5);
+
+    // find → busca el primero que cumpla la condición
+    const encontrado = numeros.find(num => num === 6);
+
+    // some → al menos uno cumple
+    const hayPares = numeros.some(num => num % 2 === 0);
+
+    // every → todos cumplen
+    const todosPares = numeros.every(num => num % 2 === 0);
+
+    // reduce → acumula valores
+    const suma = numeros.reduce((acum, num) => acum + num, 0);
+
+    // splice → elimina o reemplaza
+    let frutas = ["manzana", "pera", "uva"];
+    frutas.splice(1, 1, "plátano"); // quita 1 desde índice 1 y añade "plátano"
+
+    // split → divide string en array
+    const dias = "Lunes,Martes,Miércoles".split(",");
+
+    // join → une array en string
+    const texto = dias.join(" - ");
+
+    /*********************************************
+     * ⚙️ FUNCIONES Y ARROW FUNCTIONS
+     *********************************************/
+    // Tradicional
+    function saludar(nombre) {
+      return `Hola ${nombre}`;
+    }
+
+    // Arrow function
+    const despedir = (nombre) => `Adiós ${nombre}`;
+
+    // Arrow con varias instrucciones
+    const sumar = (a, b) => {
+      const resultado = a + b;
+      return resultado;
+    };
+
+    /*********************************************
+     * 🧠 OPERADORES
+     *********************************************/
+    const edadPersona = 20;
+    // Ternario
+    const puedeEntrar = edadPersona >= 18 ? "Sí puede" : "No puede";
+
+    // Spread (...)
+    const copiaNumeros = [...numeros];
+
+    // Desestructuración
+    const { nombre: nombrePersona, ciudad: ciudadPersona } = persona;
+
+    /*********************************************
+     * 💾 LOCAL STORAGE
+     *********************************************/
+    // Guardar dato
+    localStorage.setItem("usuario", JSON.stringify(persona));
+
+    // Recuperar
+    const usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+
+    // Eliminar un dato
+    // localStorage.removeItem("usuario");
+
+    /*********************************************
+     * 🖱️ EVENTOS
+     *********************************************/
+    // addEventListener → forma moderna
+    boton.addEventListener("click", () => {
+      alert("¡Has hecho clic!");
+    });
+
+    // PreventDefault en formularios
+    document.addEventListener("submit", (e) => {
+      e.preventDefault(); // Evita recargar la página
+      console.log("Formulario enviado");
+    });
+
+    /*********************************************
+     * 📦 MÓDULOS (IMPORT / EXPORT)
+     *********************************************/
+    // Ejemplo de exportación (en otro archivo JS):
+    /*
+    export const PI = 3.1416;
+    export function sumar(a,b){ return a+b; }
+    export class Circulo {
+      constructor(radio){ this.radio = radio; }
+      area(){ return PI * this.radio * this.radio; }
+    }
+    */
+
+    // Ejemplo de importación:
+    // import { PI, sumar, Circulo } from './miArchivo.js';
+    </script>
+</body>
+</html>

@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{BF240758-C365-444E-B049-1C35A6C71656}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\ejercicio pizas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF240758-C365-444E-B049-1C35A6C71656}|WebApplication2\\WebApplication2.csproj|c:\\laboratorio\\webapplication2\\webapplication2\\htmlpage2.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{BF240758-C365-444E-B049-1C35A6C71656}|WebApplication2\\WebApplication2.csproj|C:\\laboratorio\\WebApplication2\\webapplication2\\htmlpage2.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BF240758-C365-444E-B049-1C35A6C71656}|WebApplication2\\WebApplication2.csproj|solutionrelative:webapplication2\\htmlpage2.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -22,21 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Ejercicio pizas.html",
               "DocumentMoniker": "C:\\laboratorio\\WebApplication2\\WebApplication2\\Ejercicio pizas.html",
               "RelativeDocumentMoniker": "WebApplication2\\Ejercicio pizas.html",
-              "ToolTip": "C:\\laboratorio\\WebApplication2\\WebApplication2\\Ejercicio pizas.html*",
-              "RelativeToolTip": "WebApplication2\\Ejercicio pizas.html*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAYwCgAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\laboratorio\\WebApplication2\\WebApplication2\\Ejercicio pizas.html",
+              "RelativeToolTip": "WebApplication2\\Ejercicio pizas.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-10-03T11:16:35.172Z",
               "EditorCaption": ""
@@ -49,7 +45,7 @@
               "RelativeDocumentMoniker": "WebApplication2\\HtmlPage2.html",
               "ToolTip": "C:\\laboratorio\\WebApplication2\\WebApplication2\\HtmlPage2.html",
               "RelativeToolTip": "WebApplication2\\HtmlPage2.html",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACQAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-10-03T08:56:48.824Z",
               "EditorCaption": ""
@@ -62,9 +58,10 @@
               "RelativeDocumentMoniker": "WebApplication2\\Page1.html",
               "ToolTip": "C:\\laboratorio\\WebApplication2\\WebApplication2\\Page1.html",
               "RelativeToolTip": "WebApplication2\\Page1.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-02T14:06:21.628Z"
+              "WhenOpened": "2025-10-02T14:06:21.628Z",
+              "EditorCaption": ""
             }
           ]
         }
