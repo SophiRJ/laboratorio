@@ -58,70 +58,70 @@
 </html>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const modal = new bootstrap.Modal(document.querySelector("#modalEjemplo"))
+        const modal = new bootstrap.Modal(document.querySelector("#modalEjemplo"));
 
-        const form = document.querySelector("#formulario")
-        const nombreInput = form.querySelector("#nombreInput")
-        const edadInput = form.querySelector("#edadInput")
-        const cursoInput = form.querySelector("#cursoInput")
-        const telefonoInput = form.querySelector("#telefonoInput")
-        const btnRegistro = form.querySelector("#btnRegistrar")
-        const contenedorAlumnos = document.querySelector("#container")
+        const form = document.querySelector("#formulario");
+        const nombreInput = form.querySelector("#nombreInput");
+        const edadInput = form.querySelector("#edadInput");
+        const cursoInput = form.querySelector("#cursoInput");
+        const telefonoInput = form.querySelector("#telefonoInput");
 
+        const contenedorAlumnos = document.querySelector("#container");
 
-        const infoEstudiante = document.querySelector("#infoEstudiante")
-        const modalNombre = document.querySelector("#nombre")
-        const modalEdad = document.querySelector("#edad")
-        const modalCurso = document.querySelector("#curso")
-        const modalTelefono = document.querySelector("#telefono")
-        const btnEditar = document.querySelector("#editar")
-        const btnEliminar = document.querySelector("#eliminar")
-        const totalEst = document.querySelector("#info")
-        const divAlert = document.querySelector("#alertMensaje")
+        const infoEstudiante = document.querySelector("#infoEstudiante");
+        const modalNombre = document.querySelector("#nombre");
+        const modalEdad = document.querySelector("#edad");
+        const modalCurso = document.querySelector("#curso");
+        const modalTelefono = document.querySelector("#telefono");
+        const btnEditar = document.querySelector("#editar");
+        const btnEliminar = document.querySelector("#eliminar");
+        const totalEst = document.querySelector("#info");
+        const divAlert = document.querySelector("#alertMensaje");
 
-        const listaEstudiantes = []
+        const listaEstudiantes = [];
 
         const actualizarAlumnos = () => {
-            totalEst.textContent = `Total estudiantes: ${listaEstudiantes.length}`
-        }
-        const mostrarAlerta = (mensaje, alerta = "success") => {
+            totalEst.textContent = `Total estudiantes: ${listaEstudiantes.length}`;
+        };
+
+        const mostrarAlerta = (mensaje, tipo = "success") => {
             divAlert.innerHTML = `
-             <div class="alert alert-${alerta} alert-dismissible fade show" role="alert">
-             ${mensaje}<button type="button" class="btn-close"" data-bs-dismiss="alert"></button></div>
-             `
+      <div class="alert alert-${tipo} alert-dismissible fade show" role="alert">
+        ${mensaje}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
             setTimeout(() => { divAlert.innerHTML = ""; }, 3000);
-        }
+        };
 
         const mostrarLista = () => {
-            contenedorAlumnos.innerHTML = ""
-            const ul = document.createElement("ul")
-            ul.className = "list-group"; 
-           
+            contenedorAlumnos.innerHTML = "";
+            const ul = document.createElement("ul");
+            ul.className = "list-group";
 
-            listaEstudiantes.map((item, index) => {
-                const li = document.createElement("li")
-                li.className = "list-group-item d-flex justify-content-between aling-items-center";
-                const span = document.createElement("span")
-                span.textContent = `${index}. ${item.nombre}`
+            listaEstudiantes.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.className = "list-group-item d-flex justify-content-between align-items-center";
 
-                const btnDetalles = document.createElement("button")
-                btnDetalles.className = "btn btn-info btn-sm"
-                btnDetalles.textContent = "Ver detalles"
-                btnDetalles.addEventListener("click", () => verDetalles(index))
+                const span = document.createElement("span");
+                span.textContent = `${index + 1}. ${item.nombre}`;
 
-                li.appendChild(span)
-                li.appendChild(btnDetalles)
-                ul.appendChild(li)
+                const btnDetalles = document.createElement("button");
+                btnDetalles.className = "btn btn-info btn-sm";
+                btnDetalles.textContent = "Ver detalles";
+                btnDetalles.addEventListener("click", () => verDetalles(index));
 
-            })
-            contenedorAlumnos.appendChild(ul)
+                li.appendChild(span);
+                li.appendChild(btnDetalles);
+                ul.appendChild(li);
+            });
 
-        }
+            contenedorAlumnos.appendChild(ul);
+        };
+
         const verDetalles = (idx) => {
-
             const estudiante = listaEstudiantes[idx];
             if (!estudiante) return;
-
 
             infoEstudiante.textContent = `Información Estudiante #${idx + 1}`;
             modalNombre.textContent = estudiante.nombre;
@@ -129,51 +129,62 @@
             modalCurso.textContent = estudiante.curso;
             modalTelefono.textContent = estudiante.telefono;
 
+            // REEMPLAZAMOS los handlers (no los acumulamos)
+            btnEditar.onclick = () => {
+                const nuevoNombre = prompt("Nuevo nombre:", estudiante.nombre);
+                const nuevoTelefono = prompt("Nuevo telefono:", estudiante.telefono);
+                const nuevaEdad = prompt("Nueva edad:", estudiante.edad);
+                const nuevoCurso = prompt("Nuevo curso:", estudiante.curso);
 
-            btnEditar.addEventListener("click", () => {
-                const nuevoNombre = prompt("Nuevo nombre: ", estudiante.nombre)
-                const nuevoTelefono = prompt("Nuevo telefono: ", estudiante.telefono)
-                const nuevoEdad = prompt("Nuevo edad: ", estudiante.edad)
-                const nuevoCurso = prompt("Nuevo Curso: ", estudiante.curso)
+                // si el usuario cancela prompt devuelve null -> comprobamos
+                if (nuevoNombre !== null && nuevoNombre.trim() !== "") estudiante.nombre = nuevoNombre.trim();
+                if (nuevoTelefono !== null && nuevoTelefono.trim() !== "") estudiante.telefono = nuevoTelefono.trim();
+                if (nuevaEdad !== null && nuevaEdad.trim() !== "") estudiante.edad = nuevaEdad.trim();
+                if (nuevoCurso !== null && nuevoCurso.trim() !== "") estudiante.curso = nuevoCurso.trim();
 
-                modalNombre.textContent = nuevoNombre
-                modalEdad.textContent = nuevoEdad
-                modalCurso.textContent = nuevoCurso
-                modalTelefono.textContent = nuevoTelefono
-                mostrarLista()
+                // actualizamos vista y lista
+                modalNombre.textContent = estudiante.nombre;
+                modalEdad.textContent = estudiante.edad;
+                modalCurso.textContent = estudiante.curso;
+                modalTelefono.textContent = estudiante.telefono;
+
+                mostrarLista();
                 mostrarAlerta("Datos actualizados", "success");
-            })
+            };
 
-            btnEliminar.addEventListener("click", () => {
-                listaEstudiantes.splice(idx, 1)
-                actualizarAlumnos()
-                mostrarLista()
-                modal.hide()
-                mostrarAlerta("Estudiante eliminado", "danger")
-            })
-            modal.show(); 
-        }
+            btnEliminar.onclick = () => {
+                // eliminar exactamente ese índice una vez
+                listaEstudiantes.splice(idx, 1);
+                actualizarAlumnos();
+                mostrarLista();
+                modal.hide();
+                mostrarAlerta("Estudiante eliminado", "danger");
+            };
+
+            modal.show();
+        };
 
         form.addEventListener("submit", (e) => {
-            e.preventDefault()
-            const nombre = nombreInput.value.trim()
-            const edad = edadInput.value.trim()
-            const telefono = telefonoInput.value.trim()
-            const curso = cursoInput.value.trim()
+            e.preventDefault();
+            const nombre = nombreInput.value.trim();
+            const edad = edadInput.value.trim();
+            const telefono = telefonoInput.value.trim();
+            const curso = cursoInput.value.trim();
 
             if (!nombre || !edad || !telefono || !curso) {
-                mostrarAlerta("Rellena todos los campos", "warning")
-                return
+                mostrarAlerta("Rellena todos los campos", "warning");
+                return;
             }
-            listaEstudiantes.push({ nombre, edad, telefono, curso })
-            actualizarAlumnos()
-            mostrarLista()
-            mostrarAlerta("Registro exitoso", "success")
-            form.reset()
-        })
 
-        actualizarAlumnos()
-        mostrarLista()
-       
-    }) 
+            listaEstudiantes.push({ nombre, edad, telefono, curso });
+            actualizarAlumnos();
+            mostrarLista();
+            mostrarAlerta("Registro exitoso", "success");
+            form.reset();
+        });
+
+        actualizarAlumnos();
+        mostrarLista();
+    });
+
 </script>
