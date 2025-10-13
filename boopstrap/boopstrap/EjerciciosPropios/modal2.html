@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>¡Hola mundo!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header text-center bg-dark text-white">
+                <h2>Registro Estudiantes</h2>
+            </div>
+            <div class="card-body text-center">
+                <form id="formulario" class="form">
+                    <input type="text" class="form-control" placeholder="Nombre" id="nombreInput" />
+                    <input type="text" class="form-control" placeholder="Edad" id="edadInput" />
+                    <input type="text" class="form-control" placeholder="Curso" id="cursoInput" />
+                    <input type="text" class="form-control" placeholder="Telefono" id="telefonoInput" />
+                    <button type="submit" id="btnRegistrar" class="btn btn-primary">Registrar Estudiante</button>
+                </form>
+                <div id="container">Listado de alumnos</div>
+                <div class="modal fade" id="modalEjemplo">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header bg-info">
+                                <span id="infoEstudiante">Informacion Estudiante: 0</span>
+                                <button class="btn-close " data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p><strong>Nombre</strong><span id="nombre"></span></p>
+                                <p><strong>Edad</strong><span id="edad"></span></p>
+                                <p><strong>Curso</strong><span id="curso"></span></p>
+                                <p><strong>Telefono</strong><span id="telefono"></span></p>
+
+                            </div>
+                            <div class="modal-body input-group" >
+                                <button type="button" id="editar">Editar</button>
+                                <button type="button" id="eliminar"> Eliminar</button> 
+                                
+                                <!--alerta-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-info">
+                <span id="info"> Total estudiantes: 0</span>
+                <div id="alertMensaje"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const modal = new bootstrap.Modal(document.querySelector("#modalEjemplo"))
+
+        const form = document.querySelector("#formulario")
+        const nombreInput = form.querySelector("#nombreInput")
+        const edadInput = form.querySelector("#edadInput")
+        const cursoInput = form.querySelector("#cursoInput")
+        const telefonoInput = form.querySelector("#telefonoInput")
+        const btnRegistro = form.querySelector("#btnRegistrar")
+        const contenedorAlumnos = document.querySelector("#container")
+
+
+        const infoEstudiante = document.querySelector("#infoEstudiante")
+        const modalNombre = document.querySelector("#nombre")
+        const modalEdad = document.querySelector("#edad")
+        const modalCurso = document.querySelector("#curso")
+        const modalTelefono = document.querySelector("#telefono")
+        const btnEditar = document.querySelector("#editar")
+        const btnEliminar = document.querySelector("#eliminar")
+        const totalEst = document.querySelector("#info")
+        const divAlert = document.querySelector("#alertMensaje")
+
+        const listaEstudiantes = []
+
+        const actualizarAlumnos = () => {
+            totalEst.textContent = `Total estudiantes: ${listaEstudiantes.length}`
+        }
+        const mostrarAlerta = (mensaje, alerta = "success") => {
+            divAlert.innerHTML = `
+             <div class="alert alert-${alerta} alert-dismissible fade show" role="alert">
+             ${mensaje}<button type="button" class="btn-close"" data-bs-dismiss="alert"></button></div>
+             `
+            setTimeout(() => { divAlert.innerHTML = ""; }, 3000);
+        }
+
+        const mostrarLista = () => {
+            contenedorAlumnos.innerHTML = ""
+            const ul = document.createElement("ul")
+            ul.className = "list-group"; 
+           
+
+            listaEstudiantes.map((item, index) => {
+                const li = document.createElement("li")
+                li.className = "list-group-item d-flex justify-content-between aling-items-center";
+                const span = document.createElement("span")
+                span.textContent = `${index}. ${item.nombre}`
+
+                const btnDetalles = document.createElement("button")
+                btnDetalles.className = "btn btn-info btn-sm"
+                btnDetalles.textContent = "Ver detalles"
+                btnDetalles.addEventListener("click", () => verDetalles(index))
+
+                li.appendChild(span)
+                li.appendChild(btnDetalles)
+                ul.appendChild(li)
+
+            })
+            contenedorAlumnos.appendChild(ul)
+
+        }
+        const verDetalles = (idx) => {
+
+            const estudiante = listaEstudiantes[idx];
+            if (!estudiante) return;
+
+
+            infoEstudiante.textContent = `Información Estudiante #${idx + 1}`;
+            modalNombre.textContent = estudiante.nombre;
+            modalEdad.textContent = estudiante.edad;
+            modalCurso.textContent = estudiante.curso;
+            modalTelefono.textContent = estudiante.telefono;
+
+
+            btnEditar.addEventListener("click", () => {
+                const nuevoNombre = prompt("Nuevo nombre: ", estudiante.nombre)
+                const nuevoTelefono = prompt("Nuevo telefono: ", estudiante.telefono)
+                const nuevoEdad = prompt("Nuevo edad: ", estudiante.edad)
+                const nuevoCurso = prompt("Nuevo Curso: ", estudiante.curso)
+
+                modalNombre.textContent = nuevoNombre
+                modalEdad.textContent = nuevoEdad
+                modalCurso.textContent = nuevoCurso
+                modalTelefono.textContent = nuevoTelefono
+                mostrarLista()
+                mostrarAlerta("Datos actualizados", "success");
+            })
+
+            btnEliminar.addEventListener("click", () => {
+                listaEstudiantes.splice(idx, 1)
+                actualizarAlumnos()
+                mostrarLista()
+                modal.hide()
+                mostrarAlerta("Estudiante eliminado", "danger")
+            })
+            modal.show(); 
+        }
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const nombre = nombreInput.value.trim()
+            const edad = edadInput.value.trim()
+            const telefono = telefonoInput.value.trim()
+            const curso = cursoInput.value.trim()
+
+            if (!nombre || !edad || !telefono || !curso) {
+                mostrarAlerta("Rellena todos los campos", "warning")
+                return
+            }
+            listaEstudiantes.push({ nombre, edad, telefono, curso })
+            actualizarAlumnos()
+            mostrarLista()
+            mostrarAlerta("Registro exitoso", "success")
+            form.reset()
+        })
+
+        actualizarAlumnos()
+        mostrarLista()
+       
+    }) 
+</script>

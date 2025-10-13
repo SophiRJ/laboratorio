@@ -74,6 +74,8 @@
     <Content Include="Ejercicio4.html" />
     <Content Include="Ejercicio5.html" />
     <Content Include="EjerciciosPropios\GestorContactos.html" />
+    <Content Include="EjerciciosPropios\Modal!.html" />
+    <Content Include="EjerciciosPropios\modal2.html" />
     <Content Include="Formularios.html" />
     <Content Include="funcionesCarrito.js" />
     <Content Include="Gestor_tareas.html" />
@@ -83,7 +85,7 @@
     <Content Include="listaTareas.js" />
     <Content Include="main.html" />
     <Content Include="main.js" />
-    <Content Include="Page1.html" />
+    <Content Include="boopstrapInfo.html" />
     <Content Include="PracticaRejillas.html" />
     <Content Include="SolucionEjerc1.html" />
     <Content Include="SolucionEjerc2.html" />
