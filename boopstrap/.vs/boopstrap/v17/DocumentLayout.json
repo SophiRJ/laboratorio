@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratoriogit\\laboratorio\\boopstrap\\boopstrap\\listatareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\listatareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\listatareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -11,15 +11,15 @@
       "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\listatareas.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratoriogit\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\gestor_tareas.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratoriogit\\laboratorio\\boopstrap\\boopstrap\\carritocompra.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\carritocompra.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\carritocompra.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|c:\\laboratoriogit\\laboratorio\\boopstrap\\boopstrap\\funcionescarrito.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\funcionescarrito.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{83803363-D443-4CA0-91B0-2F1ED3B4800D}|boopstrap\\boopstrap.csproj|solutionrelative:boopstrap\\funcionescarrito.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
@@ -46,9 +46,9 @@
               "Title": "listaTareas.js",
               "DocumentMoniker": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\listaTareas.js",
               "RelativeDocumentMoniker": "boopstrap\\listaTareas.js",
-              "ToolTip": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\listaTareas.js*",
-              "RelativeToolTip": "boopstrap\\listaTareas.js*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA4AAAAAAAAAA==",
+              "ToolTip": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\listaTareas.js",
+              "RelativeToolTip": "boopstrap\\listaTareas.js",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAC4AAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-10-10T17:10:27.089Z",
               "EditorCaption": ""
@@ -61,7 +61,7 @@
               "RelativeDocumentMoniker": "boopstrap\\LIstaTareas.html",
               "ToolTip": "C:\\LaboratorioGit\\laboratorio\\boopstrap\\boopstrap\\LIstaTareas.html",
               "RelativeToolTip": "boopstrap\\LIstaTareas.html",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAQwBQAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-10-10T16:53:12.154Z",
               "EditorCaption": ""
@@ -76,8 +76,7 @@
               "RelativeToolTip": "boopstrap\\carritoCompra.html",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAIEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-10T14:09:53.418Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-10T14:09:53.418Z"
             },
             {
               "$type": "Document",
@@ -89,8 +88,7 @@
               "RelativeToolTip": "boopstrap\\Gestor_tareas.html",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-10-10T09:16:43.413Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-10T09:16:43.413Z"
             },
             {
               "$type": "Document",
@@ -102,8 +100,7 @@
               "RelativeToolTip": "boopstrap\\funcionesCarrito.js",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-10-10T14:50:44.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-10T14:50:44.759Z"
             },
             {
               "$type": "Document",
