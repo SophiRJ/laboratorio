@@ -8,9 +8,7 @@ namespace Clase_2
 {
     internal class Program
     {
-
-        //para crear funciones -> lo estatico no necesito generare una instancia del objeto para usarlo
-
+        #region Funciones
         public static void saludar()
         {
             Console.WriteLine("Hola al programa");
@@ -36,9 +34,17 @@ namespace Clase_2
             x = x * 2;
             Console.WriteLine($"Ahora vale {x}");
         }
+        #endregion
+        //para crear funciones -> lo estatico no necesito generar una instancia del objeto para usarlo
+
+        
+
 
         static void Main(string[] args)
         {
+            //aleatorio
+            Random generador = new Random();
+            int aleatorio = generador.Next(1, 100);
 
             //llamada funciones
             saludar();
