@@ -150,14 +150,20 @@
                 mostrarLista();
                 mostrarAlerta("Datos actualizados", "success");
             };
-
-            btnEliminar.onclick = () => {
+            btnEliminar.addEventListener("click",()=> {
                 listaEstudiantes.splice(idx, 1);
                 actualizarAlumnos();
                 mostrarLista();
                 modal.hide();
                 mostrarAlerta("Estudiante eliminado", "danger");
-            };
+            })
+            //btnEliminar.onclick = () => {
+            //    listaEstudiantes.splice(idx, 1);
+            //    actualizarAlumnos();
+            //    mostrarLista();
+            //    modal.hide();
+            //    mostrarAlerta("Estudiante eliminado", "danger");
+            //};
 
             modal.show();
         };

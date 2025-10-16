@@ -67,8 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="apuntes\apuntes2.html" />
+    <Content Include="apuntes\apunteshtmlJS2.html" />
     <Content Include="apuntes\apunteshtmlJS.html" />
+    <Content Include="apuntes\PlantillaBoopstrap.html" />
     <Content Include="carritoCompra.html" />
     <Content Include="Ejercicio1.html" />
     <Content Include="Ejercicio2.html" />
@@ -83,6 +84,7 @@
     <Content Include="funcionesCarrito.js" />
     <Content Include="Gestor_tareas.html" />
     <Content Include="gestor_tareas.js" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="image\medellin.jpg" />
     <Content Include="LIstaTareas.html" />
     <Content Include="listaTareas.js" />
