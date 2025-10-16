@@ -50,3 +50,22 @@ async function mostrarRecetas() {
     console.log("Recetas cargadas:",recetas)
 }
 mostrarRecetas()
+
+// Simulamos la peticion al servidor
+function obtenerRecetas() {
+    return new Promise((resolve) => {
+        console.log("Cargando recetas...");
+        setTimeout(() => {
+            resolve(["Tortilla", "Gazpacho", "Croquetas"]);
+        }, 2000); //tarda 2 segundos
+    });
+}
+
+// Función asíncrona espera la respuesta
+async function mostrarRecetas() {
+    console.log("Esperando recetas...");
+    const recetas = await obtenerRecetas(); // await espera hasta que la promesa s resuleva
+    console.log("Recetas cargadas:", recetas);
+}
+
+mostrarRecetas();

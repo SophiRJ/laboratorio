@@ -1,0 +1,211 @@
+﻿<!-- ===================================================== -->
+<!-- 📘 APUNTES HTML + JAVASCRIPT + BOOTSTRAP -->
+<!-- ===================================================== -->
+<!-- ============================== -->
+<!-- 🧩 ESTRUCTURA HTML BÁSICA -->
+<!-- ============================== -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apuntes HTML + JavaScript + Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ============================== -->
+    <!-- ELEMENTOS HTML BÁSICOS -->
+    <!-- ============================== -->
+    <!-- <span>: texto en línea, sin salto -->
+    <span>Texto dentro de un span</span>
+
+    <!-- data-* → atributos personalizados -->
+    <div data-id="1" data-nombre="Ana">Ejemplo de dataset</div>
+
+    <!-- id → identificador único -->
+    <p id="parrafo1">Párrafo con id</p>
+
+    <!-- class → agrupa elementos -->
+    <p class="texto-azul">Ejemplo de clase</p>
+
+    <!-- ============================== -->
+    <!-- SELECT Y OPTION -->
+    <!-- ============================== -->
+
+    <select id="listaCursos">
+        <option value="">-- Selecciona un curso --</option>
+        <option value="js">JavaScript</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+    </select>
+
+    <button id="btnVerValor">Ver valor seleccionado</button>
+    <p id="resultado"></p>
+
+    <!-- ============================== -->
+    <!-- LISTA CON DATASET -->
+    <!-- ============================== -->
+
+    <ul id="listaPersonas">
+        <li data-id="1" data-nombre="Ana">Ana</li>
+        <li data-id="2" data-nombre="Luis">Luis</li>
+        <li data-id="3" data-nombre="Sofía">Sofía</li>
+    </ul>
+
+
+    <script src="apuntes.js"></script>
+</body>
+</html>
+<script>
+    // =====================================================
+    // 📘 APUNTES JAVASCRIPT
+    // =====================================================
+
+    // ==============================
+    // ACCESO AL DOM
+    // ==============================
+
+    // Por etiqueta
+    document.querySelector("p");
+
+    // Por id
+    document.querySelector("#parrafo1");
+
+    // Por clase
+    document.querySelector(".texto-azul");
+
+    // Todos los elementos (NodeList)
+    document.querySelectorAll("li");
+
+    // ==============================
+    // SELECT Y DATASET
+    // ==============================
+
+    const select = document.querySelector("#listaCursos");
+    const btnVerValor = document.querySelector("#btnVerValor");
+    const resultado = document.querySelector("#resultado");
+
+    btnVerValor.addEventListener("click", () => {
+        const valor = select.value;
+        const texto = select.options[select.selectedIndex].text;
+        resultado.textContent = `Valor: ${valor} | Texto: ${texto}`;
+    });
+
+    // DATASET (data-id, data-nombre)
+    const lista = document.querySelectorAll("#listaPersonas li");
+
+    lista.forEach(item => {
+        item.addEventListener("click", () => {
+            const id = item.dataset.id;
+            const nombre = item.dataset.nombre;
+            console.log(`ID: ${id} - Nombre: ${nombre}`);
+        });
+    });
+
+    // ==============================
+    // ARRAYS Y MÉTODOS
+    // ==============================
+
+    let numeros = [2, 4, 6, 8, 10, 11, 14];
+
+    // map()
+    let dobles = numeros.map(num => num * 2);
+
+    // filter()
+    let pares = numeros.filter(num => num % 2 === 0);
+
+    // find()
+    let encontrado = numeros.find(num => num > 8);
+
+    // some()
+    let hayImpares = numeros.some(num => num % 2 !== 0);
+
+    // every()
+    let todosPares = numeros.every(num => num % 2 === 0);
+
+    // reduce()
+    let suma = numeros.reduce((a, b) => a + b, 0);
+
+    // forEach()
+    numeros.forEach((num, i) => console.log(i, num));
+
+    // ==============================
+    // OBJETOS Y JSON
+    // ==============================
+
+    let persona = {
+        nombre: "Ana",
+        edad: 25,
+        ciudad: "Madrid"
+    };
+
+    console.log(persona.nombre);
+
+    let personaJSON = '{"nombre":"Ana","edad":25}';
+    let personaObj = JSON.parse(personaJSON);   // texto → objeto
+    let textoJSON = JSON.stringify(personaObj); // objeto → texto
+
+    // ==============================
+    // FUNCIONES FLECHA
+    // ==============================
+
+    function saludar(nombre) {
+        return "Hola " + nombre;
+    }
+
+    const saludar2 = nombre => `Hola ${nombre}`;
+    console.log(saludar2("Carlos"));
+
+    // ==============================
+    // OPERADOR TERNARIO
+    // ==============================
+
+    let edad = 18;
+    let mensaje = (edad >= 18) ? "Eres mayor de edad" : "Eres menor";
+    console.log(mensaje);
+
+    // ==============================
+    // LOCALSTORAGE
+    // ==============================
+
+    localStorage.setItem("nombre", "Sofía");
+    let nombreGuardado = localStorage.getItem("nombre");
+    localStorage.removeItem("nombre");
+    localStorage.clear();
+
+    // ==============================
+    // MÓDULOS JS (import/export)
+    // ==============================
+
+    // --- MathUtils.js ---
+    export const PI = 3.1416;
+    export function suma(a, b) { return a + b; }
+    export class Circulo {
+        constructor(radio) { this.radio = radio; }
+        area() { return PI * this.radio * this.radio; }
+    }
+
+    // --- principal.js ---
+    import { PI, suma, Circulo } from './MathUtils.js';
+    console.log(PI, suma(2, 3));
+    const c = new Circulo(5);
+    console.log(c.area());
+
+    // ==============================
+    // EVENTOS (click, submit)
+    // ==============================
+
+    const boton = document.querySelector("#btn");
+    if (boton) {
+        boton.addEventListener("click", () => alert("Click detectado"));
+    }
+
+    const form = document.querySelector("#miFormulario");
+    form.addEventListener("submit", e => {
+        e.preventDefault(); // Evita recargar la página
+        alert("Formulario enviado correctamente");
+    });
+
+</script>

@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+
+
+    <div class="modal fade" id="miModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    Soy una ventana modal.
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#miModal">
+        Ver Detalles
+    </button>
+
+</body>
+</html>
+<script>
+    const numeros = [2, 4, 6, 8, 10];
+    // filter → filtra elementos
+    const mayores5 = numeros.filter(num => num > 5);//devuelve [6,8,10]
+    console.log(mayores5)
+    // find → busca el primero que cumpla la condición
+    const encontrado = numeros.find(num => num === 6);//devuelve 6
+    console.log(encontrado)
+
+
+
+</script>
