@@ -67,12 +67,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="apuntes\apuntes2.html" />
+    <Content Include="apuntes\apunteshtmlJS.html" />
     <Content Include="carritoCompra.html" />
     <Content Include="Ejercicio1.html" />
     <Content Include="Ejercicio2.html" />
     <Content Include="Ejercicio3.html" />
     <Content Include="Ejercicio4.html" />
     <Content Include="Ejercicio5.html" />
+    <Content Include="EjerciciosPropios\GestorContactos.html" />
+    <Content Include="EjerciciosPropios\Modal!.html" />
+    <Content Include="EjerciciosPropios\modal2.html" />
+    <Content Include="EjerciciosPropios\PreciosIva.html" />
     <Content Include="Formularios.html" />
     <Content Include="funcionesCarrito.js" />
     <Content Include="Gestor_tareas.html" />
@@ -82,7 +88,8 @@
     <Content Include="listaTareas.js" />
     <Content Include="main.html" />
     <Content Include="main.js" />
-    <Content Include="Page1.html" />
+    <Content Include="apuntes\boopstrapInfo.html" />
+    <Content Include="PracticaRejillas.html" />
     <Content Include="SolucionEjerc1.html" />
     <Content Include="SolucionEjerc2.html" />
     <Content Include="SulucionEjerciciosProfe.js" />

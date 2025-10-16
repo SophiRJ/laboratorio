@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Libros</title>
+</head>
+<body>
+    <h1>Registro de Libros</h1>
+
+    <form id="formLibro">
+        <input type="text" id="titulo" placeholder="Título" required>
+        <input type="text" id="autor" placeholder="Autor" required>
+        <input type="number" id="anio" placeholder="Año" required>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <ul id="listaLibros"></ul>
+
+    <script>
+        class Libro {
+            constructor(titulo, autor, anio) {
+                this.titulo = titulo;
+                this.autor = autor;
+                this.anio = anio;
+            }
+        }
+
+        class Biblioteca {
+            constructor() {
+                this.libros = [];
+            }
+
+            agregar(titulo, autor, anio) {
+                this.libros.push(new Libro(titulo, autor, anio));
+                this.mostrar();
+            }
+
+            eliminar(i) {
+                this.libros.splice(i, 1);
+                this.mostrar();
+            }
+
+            mostrar() {
+                const ul = document.querySelector("#listaLibros");
+                ul.innerHTML = this.libros.map((l, i) =>
+                    `<li><b>${l.titulo}</b> (${l.anio}) - ${l.autor}
+                <button onclick="biblioteca.eliminar(${i})">Eliminar</button>
+              </li>`
+                ).join("");
+            }
+        }
+
+        const biblioteca = new Biblioteca();
+
+        document.querySelector("#formLibro").addEventListener("submit", e => {
+            e.preventDefault();
+            biblioteca.agregar(
+                document.querySelector("#titulo").value,
+                document.querySelector("#autor").value,
+                document.querySelector("#anio").value
+            );
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

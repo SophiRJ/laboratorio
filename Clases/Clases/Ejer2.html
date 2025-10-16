@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Estudiantes</title>
+</head>
+<body>
+    <h1>Registro de Estudiantes</h1>
+    <form id="formAlumno">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="number" id="nota" placeholder="Nota" min="0" max="10" required>
+        <button type="submit">Agregar</button>
+    </form>
+
+    <ul id="listaAlumnos"></ul>
+    <h3>Promedio: <span id="promedio">0</span></h3>
+
+    <script>
+        class Alumno {
+            constructor(nombre, nota) {
+                this.nombre = nombre;
+                this.nota = parseFloat(nota);
+            }
+        }
+
+        class Registro {
+            constructor() {
+                this.alumnos = [];
+            }
+
+            agregar(nombre, nota) {
+                this.alumnos.push(new Alumno(nombre, nota));
+                this.mostrar();
+            }
+
+            eliminar(index) {
+                this.alumnos.splice(index, 1);
+                this.mostrar();
+            }
+
+            mostrar() {
+                const ul = document.querySelector("#listaAlumnos");
+                ul.innerHTML = this.alumnos.map((a, i) =>
+                    `<li>${a.nombre} - Nota: ${a.nota}
+              <button onclick="registro.eliminar(${i})">Eliminar</button></li>`
+                ).join("");
+
+                const promedio = this.alumnos.length > 0
+                    ? this.alumnos.reduce((acc, a) => acc + a.nota, 0) / this.alumnos.length
+                    : 0;
+                document.querySelector("#promedio").textContent = promedio.toFixed(2);
+            }
+        }
+
+        const registro = new Registro();
+
+        document.querySelector("#formAlumno").addEventListener("submit", e => {
+            e.preventDefault();
+            registro.agregar(
+                document.querySelector("#nombre").value,
+                document.querySelector("#nota").value
+            );
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
+

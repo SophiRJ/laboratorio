@@ -39,63 +39,117 @@
     let aleatorio = Math.floor(Math.random() * 100) + 1
     let oportunidades = 0
 
-    const adivinar = () => {
-        const input = form.querySelector("#txtNumeroJuego")
-        const resultadoDiv = form.querySelector("#resultado")
-        if (!input || resultadoDiv) return
+    const Adivinar = () => {
 
-        const numero = parseInt(input.value)
-        if (isNaN(numero) || numero < 1 || numero > 1) {
-            resultadoDiv.innerHTML = `
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            Introduce un número válido entre 1 y 100
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-            `
-            return
+        const input = form.querySelector("#txtNumeroJuego");
+
+        const resultadoDiv = form.querySelector("#resultado");
+
+        if (!input || !resultadoDiv) return;
+
+
+
+        const numero = parseInt(input.value);
+
+        if (isNaN(numero) || numero < 1 || numero > 100) {
+
+            resultadoDiv.innerHTML = ` 
+
+      <div class="alert alert-warning alert-dismissible fade show" role="alert"> 
+
+        Introduce un número válido entre 1 y 100. 
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button> 
+
+      </div>`;
+
+            return;
+
         }
 
-        oportunidades++
-        resultadoDiv.innerHTML = ""
-        if (nuero === aleatorio) {
-            resultadoDiv.innerHTML = `
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-            !Acertaste! El número aleatorio era: <strong>${aleatorio}</strong><br/>
-            Lo lograste en <strong>${oportunidades} intentos
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
 
-            `
+
+        oportunidades++;
+
+        resultadoDiv.innerHTML = "";
+
+
+
+        if (numero === aleatorio) {
+
+            resultadoDiv.innerHTML = ` 
+
+      <div class="alert alert-success alert-dismissible fade show" role="alert"> 
+
+        ¡Acertaste! El número era <strong>${aleatorio}</strong>.<br> 
+
+        Lo lograste en <strong>${oportunidades}</strong> intento(s). 
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button> 
+
+      </div>`;
+
+            // Reiniciar el juego 
+
+            reiniciarJuego();
+
         } else if (oportunidades >= 6) {
-            resultadoDiv.innerHTML = `
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-            Se acabaron los intentos. El número era <strong> ${aleatorio} </strong><br>
-            !Intentalo otra vez!
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            `
-            reiniciarJuego()
-        } else if (numero > aleatorio) {
-            resultadoDiv.innerHTML = `
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-            Demasiado alto. Te quedan <strong> ${6 - oportunidades} </strong><br>
-            !Intentalo otra vez!
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            `
-        } else {
-            resultadoDiv.innerHTML = `
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-            Demasiado bajo. Te quedan <strong> ${6 - oportunidades} </strong><br>
-            !Intentalo otra vez!
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            `
-        }
-        input.value = ""
 
-    }
+            resultadoDiv.innerHTML = ` 
+
+      <div class="alert alert-danger alert-dismissible fade show" role="alert"> 
+
+        Se acabaron los intentos. El número era <strong>${aleatorio}</strong>.<br> 
+
+        ¡Inténtalo de nuevo! 
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button> 
+
+      </div>`;
+
+            reiniciarJuego();
+
+        } else if (numero > aleatorio) {
+
+            resultadoDiv.innerHTML = ` 
+
+      <div class="alert alert-info alert-dismissible fade show" role="alert"> 
+
+        Demasiado alto. Te quedan <strong>${6 - oportunidades}</strong> intento(s). 
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button> 
+
+      </div>`;
+
+        } else {
+
+            resultadoDiv.innerHTML = ` 
+
+      <div class="alert alert-info alert-dismissible fade show" role="alert"> 
+
+        Demasiado bajo. Te quedan <strong>${6 - oportunidades}</strong> intento(s). 
+
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button> 
+
+      </div>`;
+
+        }
+
+
+
+        input.value = "";
+
+    };
+
+
 
     const reiniciarJuego = () => {
-        let aleatorio = Math.floor(Math.random() * 100) + 1
-        let oportunidades = 0
-    }
+
+        aleatorio = Math.floor(Math.random() * 100) + 1;
+
+        oportunidades = 0;
+
+    }; 
 
 
 
@@ -103,6 +157,6 @@
     form.querySelector("#btnMedia")?.addEventListener("click", calcularMedia)
     form.querySelector("#btnMayor")?.addEventListener("click", encontrarMayor)
     form.querySelector("#btnMenor")?.addEventListener("click", encontrarMenor)
-    form.querySelector("#btnAdivinar")?.addEventListener("click", adivinar)
+    form.querySelector("#btnAdivinar")?.addEventListener("click", Adivinar)
 
 })

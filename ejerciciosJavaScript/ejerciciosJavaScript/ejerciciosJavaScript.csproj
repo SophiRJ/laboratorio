@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Asincronia.js" />
+    <Content Include="ejerciciosNivel1.html" />
     <Content Include="FacturaPizza.html" />
     <Content Include="Hotel.html" />
     <Content Include="hotel.js" />

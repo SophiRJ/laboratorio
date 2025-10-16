@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Compras</title>
+</head>
+<body>
+    <h1>Lista de Compras</h1>
+
+    <form id="formProducto">
+        <input type="text" id="nombre" placeholder="Producto" required>
+        <input type="number" id="cantidad" placeholder="Cantidad" min="1" value="1" required>
+        <input type="number" id="precio" placeholder="Precio" min="0" required>
+        <button type="submit">Añadir</button>
+    </form>
+
+    <ul id="lista"></ul>
+    <h3>Total: $<span id="total">0.00</span></h3>
+
+    <script>
+        class Producto {
+            constructor(nombre, cantidad, precio) {
+                this.nombre = nombre;
+                this.cantidad = parseInt(cantidad);
+                this.precio = parseFloat(precio);
+                this.total = this.cantidad * this.precio;
+            }
+        }
+
+        class ListaCompras {
+            constructor() {
+                this.productos = [];
+            }
+
+            agregarProducto(nombre, cantidad, precio) {
+                this.productos.push(new Producto(nombre, cantidad, precio));
+                this.actualizarLista();
+            }
+
+            eliminarProducto(index) {
+                this.productos.splice(index, 1);
+                this.actualizarLista();
+            }
+
+            actualizarLista() {
+                const ul = document.querySelector("#lista");
+                ul.innerHTML = this.productos.map((p, i) =>
+                    `<li>${p.nombre} (${p.cantidad} x $${p.precio}) = $${p.total.toFixed(2)}
+                <button onclick="lista.eliminarProducto(${i})">Eliminar</button></li>`
+                ).join("");
+                const total = this.productos.reduce((acc, p) => acc + p.total, 0);
+                document.querySelector("#total").textContent = total.toFixed(2);
+            }
+        }
+
+        const lista = new ListaCompras();
+
+        document.querySelector("#formProducto").addEventListener("submit", e => {
+            e.preventDefault();
+            const nombre = document.querySelector("#nombre").value;
+            const cantidad = document.querySelector("#cantidad").value;
+            const precio = document.querySelector("#precio").value;
+            lista.agregarProducto(nombre, cantidad, precio);
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
+
+
