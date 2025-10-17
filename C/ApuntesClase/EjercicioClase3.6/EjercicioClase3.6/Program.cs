@@ -48,9 +48,11 @@ namespace EjercicioClase3._6
             {
                 return numero1 + numero2 + numero3;
             }
-            public double media()
+            public decimal media()
             {
-                return (numero1 + numero2 + numero3) / 3;
+                decimal media = (decimal)suma() / 3;
+                return media;
+                //return (numero1 + numero2 + numero3) / 3;
             }
         }
         
@@ -69,6 +71,13 @@ namespace EjercicioClase3._6
             int segundoN = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Tercer numero: ");
             int tercerN = Convert.ToInt32(Console.ReadLine());
+
+            //int[] valores = new int[3];
+            //for(int i=0; i < 3; i++)
+            //{
+            //    Console.Write($"Valor de X{i + 1}:");
+            //    valores[i]= Con
+            //}
 
 
             Estadistica estadistica1= new Estadistica(primerN,segundoN, tercerN);
