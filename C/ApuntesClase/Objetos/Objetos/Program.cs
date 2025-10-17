@@ -132,13 +132,13 @@ namespace Objetos
             }
             public static void mostrarTotal()
             {
-                Console.WriteLine($"Total objetos: {totalObjetos}")
+                Console.WriteLine($"Total objetos: {totalObjetos}");
             }
         }
 
-        //public class Person//herencia virtual, override, base
-        {
-            protected string ssn = "444-555-666";//Solo podran acceder a ellas las clases qeu hereden de esta clase
+        public class Person{//herencia virtual, override, base
+        
+        protected string ssn = "444-555-666";//Solo podran acceder a ellas las clases qeu hereden de esta clase
         protected string name = "Pepe lillo";
 
         public virtual void getInfo()//virtual->para q quienes hereden de sta lo puedan utilizatr o sobreescribir
@@ -153,7 +153,7 @@ namespace Objetos
         public override void getInfo()//override -> sobreescibimos el virtual
         {
             base.getInfo();//base-> le pasamos todo lo del metodo anteior
-            Console.WriteLine($"Employee ID: {id}"
+                Console.WriteLine($"Employee ID: {id}");
             }
     }
     public class Emplead
@@ -178,7 +178,7 @@ namespace Objetos
     {
         public Manager(int annualSalary) : base(annualSalary)
         {
-            Console.WriteLine($"Construcor para el Manager :{salary}")
+                Console.WriteLine($"Construcor para el Manager :{salary}");
             }//heredamos de la clase base el salario anual
     }
 
@@ -256,7 +256,7 @@ namespace Objetos
         }
         public override double Area()
         {
-            return (2 * base.Area()) + (2 * pi * x * y)
+                return (2 * base.Area()) + (2 * pi * x * y);
             }
     }
     public class Date//lamdas
@@ -274,26 +274,30 @@ namespace Objetos
             }
         }
     }
-        public class Person{//lamdas
+    public class Person1{//lamdas
 
-            private string _name;
-            private string Name
-            {
-                get => _name;
-                set => _name = value;
-            }
-
-        }
-        public interface IVolador{
-
-            void Volar();
-
-        }
-        public class Abeja: IVolador//implementar el metodo explicita e implicita
+        private string _name;
+        private string Name
         {
-
+            get => _name;
+            set => _name = value;
         }
-        
+
+    }
+    public interface IVolador{
+
+        void Volar();
+
+    }
+    public class Abeja : IVolador//implementar el metodo explicita e implicita
+    {
+        public void Volar()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
         static void Main(string[] args)
         {
             Date date = new Date();
@@ -316,14 +320,14 @@ namespace Objetos
             Console.WriteLine(c2.ToString());
 
 
-            Emplead em1 = new Empload(30000);
+            Emplead em1 = new Emplead(30000);
             Emplead em2 = new Emplead(3214, 32);
             Manager m1 = new Manager(50000);
 
             Console.WriteLine("Resumen de salarios");
             Console.WriteLine($"e1: {em1.salary}");
             Console.WriteLine($"e2: {em1.salary}");
-            Console.WriteLine($"manager: {m1.salary}")
+            Console.WriteLine($"manager: {m1.salary}");
 
 
 
@@ -336,13 +340,13 @@ namespace Objetos
             //metodo: es un metodo que se puede usar sin instanciar la clase.
 
             //Variable clase Static
-            Contador c1 = new Contador();
-            Contador c2 = new Contador();
-            Contador c3 = new Contador();
+            Contador ct1 = new Contador();
+            Contador ct2 = new Contador();
+            Contador ct3 = new Contador();
 
-            Console.WriteLine($"ID de c1 es {c1.id}")
-            Console.WriteLine($"ID de c2 es {c2.id}")
-            Console.WriteLine($"ID de c3 es {c3.id}")
+            Console.WriteLine($"ID de c1 es {ct1.id}");
+            Console.WriteLine($"ID de c2 es {ct2.id}");
+            Console.WriteLine($"ID de c3 es {ct3.id}");
 
             Contador.mostrarTotal();//Si es static no necesitamos crear un objeto sino llamrlo con su clase
 
