@@ -243,6 +243,75 @@ Ambas deben implementar su propio cálculo del costo de alquiler según la durac
             return costo;
         }
     }
+    /*6.	Sistema de pagos electrónicos (interfaces + clases derivadas + sobrecarga)
+•	Crea una interfaz IPago con un método ProcesarPago(double monto).
+Crea clases PagoTarjeta, PagoEfectivo y PagoTransferencia.
+Cada una debe implementar la interfaz y comportarse diferente.
+Sobrecarga ProcesarPago para incluir variantes con comisión
+*/
+    interface IPago
+    {
+        void ProcesarPago(double monto);
+        void ProcesarPago(double monto, double comision);
+    }
+    public abstract class Pago : IPago
+    {
+        
+        protected double monto {  get; set; }
+        protected double comision { get; set; }
+
+        public Pago(double _monto, double _comision)
+        {
+            monto = _monto;
+            comision = _comision;
+        }
+
+        public virtual void ProcesarPago(double monto)
+        {
+            Console.WriteLine($"{GetType().Name} precio: {monto}");
+        }
+
+        public void ProcesarPago(double monto, double comision)
+        {
+            double precioFinal = monto + comision;
+            Console.WriteLine($"{GetType().Name} precio: {precioFinal}");
+        }
+    }
+    public class PagoTarjeta : Pago
+    {
+        public string  numeroTarjeta { get; set; }
+        public PagoTarjeta(double _monto, double _comision, string _numeroTarjeta) : base(_monto, _comision) {
+            numeroTarjeta = _numeroTarjeta;
+        }
+       
+
+        
+    }
+    public class PagoEfectivo : IPago
+    {
+        public void ProcesarPago(double monto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ProcesarPago(double monto, double comision)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class PagoTransferencia : IPago
+    {
+        public void ProcesarPago(double monto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ProcesarPago(double monto, double comision)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
 
     internal class Program
         {
