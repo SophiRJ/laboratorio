@@ -345,7 +345,8 @@ namespace EjerciciosCasa1
             int numeroFichero;
             do 
             {
-                Console.Write("Elija una opcion:\n1.Añadir datos de un nuevo fichero." +
+                Console.Write("Elija una opcion:" +
+                    "\n1.Añadir datos de un nuevo fichero." +
                     "\n2.Mostrar los nombres de todos lo ficheros " +
                     "\n3.Mostrar Ficheros que sean de mas e cierto tamaño" +
                     "\n4.Ver datos de cierto fichero" +

@@ -14,21 +14,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Page1.html",
               "DocumentMoniker": "C:\\laboratorio\\ejerciciosObjetos\\ejerciciosObjetos\\Page1.html",
               "RelativeDocumentMoniker": "ejerciciosObjetos\\Page1.html",
-              "ToolTip": "C:\\laboratorio\\ejerciciosObjetos\\ejerciciosObjetos\\Page1.html*",
-              "RelativeToolTip": "ejerciciosObjetos\\Page1.html*",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHUAAAAwAAAAAAAAAA==",
+              "ToolTip": "C:\\laboratorio\\ejerciciosObjetos\\ejerciciosObjetos\\Page1.html",
+              "RelativeToolTip": "ejerciciosObjetos\\Page1.html",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-10-06T10:54:10.634Z",
               "EditorCaption": ""
