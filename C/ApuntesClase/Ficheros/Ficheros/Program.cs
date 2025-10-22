@@ -15,6 +15,16 @@ namespace Ficheros
         public string Deoartamento { get; set; }
         public decimal Salario { get; set; }
     }
+    class Producto
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Categoria { get; set; }
+        public double Precio { get; set; }
+        public int Stock { get; set; }
+        public string Proveedor { get; set; }
+
+    }
     internal class Program
     {
         static void Main(string[] args)
@@ -141,49 +151,87 @@ namespace Ficheros
 
             //Ficheros CSV
 
-            string rutaArchivo = "empleado.csv";
+            //string rutaArchivo = "empleado.csv";
             //Lista empleados
-            List<Empleado> empleados = new List<Empleado>();
+            //List<Empleado> empleados = new List<Empleado>();
+            //try
+            //{
+            //    using(StreamReader sr= new StreamReader(rutaArchivo))
+            //    {
+            //        string linea;
+            //        bool primera_linea = true;
+            //        while((linea = sr.ReadLine()) != null)  {
+            //            //Saltar la cabecera
+            //            if (primera_linea)
+            //            {
+            //                primera_linea=false;
+            //                continue;
+            //            }
+            //            //dividir por comas
+            //            string[] columnas = linea.Split(',');
+            //            Empleado empleado = new Empleado()
+            //            {
+            //                Id = int.Parse(columnas[0]),
+            //                Nombre = columnas[1],
+            //                Deoartamento = columnas[2],
+            //                Salario = decimal.Parse(columnas[3])
+            //            };
+            //            empleados.Add(empleado);
+            //        }
+            //    }
+            //    Console.WriteLine("======Lista empleados============");
+            //    foreach (var empleado in empleados)
+            //    {
+            //        Console.WriteLine($"{empleado.Nombre}- {empleado.Deoartamento}");
+            //        Console.WriteLine($"=========Estadisticas===========");
+            //        var salarioPromedio = empleados.Average(e => e.Salario);
+            //        var salarioMAx = empleados.Max(e => e.Salario);
+
+            //        Console.WriteLine($"Salario promedio {salarioPromedio}");
+            //        Console.WriteLine($"Salario maximo {salarioMAx}");
+            //    }
+            //}
+            
+            //catch (Exception ex) { 
+            //    Console.WriteLine(ex.ToString());   
+            //}
+
+            string ruta = "producto.csv";
+            List<Producto> producto = new List<Producto>();
             try
             {
-                using(StreamReader sr= new StreamReader(rutaArchivo))
-                {
+                using (StreamReader sr = new StreamReader(ruta)) {
+
                     string linea;
-                    bool primera_linea = true;
-                    while((linea = sr.ReadLine()) != null)  {
-                        //Saltar la cabecera
-                        if (primera_linea)
+                    bool cabecera = true;
+                    while ((linea = sr.ReadLine())!=null) {
+                        if (cabecera)
                         {
-                            primera_linea=false;
+                            cabecera = false;
                             continue;
                         }
-                        //dividir por comas
                         string[] columnas = linea.Split(',');
-                        Empleado empleado = new Empleado()
+                        Producto p = new Producto()
                         {
                             Id = int.Parse(columnas[0]),
                             Nombre = columnas[1],
-                            Deoartamento = columnas[2],
-                            Salario = decimal.Parse(columnas[3])
+                            Categoria = columnas[2],
+                            Precio= double.Parse(columnas[3]),
+                            Stock=int.Parse(columnas[4]),
+                            Proveedor = columnas[5]
                         };
-                        empleados.Add(empleado);
+                        producto.Add(p);
+                    }
+
+                    Console.WriteLine("Lista empleados");
+                    foreach (var p in producto) {
+                        Console.WriteLine($"{p.Id}- Nombre : {p.Nombre}- Categoria:{p.Categoria} Stock: {p.Stock} Proveedor: {p.Proveedor}");
+                        Console.WriteLine();
                     }
                 }
-                Console.WriteLine("======Lista empleados============");
-                foreach (var empleado in empleados)
-                {
-                    Console.WriteLine($"{empleado.Nombre}- {empleado.Deoartamento}");
-                    Console.WriteLine($"=========Estadisticas===========");
-                    var salarioPromedio = empleados.Average(e => e.Salario);
-                    var salarioMAx = empleados.Max(e => e.Salario);
-
-                    Console.WriteLine($"Salario promedio {salarioPromedio}");
-                    Console.WriteLine($"Salario maximo {salarioMAx}");
-                }
             }
-            
             catch (Exception ex) { 
-                Console.WriteLine(ex.ToString());   
+                Console.WriteLine (ex.ToString());
             }
 
             Console.ReadKey();
