@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GestorMascotasEnRefugio
@@ -28,6 +29,11 @@ namespace GestorMascotasEnRefugio
             
             base.MostrarInfo(detallado);
             Console.WriteLine($"Especie: {Especie}, {volador}");
+        }
+        public override void Vacunar()
+        {
+            Console.WriteLine($"{Nombre} (Ave) esta siendo vacunado contra Influenza Aviar y Ácaros");
+            Thread.Sleep(2000);
         }
     }
 }

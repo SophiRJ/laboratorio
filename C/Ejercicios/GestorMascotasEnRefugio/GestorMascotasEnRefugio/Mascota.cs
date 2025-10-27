@@ -23,17 +23,15 @@ namespace GestorMascotasEnRefugio
 
 
         public abstract double CalcularRacion();
-        public void Vacunar()
-        {
-            Console.WriteLine($"{Nombre} Esta siendo vacunado..");
-        }
+        public abstract void Vacunar();
         public void MostrarInfo()
         {
             Console.WriteLine($"{Nombre} - {Tipo} ({Edad} años)");
         }
         public virtual void MostrarInfo(bool detallado)
         {
-            Console.WriteLine($"Mascota: {Nombre}, Tipo: {Tipo}, Edad: {Edad}, Peso: {Peso}kg, Alimentación diaria: {CalcularRacion()}gr");
+            
+            Console.WriteLine($"Mascota: {Nombre}, Tipo: {Tipo}, Edad: {Edad} años, Peso: {Peso:0.00}kg, Alimentación diaria: {CalcularRacion()}gr");
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GestorMascotasEnRefugio
@@ -23,9 +24,14 @@ namespace GestorMascotasEnRefugio
             return Math.Round(racion, 2); ;
         }
         public override void MostrarInfo(bool detallado)
-        {
+        { 
             base.MostrarInfo(detallado);
             Console.WriteLine($"Raza: {Raza}, Nivel de Actividad: {NivelActividad}");
+        }
+        public override void Vacunar()
+        {
+            Console.WriteLine($"{Nombre} esta siendo vacunado contra Rabia y Sarna Canina");
+            Thread.Sleep(2000);
         }
     }
 }

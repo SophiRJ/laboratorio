@@ -57,14 +57,14 @@ namespace GestorMascotasEnRefugio
             string especie;
 
             Console.WriteLine("Indique que animal quiere registrar:" +
-                        "\n1-> Perro\n2->Gato\n3-> Ave");
+                        "\n1-> Perro\n2-> Gato\n3-> Ave");
             int dato = Convert.ToInt32(Console.ReadLine());
             if (dato <= 0 || dato > 3)
             {
                 Console.WriteLine("Eleccion invalida");
                 return;
             }
-            Console.Write("Nombre ");
+            Console.Write("Nombre: ");
             nombre = Console.ReadLine();
             Console.Write("Tipo: ");
             tipo = Console.ReadLine();
@@ -72,7 +72,7 @@ namespace GestorMascotasEnRefugio
             edad = Convert.ToInt32(Console.ReadLine());
             Console.Write("Peso: ");
             peso = Convert.ToDouble(Console.ReadLine());
-
+            Mascota nuevaM = null;
             switch (dato)
             {
                 case 1:
@@ -80,16 +80,23 @@ namespace GestorMascotasEnRefugio
                     raza = Console.ReadLine();
                     Console.Write("Nivel de actividad(1-10): ");
                     nivelAct = Convert.ToInt32(Console.ReadLine());
-                    lista.Add(new Perro(nombre, tipo, edad, peso, raza, nivelAct));
+                    if (nivelAct > 10 || nivelAct < 1)
+                    {
+                        Console.WriteLine("Dato invalido");
+                        Console.ReadKey();
+                        return;
+                    }
+                    nuevaM=new Perro(nombre, tipo, edad, peso, raza, nivelAct);
                     break;
                 case 2:
                     Console.Write("Esterilizado?: (s/n) ");
                     string respuesta = Console.ReadLine();
                     esterilizado = (respuesta == "s") ? true : false;
-                    Console.Write("domestico?: (s/n) ");
+                    Console.Write("domestico?: (s/n) ");             
                     respuesta = Console.ReadLine();
                     domestico = (respuesta == "s") ? true : false;
-                    lista.Add(new Gato(nombre, tipo, edad, peso, esterilizado, domestico));
+                    nuevaM= new Gato(nombre, tipo, edad, peso, esterilizado, domestico);
+                    
                     break;
                 case 3:
                     Console.Write("Especie: ");
@@ -97,29 +104,46 @@ namespace GestorMascotasEnRefugio
                     Console.Write("Vuela?: (s/n) ");
                     respuesta = Console.ReadLine();
                     vuela = (respuesta == "s") ? true : false;
-                    lista.Add(new Ave(nombre, tipo, edad, peso, especie, vuela));
+                    nuevaM=new Ave(nombre, tipo, edad, peso, especie, vuela);
                     break;
             }
+            if (nuevaM != null)
+            {
+                lista.Add(nuevaM);
+                Console.WriteLine($"Animal {nombre} registrado correctamente.");
+
+                nuevaM.Vacunar();
+                Console.WriteLine("Vacunación completada");
+            }
+
+            
         }
         public static void Listar(List<Mascota> lista)
         {
-           foreach (Mascota m in lista)
+            if (lista.Count == 0)
             {
+                Console.WriteLine("La lista esta vacia.");
+                return;
+            }
+           foreach (Mascota m in lista)
+            { 
                 Console.WriteLine(m.nombre);
             }
         }
         public static void MostrarDetalle(List<Mascota> lista)
         {
             Console.WriteLine("Indique el nombre de la mascota: ");
+            
             string resp= Console.ReadLine().ToLower();
             foreach (Mascota m in lista)
             {
                 if(m.nombre.ToLower()== resp)
                 {
-                    Console.WriteLine("Deseas ver la lista general o detallada? (g/d)");
+                    Console.WriteLine("Deseas ver la datos generales o detallados? (g/d)");
                     resp = Console.ReadLine();
                     bool detallada = resp == "g" ? false : true;
-                    if (detallada)          
+                    if (detallada)
+                    {
                         m.MostrarInfo(detallada);
                     }
                     else
@@ -127,9 +151,14 @@ namespace GestorMascotasEnRefugio
                         m.MostrarInfo();
                     }
                 }
-            }
-        }
+                else
+                {
+                    Console.WriteLine("El animal no esta registrado");
+                }                    
+            }   
+       }
     }
+}
 
 
 

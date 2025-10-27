@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GestorMascotasEnRefugio
@@ -24,8 +25,15 @@ namespace GestorMascotasEnRefugio
         }
         public override void MostrarInfo(bool detallado)
         {
+            string esterilizado = Esterilizado ? "Esterilizado" : "Sin esterilizacion";
+            string domestico = Domestico ? "Domestico" : "No Domesticado";
             base.MostrarInfo(detallado);
-            Console.WriteLine($"Esterilizado?: {Esterilizado}, Domestico?: {Domestico}");
+            Console.WriteLine($"Gato {esterilizado}, {domestico}");
+        }
+        public override void Vacunar()
+        {
+            Console.WriteLine($"{Nombre} (Gato) esta siendo vacunado contra la rabia y leucemia felina.");
+            Thread.Sleep(2000);
         }
     }
 }
