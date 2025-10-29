@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model2.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model2StoreContainer">
+    <EntitySet Name="Clientes" EntityType="Model2.Store.Clientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Productos" EntityType="Model2.Store.Productos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ordenes" EntityType="Model2.Store.Ordenes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ClienteOrden" Association="Model2.Store.ClienteOrden">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Orden" EntitySet="Ordenes" />
+    </AssociationSet>
+    <AssociationSet Name="ProductoOrden" Association="Model2.Store.ProductoOrden">
+      <End Role="Producto" EntitySet="Productos" />
+      <End Role="Orden" EntitySet="Ordenes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UnitPrice" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ordenes">
+    <Key>
+      <PropertyRef Name="IdOrden" />
+    </Key>
+    <Property Name="IdOrden" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Cliente" Type="int" Nullable="false" />
+    <Property Name="Producto" Type="int" Nullable="false" />
+    <Property Name="Cliente1_IdCliente" Type="int" Nullable="false" />
+    <Property Name="Producto1_IdProducto" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ClienteOrden">
+    <End Role="Cliente" Type="Model2.Store.Clientes" Multiplicity="1" />
+    <End Role="Orden" Type="Model2.Store.Ordenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="Orden">
+        <PropertyRef Name="Cliente1_IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductoOrden">
+    <End Role="Producto" Type="Model2.Store.Productos" Multiplicity="1" />
+    <End Role="Orden" Type="Model2.Store.Ordenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="Orden">
+        <PropertyRef Name="Producto1_IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model2" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model2Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="Model2.Cliente" />
+          <EntitySet Name="Productos" EntityType="Model2.Producto" />
+          <EntitySet Name="Ordenes" EntityType="Model2.Orden" />
+          <AssociationSet Name="ClienteOrden" Association="Model2.ClienteOrden">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Orden" EntitySet="Ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="ProductoOrden" Association="Model2.ProductoOrden">
+            <End Role="Producto" EntitySet="Productos" />
+            <End Role="Orden" EntitySet="Ordenes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" />
+          <Property Name="Phone" Type="String" Nullable="false" />
+          <NavigationProperty Name="Orden" Relationship="Model2.ClienteOrden" FromRole="Cliente" ToRole="Orden" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="IdProducto" />
+          </Key>
+          <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" Nullable="false" />
+          <Property Name="UnitPrice" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Orden" Relationship="Model2.ProductoOrden" FromRole="Producto" ToRole="Orden" />
+        </EntityType>
+        <EntityType Name="Orden">
+          <Key>
+            <PropertyRef Name="IdOrden" />
+          </Key>
+          <Property Name="IdOrden" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Cliente" Type="Int32" Nullable="false" />
+          <Property Name="Producto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente1" Relationship="Model2.ClienteOrden" FromRole="Orden" ToRole="Cliente" />
+          <NavigationProperty Name="Producto1" Relationship="Model2.ProductoOrden" FromRole="Orden" ToRole="Producto" />
+        </EntityType>
+        <Association Name="ClienteOrden">
+          <End Type="Model2.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="Model2.Orden" Role="Orden" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductoOrden">
+          <End Type="Model2.Producto" Role="Producto" Multiplicity="1" />
+          <End Type="Model2.Orden" Role="Orden" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model2StoreContainer" CdmEntityContainer="Model2Container">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model2.Cliente)">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model2.Producto)">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ordenes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model2.Orden)">
+        <MappingFragment StoreEntitySet="Ordenes">
+          <ScalarProperty Name="IdOrden" ColumnName="IdOrden" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ClienteOrden" TypeName="Model2.ClienteOrden" StoreEntitySet="Ordenes">
+      <EndProperty Name="Cliente">
+        <ScalarProperty Name="IdCliente" ColumnName="Cliente1_IdCliente" />
+      </EndProperty>
+      <EndProperty Name="Orden">
+        <ScalarProperty Name="IdOrden" ColumnName="IdOrden" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProductoOrden" TypeName="Model2.ProductoOrden" StoreEntitySet="Ordenes">
+      <EndProperty Name="Producto">
+        <ScalarProperty Name="IdProducto" ColumnName="Producto1_IdProducto" />
+      </EndProperty>
+      <EndProperty Name="Orden">
+        <ScalarProperty Name="IdOrden" ColumnName="IdOrden" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
