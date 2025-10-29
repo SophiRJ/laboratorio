@@ -64,41 +64,88 @@ namespace PracticaLinqSql
                     .OrderByDescending(g => g.Cantidad)
                     .Take(5).ToList();
 
-                //foreach (var item in query3)
-                //{
-                //    Console.WriteLine($"{item.Producto} {item.Cantidad}");
-                //}
+                foreach (var item in query3)
+                {
+                    Console.WriteLine($"{item.Producto} {item.Cantidad}");
+                }
 
                 //* Ventas por categoría
                 //Realizar un join entre Products y Categories.
                 //Mostrar el total de ventas por categoría(CategoryName, TotalSales).
+                var query4b = (from p in db.Products
+                               from od in p.Order_Details//join implicito
+                               join c in db.Categories
+                              on p.CategoryID equals c.CategoryID
+                              group od by c.CategoryName
+                             into grupo
+                              select new
+                              {
+                                  Categoria = grupo.Key,
+                                  TotalVentas = grupo.Sum(o => o.UnitPrice * o.Quantity)
+                             }).ToList();
 
-                //var query4 = (from p in db.Products
-                //              join c in db.Categories
-                //              on p.CategoryID equals c.CategoryID
-                //              group p.ProductID by c.CategoryName into g
-                //              select new
-                //              {
-                //                  Nombre = g.Key,
-                //                  TotalVentas = g.Sum()
-                //              }).ToList();
-                //foreach (var item in query4) {
-                //    Console.WriteLine($"{item.Nombre}, {item.TotalVentas}");
-                //}
+                var query4 = (from p in db.Products
+                              join c in db.Categories
+                              on p.CategoryID equals c.CategoryID
+                              join od in db.Order_Details
+                              on p.ProductID equals od.ProductID
+                              group (od) by c.CategoryName into g
+                              select new
+                              {
+                                  Nombre = g.Key,
+                                  TotalVentas = g.Sum(o=>o.UnitPrice*o.Quantity)
+                              }).ToList();
+                foreach (var item in query4)
+                {
+                    Console.WriteLine($"{item.Nombre}, {item.TotalVentas}");
+                }
+
+                var query4a = (from p in db.Products
+                               join c in db.Categories
+                               on p.CategoryID equals c.CategoryID
+                               join od in db.Order_Details
+                               on p.ProductID equals od.ProductID
+                               group od by c.CategoryName into g
+                               select new
+                               {
+                                   Nombre = g.Key,
+                                   CantidadProdVendidos = g.Count()
+                               }).ToList();
+                foreach (var item in query4a)
+                {
+                    Console.WriteLine($"{item.Nombre} {item.CantidadProdVendidos}");
+                }
 
                 //* Empleados y su número de pedidos
                 //Mostrar EmployeeName y cantidad de pedidos que gestionó.
-                //var query5 = db.Orders
-                //    .GroupBy(o => o.Employees.FirstName)
-                //    .Select(g => new
-                //    {
-                //        nombre = g.Key,
-                //        cantidad = g.Count()
-                //    }).ToList();
+                var query5 = db.Orders
+                    .GroupBy(o => o.Employees.FirstName)
+                    .Select(g => new
+                    {
+                        nombre = g.Key,
+                        cantidad = g.Count()
+                    }).ToList();
 
-                //foreach (var item in query5) {
-                //    Console.WriteLine($"{item.nombre} {item.cantidad}");
-                //}
+                foreach (var item in query5)
+                {
+                    Console.WriteLine($"{item.nombre} {item.cantidad}");
+                }
+
+                var query5a = (from o in db.Orders
+                               group o by new
+                               {
+                                   o.Employees.FirstName,
+                                   o.Employees.LastName
+                               } into grupo
+                               select new
+                               {
+                                   Empleado = $"{grupo.Key.FirstName} {grupo.Key.LastName}",
+                                   CantidadPEdidos = grupo.Count()
+                               }).ToList();
+                foreach(var item in query5a)
+                {
+                    Console.WriteLine($"{item.Empleado} Cantidad: {item.CantidadPEdidos}");
+                }
 
                 //* Filtrado avanzado
                 //Consultar todos los pedidos enviados a “USA” en el año 1997.

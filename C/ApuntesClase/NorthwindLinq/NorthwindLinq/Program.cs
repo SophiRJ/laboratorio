@@ -34,16 +34,17 @@ namespace NorthwindLinq
                 //var dataLAmbda = db.Customers
                 //    .Where(c => c.Country == "Spain").ToList();
 
-                ////foreach (var c in dataLAmbda) {
-                ////    Console.WriteLine($"{c.CompanyName} -{c.City}");
-                ////}
+                //foreach (var c in dataLAmbda)
+                //{
+                //    Console.WriteLine($"{c.CompanyName} -{c.City}");
+                //}
 
                 //var clientes = (from c in db.Customers
                 //                where c.Country == "Spain"
                 //                orderby c.CompanyName, c.ContactName descending
                 //                select c).ToList();
 
-                ////sacamos dos columnas filtramos
+                //sacamos dos columnas filtramos
                 //var clientesFiltrados = (from c in db.Customers
                 //                         where c.Country == "Spain"
                 //                         orderby c.CompanyName
@@ -84,23 +85,25 @@ namespace NorthwindLinq
                 //{
                 //    Console.WriteLine($"{e.Nombre}, {e.FechaNac}, {e.Ciudad}");
                 //}
+
                 //⦁Ejercicio propuestos(5.3):
                 //⦁Crear una aplicación que muestre por consola utilizando LINQ nombre de
                 //producto y unidades en stock para los productos con un precio superior a 50€.
                 //⦁
-                //var query3= (from p in db.Products
-                //            where p.UnitPrice>50
-                //            select new
-                //            {
-                //                Nombre= p.ProductName,
-                //                Stock=p.UnitsInStock,
-                //                Precio=p.UnitPrice
-                //            }).ToList();
+                //var query3 = (from p in db.Products
+                //              where p.UnitPrice > 50
+                //              select new
+                //              {
+                //                  Nombre =$"{p.ProductName}" ,
+                //                  Stock = Convert.ToInt32($"{p.UnitsInStock}"),
+                //                  Precio = p.UnitPrice
+                //              }).ToList();
 
                 //foreach (var p in query3)
                 //{
-                //    Console.WriteLine($"{p.Nombre}, {p.Stock}, {p.Precio}");
+                //    Console.WriteLine($"{p.Nombre}, {p.Stock}, {p.Precio:0.00}");
                 //}
+
                 //⦁Ejercicio propuestos(5.4):
                 //⦁Crear una única aplicación que muestre por consola utilizando Expresiones
                 //Lambda las tres prácticas anteriores.
@@ -115,10 +118,11 @@ namespace NorthwindLinq
                 //    .ToList()
                 //    .Select(e => new
                 //    {
-                //        Nombre = e.FirstName + " " + e.LastName,
+                //        Nombre = $"{e.FirstName} {e.LastName}",
                 //        FechaNac = Convert.ToDateTime($"{e.BirthDate}").ToShortDateString(),
                 //        Ciudad = e.City
                 //    }).OrderByDescending(e => e.FechaNac);
+
                 //foreach (var p in lamda2)
                 //{
                 //    Console.WriteLine($"{p.Nombre}- {p.FechaNac} - {p.Ciudad}");
@@ -126,29 +130,31 @@ namespace NorthwindLinq
 
                 //var lambda3 = db.Products
                 //    .Where(p => p.UnitPrice > 50)
+                //    .OrderBy(p=> p.ProductName)
                 //    .Select(p => new
                 //    {
-                //        Nombre = p.ProductName,
+                //        Nombre = $"{p.ProductName}",
                 //        Stock = Convert.ToInt32($"{p.UnitsInStock}"),
                 //        Precio = p.UnitPrice
                 //    }).ToList();
+
                 //var lambda3a = db.Products
                 //    .Where(p => p.UnitPrice > 50)
                 //    .ToList()
                 //    .Select(p => new
 
                 //    {
-                //        Nombre = p.ProductName,
+                //        Nombre = $"{p.ProductName}",
                 //        Stock = Convert.ToInt32($"{p.UnitsInStock}"),
                 //        Precio = p.UnitPrice
                 //    }).OrderByDescending(p => p.Nombre);
 
-                //foreach ( var p in lambda3)
+                //foreach (var p in lambda3)
                 //{
                 //    Console.WriteLine($"{p.Nombre}- {p.Stock} - {p.Precio}");
                 //}
 
-                //PRopiedades calculadas
+                //Propiedades calculadas
 
                 //var clientes = (from c in db.Customers
                 //                where c.Country == "Spain"
@@ -163,7 +169,7 @@ namespace NorthwindLinq
                 //                                                    //me permite sobre esta propiedad
                 //                                                    //encontrar los registros de orders
                 //                }).ToList();
-                //foreach(var c in clientes)
+                //foreach (var c in clientes)
                 //{
                 //    Console.WriteLine($"{c.Nombre}, {c.Total_Pedidos}");
                 //}
@@ -173,15 +179,17 @@ namespace NorthwindLinq
                 //               where c.Country == "Spain"
                 //               select c).SelectMany(c => c.Orders).ToList();
 
-                //foreach( var c in cliente)
+                //foreach (var c in cliente)
                 //{
-                //    Console.WriteLine($"{c.Customer.CompanyName}, {c.OrderDate}");-> revisarrrrrrr
+                //    Console.WriteLine($"{c.Customers.CompanyName}," +
+                //        $" {Convert.ToDateTime(c.OrderDate).ToShortDateString()}");
                 //}
 
 
                 //puedo navegar hacia diferentes datos segun las relaciones que tenga
-                //donde ponga select many es la padre desde done me muevo a todo sitio
-                //el fiñtro se lo pasas a la primera tabla
+                //donde ponga select many es la padre desde donde me muevo a todo sitio
+                //el filtro se lo pasas a la primera tabla
+
                 //var pedidos = (from c in db.Customers
                 //               where c.Country == "Spain"
                 //               select c).SelectMany(c => c.Orders).Select(c => new
@@ -192,7 +200,7 @@ namespace NorthwindLinq
                 //                   Cliente = c.Customers.CompanyName
                 //               }).ToList();
 
-                ////mismo con Lambda
+                //////mismo con Lambda
                 //var pedidosLamda = db.Customers
                 //    .Where(c => c.Country == "Spain")
                 //    .SelectMany(c => c.Orders).Select(c => new
@@ -203,8 +211,8 @@ namespace NorthwindLinq
                 //        cliente = c.Customers.CompanyName
                 //    }).ToList();
 
-                //nombre de la compañia (customers), nombre de empleado(emplloyees)
-                //gasto de reparto (productos) con proveedores de la ciudad de manchester
+                //nombre de la compañia (customers), nombre de empleado(employees)
+                //gasto de reparto freight (productos) con proveedores de la ciudad de manchester
 
                 //var query = db.Products
                 //    .SelectMany(p => p.Order_Details)
@@ -237,41 +245,54 @@ namespace NorthwindLinq
 
                 //Nombre de Producto(PRODUCT), Categoriade Producto(CATEGORY), Fecha de Pedido(ORDERS),
                 //Importe de Pedido(ORDERS_DETAILS) para todos los Productos con PrecioUnitario> 10
-                //var query3 = db.Categories
-                //    .SelectMany(p=> p.Products)
-                //    .Where(p=>p.UnitPrice>10)
+                //var query3 = db.Products
+                //    .SelectMany(p => p.Order_Details)
+                //    .Where(p => p.UnitPrice > 10)
                 //    .Select(p => new
                 //    {
-                //        Nombre=p.ProductName,
-                //        Categoria=p.Categories.CategoryName,
-                //        F_Pedido=p.Order_Details.Orders.
-                //    })
+                //        NombreProducto = p.Products.ProductName,
+                //        Categoria = p.Products.Categories.CategoryName,
+                //        F_pedido = p.Orders.OrderDate.Value.ToShortDateString(),
+                //        Importe = $"{p.UnitPrice * p.Quantity}"
+                //    }).ToList();
+                //foreach (var item in query3) {
+                //    Console.WriteLine($"{item.NombreProducto} {item.Categoria} {item.F_pedido} " +
+                //        $"{item.Importe}");
+                //}
 
                 //Empleado y fecha de pedido ordenado por fecha de pedido y apellido de empleado
 
-                //    var quer4 = db.Employees
-                //    .SelectMany(em => em.Orders)
-                //    .OrderBy(em => em.OrderDate)
-                //    .ThenBy(em => em.Employees.LastName)
-                //    .Select(em => new
-                //    {
-                //        Employee = $"{em.Employees.FirstName} {em.Employees.LastName}",
-                //        Order_date = Convert.ToDateTime(em.OrderDate).ToShortDateString()
-                //    }).ToList();
+                //var quer4 = db.Employees
+                //.SelectMany(em => em.Orders)
+                //.OrderBy(em => em.OrderDate)
+                //.ThenBy(em => em.Employees.LastName)
+                //.Select(em => new
+                //{
+                //    Employee = $"{em.Employees.FirstName} {em.Employees.LastName}",
+                //    Order_date = Convert.ToDateTime(em.OrderDate).ToShortDateString()
+                //}).ToList();
 
-
-                //var query5= db.Orders
+                //Media de ventas realizadas por michael suyama
+                //var query5 = db.Orders
                 //    .SelectMany(od => od.Order_Details)
                 //    .Where(od => od.Orders.Employees.FirstName == "Michael" && od.Orders.Employees.LastName == "Suyama")
                 //    .Select(od => od.Quantity * od.UnitPrice).Average().ToString("#.##");
+
+
                 //Nombre de Comercial(EMPLOYEE), Zona Comercial(REGION) y Territorio Comercial(TERRITORY)
                 //Para todos los empleados con Domicilio en "London"
                 //Ordenadodescendente porapellido empleadoy ascendente porterritorio
-                //var query6=db.Employees
-                //    .SelectMany(em=>em.EmployeeTerritories)
-                //    .Where(em=>em.Employees.City=="London")
-                //    .OrderByDescending(em=>em.Employees.LastName)
-                //    .ThenBy(em=>em.Terr)
+                //var query6 = db.Employees
+                //    .SelectMany(em => em.EmployeeTerritories)
+                //    .Where(em => em.Employees.City == "London")
+                //    .OrderByDescending(em => em.Employees.LastName)
+                //    .ThenBy(em => em.Territories.TerritoryDescription)
+                //    .Select(em => new
+                //    {
+                //        Comercial = $"{em.Employees.LastName} {em.Employees.FirstName}",
+                //        Zona = em.Territories.Region.RegionDescription,
+                //        Territorio = em.Territories.TerritoryDescription
+                //    }).ToList();
 
                 //join
                 //var query7 = (from c in db.Customers
@@ -287,6 +308,8 @@ namespace NorthwindLinq
                 //var data = (from od in db.Order_Details
                 //            where od.OrderID == 10250
                 //            select od.Quantity * od.UnitPrice).Sum();
+
+
 
                 //var datos= (from o in db.Orders
                 //           join em in db.Employees
@@ -318,16 +341,30 @@ namespace NorthwindLinq
 
                 // primer cliente de usa (company name, country, order_date) que tenga pedidos del mes de mayo de 1998
                 //var data4 = (from c in db.Customers
-                //             join o in (from t in db.Orders where t.OrderDate.Value.Year == 1998 
-                //                        && t.OrderDate.Value.Month == 5 select t)
+                //             join o in (from t in db.Orders
+                //                        where t.OrderDate.Value.Year == 1998
+                //                        && t.OrderDate.Value.Month == 5
+                //                        select t)
                 //             on c.CustomerID equals o.CustomerID
                 //             select new
                 //             {
                 //                 Cliente = c.CompanyName,
                 //                 Pais = c.Country,
-                //                 F_pedido = Convert.ToDateTime(o.OrderDate).ToString(),
+                //                 F_pedido = Convert.ToDateTime(o.OrderDate).ToString()
 
                 //             }).FirstOrDefault(x => x.Pais == "USA");
+
+                //var data4a = (from c in db.Customers
+                //              join o in db.Orders
+                //              on c.CustomerID equals o.CustomerID
+                //              where o.OrderDate.Value.Year == 1998
+                //              && o.OrderDate.Value.Month == 5
+                //              select new
+                //              {
+                //                  Cliente = c.CompanyName,
+                //                  Pais = c.Country,
+                //                  F_pedido = Convert.ToDateTime(o.OrderDate).ToString()
+                //              }).FirstOrDefault(x => x.Pais == "USA");
 
 
 
@@ -365,12 +402,12 @@ namespace NorthwindLinq
                 //    {
                 //        Console.WriteLine($"Pedido Nº: {objeto.OrderID} precio: {objeto.UnitPrice}");
                 //    }
-
                 //}
 
                 //CRUD
                 //Alta baja y modificacion de elementos
-                //Employees empleadoNuevo= new Employees();
+
+                //Employees empleadoNuevo = new Employees();
                 //empleadoNuevo.EmployeeID = 999;
                 //empleadoNuevo.FirstName = "Javier";
                 //empleadoNuevo.LastName = "Vazquez";
@@ -378,7 +415,7 @@ namespace NorthwindLinq
                 //db.Employees.InsertOnSubmit(empleadoNuevo);
                 //db.SubmitChanges();
 
-                //var listaEmpleados = db.Employees.ToList();
+                //var listaEmpleado = db.Employees.ToList();
 
                 //Region region = new Region();
                 //region.RegionID = 22;
@@ -387,22 +424,28 @@ namespace NorthwindLinq
                 //db.Region.InsertOnSubmit(region);
                 //db.SubmitChanges();
 
-                //Modificar
-                var empleadoModificar = db.Employees.SingleOrDefault(e => e.EmployeeID == 10);
-                if (empleadoModificar != null) {
-                    empleadoModificar.City = "Madrid";
-                    db.SubmitChanges();
-                }
-                var listaEmpleados = db.Employees.ToList();
+                //var listRegion=db.Region.ToList();
 
-                //Borrar
-                var empleadoBorrar = db.Employees.SingleOrDefault(e => e.EmployeeID == 10);
-                if (empleadoBorrar != null)
-                {
-                    db.Employees.DeleteOnSubmit(empleadoBorrar);
-                    db.SubmitChanges();
-                }
-                var listaEmpleados1 = db.Employees.ToList();
+                ////Modificar
+                //var empleadoModificar = db.Employees.SingleOrDefault(e => e.EmployeeID == 8);
+                //if (empleadoModificar != null)
+                //{
+                //    empleadoModificar.City = "Madrid";
+                //    db.SubmitChanges();
+                //}
+                //var listaEmpleados = db.Employees.ToList();
+
+                ////Borrar
+                //var empleadoBorrar = db.Employees.SingleOrDefault(e => e.EmployeeID == 12);
+                //if (empleadoBorrar != null)
+                //{
+                //    db.Employees.DeleteOnSubmit(empleadoBorrar);
+                //    db.SubmitChanges();
+                //}
+                //var listaEmpleados1 = db.Employees.ToList();
+
+
+
             }
         }
     }
