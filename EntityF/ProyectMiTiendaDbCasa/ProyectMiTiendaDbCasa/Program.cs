@@ -96,7 +96,7 @@ namespace ProyectMiTiendaDbCasa
                             join p in context.Products
                             on o.Product equals p.Id_Product
                             group new { o, p } by c.CompanyName into g
-                            orderby g.Sum(x => x.o.Quantity * x.p.UnitPrice) 
+                            orderby g.Sum(x => x.o.Quantity * x.p.UnitPrice) descending
                             select new
                             {
                                 Cliente = g.Key,
