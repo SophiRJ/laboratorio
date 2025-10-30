@@ -90,8 +90,26 @@ new Poem { Title = "A un olmo seco", Poet = poets[9], Meter = meters[6] }
             //Obtener todos los titulos de poemas junto con el
             //nombre del poeta ordenados por 
             //titulo del poema
-            PoetasPoema();
+            //PoetasPoema();
 
+            //Listar todo los poetas y sus poemas, incluso los que no tienen poemas
+            PoetasPoemasNull();
+        }
+
+        private static void PoetasPoemasNull()
+        {
+            using(var context= new PoetasEntities())
+            {
+                var query = (from pt in context.Poets
+                             join pm in context.Poems
+                             on pt.PoetId equals pm.PoetId into poetPoems
+                             from pm in poetPoems.DefaultIfEmpty()
+                             select new 
+                            {
+                                Poema = pt.FirstName + pt.LastName,
+                                Titulo = pm.Title
+                            }).ToList();
+            }
         }
 
         private static void PoetasPoema()
@@ -101,13 +119,14 @@ new Poem { Title = "A un olmo seco", Poet = poets[9], Meter = meters[6] }
                 var query = (from pt in context.Poets
                              join pm in context.Poems
                              on pt.PoetId equals pm.PoetId
-                             select new
+
+                             select new { pm, pt }).ToList()
+                             .Select(x => new
                              {
-                                 Poeta = $"{pt.FirstName} {pt.LastName}",
-                                 Poema = pm.Title
-                             }).OrderBy(x => x.Poema).ToList();
+                                 PoemTitle = x.pm.Title,
+                                 PoetName = $"{x.pt.FirstName} {x.pt.LastName}"
 
-
+                             }).OrderByDescending(x => x.PoemTitle).ToList();
             }
         }
 
