@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Personas" EntityType="Model1.Store.Personas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Clase_Animales" EntityType="Model1.Store.Clase_Animales" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Mascotas" EntityType="Model1.Store.Mascotas" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="Clase_AnimalMascota" Association="Model1.Store.Clase_AnimalMascota">
+      <End Role="Clase_Animal" EntitySet="Clase_Animales" />
+      <End Role="Mascota" EntitySet="Mascotas" />
+    </AssociationSet>
+    <AssociationSet Name="PersonaMascota" Association="Model1.Store.PersonaMascota">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="Mascota" EntitySet="Mascotas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Personas">
+    <Key>
+      <PropertyRef Name="IdPersona" />
+    </Key>
+    <Property Name="IdPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clase_Animales">
+    <Key>
+      <PropertyRef Name="IdClase" />
+    </Key>
+    <Property Name="IdClase" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mascotas">
+    <Key>
+      <PropertyRef Name="IdMascota" />
+    </Key>
+    <Property Name="IdMascota" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Clase" Type="int" Nullable="false" />
+    <Property Name="Persona" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Clase_Animal_IdClase" Type="int" Nullable="false" />
+    <Property Name="Persona1_IdPersona" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Clase_AnimalMascota">
+    <End Role="Clase_Animal" Type="Model1.Store.Clase_Animales" Multiplicity="1" />
+    <End Role="Mascota" Type="Model1.Store.Mascotas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clase_Animal">
+        <PropertyRef Name="IdClase" />
+      </Principal>
+      <Dependent Role="Mascota">
+        <PropertyRef Name="Clase_Animal_IdClase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonaMascota">
+    <End Role="Persona" Type="Model1.Store.Personas" Multiplicity="1" />
+    <End Role="Mascota" Type="Model1.Store.Mascotas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IdPersona" />
+      </Principal>
+      <Dependent Role="Mascota">
+        <PropertyRef Name="Persona1_IdPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Personas" EntityType="Model1.Persona" />
+          <EntitySet Name="Clase_Animales" EntityType="Model1.Clase_Animal" />
+          <EntitySet Name="Mascotas" EntityType="Model1.Mascota" />
+          <AssociationSet Name="Clase_AnimalMascota" Association="Model1.Clase_AnimalMascota">
+            <End Role="Clase_Animal" EntitySet="Clase_Animales" />
+            <End Role="Mascota" EntitySet="Mascotas" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaMascota" Association="Model1.PersonaMascota">
+            <End Role="Persona" EntitySet="Personas" />
+            <End Role="Mascota" EntitySet="Mascotas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="IdPersona" />
+          </Key>
+          <Property Name="IdPersona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <NavigationProperty Name="Mascota" Relationship="Model1.PersonaMascota" FromRole="Persona" ToRole="Mascota" />
+        </EntityType>
+        <EntityType Name="Clase_Animal">
+          <Key>
+            <PropertyRef Name="IdClase" />
+          </Key>
+          <Property Name="IdClase" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Mascota" Relationship="Model1.Clase_AnimalMascota" FromRole="Clase_Animal" ToRole="Mascota" />
+        </EntityType>
+        <EntityType Name="Mascota">
+          <Key>
+            <PropertyRef Name="IdMascota" />
+          </Key>
+          <Property Name="IdMascota" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Clase" Type="Int32" Nullable="false" />
+          <Property Name="Persona" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <NavigationProperty Name="Clase_Animal" Relationship="Model1.Clase_AnimalMascota" FromRole="Mascota" ToRole="Clase_Animal" />
+          <NavigationProperty Name="Persona1" Relationship="Model1.PersonaMascota" FromRole="Mascota" ToRole="Persona" />
+        </EntityType>
+        <Association Name="Clase_AnimalMascota">
+          <End Type="Model1.Clase_Animal" Role="Clase_Animal" Multiplicity="1" />
+          <End Type="Model1.Mascota" Role="Mascota" Multiplicity="*" />
+        </Association>
+        <Association Name="PersonaMascota">
+          <End Type="Model1.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="Model1.Mascota" Role="Mascota" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Personas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Persona)">
+        <MappingFragment StoreEntitySet="Personas">
+          <ScalarProperty Name="IdPersona" ColumnName="IdPersona" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clase_Animales">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Clase_Animal)">
+        <MappingFragment StoreEntitySet="Clase_Animales">
+          <ScalarProperty Name="IdClase" ColumnName="IdClase" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mascotas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Mascota)">
+        <MappingFragment StoreEntitySet="Mascotas">
+          <ScalarProperty Name="IdMascota" ColumnName="IdMascota" />
+          <ScalarProperty Name="Clase" ColumnName="Clase" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Clase_AnimalMascota" TypeName="Model1.Clase_AnimalMascota" StoreEntitySet="Mascotas">
+      <EndProperty Name="Clase_Animal">
+        <ScalarProperty Name="IdClase" ColumnName="Clase_Animal_IdClase" />
+      </EndProperty>
+      <EndProperty Name="Mascota">
+        <ScalarProperty Name="IdMascota" ColumnName="IdMascota" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PersonaMascota" TypeName="Model1.PersonaMascota" StoreEntitySet="Mascotas">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="IdPersona" ColumnName="Persona1_IdPersona" />
+      </EndProperty>
+      <EndProperty Name="Mascota">
+        <ScalarProperty Name="IdMascota" ColumnName="IdMascota" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
