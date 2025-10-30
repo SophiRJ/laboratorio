@@ -1,13 +1,66 @@
+## === Archivos de usuario de Visual Studio ===
 .vs/
-bin/
-obj/
 *.user
 *.suo
-*.dll
+*.userosscache
+*.sln.docstates
+
+## === Directorios de compilación ===
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rtifacts/
+[Ll]og/
+[Ll]ogs/
+
+## === Archivos de build y temporales ===
 *.pdb
+*.dll
+*.exe
 *.cache
-*.log
 *.tmp
 *.bak
+*.log
+*.dbmdl
 *.db
-.vs/
+*.ldf
+*.mdf
+
+## === Paquetes NuGet ===
+packages/
+*.nupkg
+!packages/repositories.config
+
+## === Entity Framework y scaffolding ===
+*.edmx.diagram
+*.edmx.sql
+Migrations/
+
+## === Configuración de usuario de Visual Studio ===
+*.userprefs
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*_h.h
+
+## === Archivos del sistema operativo ===
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+.DS_Store
+.idea/
+*.iml
+
+## === Otros archivos innecesarios ===
+*.resharper
+_ReSharper*/
+*.dotCover
+*.orig
+*.swp
+*.swo
+
