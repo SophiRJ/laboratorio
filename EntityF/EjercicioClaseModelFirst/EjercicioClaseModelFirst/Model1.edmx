@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Cientificos" EntityType="Model1.Store.Cientificos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Proyectos" EntityType="Model1.Store.Proyectos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProyectoCientifico" EntityType="Model1.Store.ProyectoCientifico" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ProyectoCientifico_Proyecto" Association="Model1.Store.FK_ProyectoCientifico_Proyecto">
+      <End Role="Proyecto" EntitySet="Proyectos" />
+      <End Role="ProyectoCientifico" EntitySet="ProyectoCientifico" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProyectoCientifico_Cientifico" Association="Model1.Store.FK_ProyectoCientifico_Cientifico">
+      <End Role="Cientifico" EntitySet="Cientificos" />
+      <End Role="ProyectoCientifico" EntitySet="ProyectoCientifico" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cientificos">
+    <Key>
+      <PropertyRef Name="Id_Cientifico" />
+    </Key>
+    <Property Name="Id_Cientifico" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DNI" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre_Apellido" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proyectos">
+    <Key>
+      <PropertyRef Name="Id_Proyecto" />
+    </Key>
+    <Property Name="Id_Proyecto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Horas" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProyectoCientifico">
+    <Key>
+      <PropertyRef Name="Proyecto_Id_Proyecto" />
+      <PropertyRef Name="Cientifico_Id_Cientifico" />
+    </Key>
+    <Property Name="Proyecto_Id_Proyecto" Type="int" Nullable="false" />
+    <Property Name="Cientifico_Id_Cientifico" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ProyectoCientifico_Proyecto">
+    <End Role="Proyecto" Type="Model1.Store.Proyectos" Multiplicity="1" />
+    <End Role="ProyectoCientifico" Type="Model1.Store.ProyectoCientifico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proyecto">
+        <PropertyRef Name="Id_Proyecto" />
+      </Principal>
+      <Dependent Role="ProyectoCientifico">
+        <PropertyRef Name="Proyecto_Id_Proyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProyectoCientifico_Cientifico">
+    <End Role="ProyectoCientifico" Type="Model1.Store.ProyectoCientifico" Multiplicity="*" />
+    <End Role="Cientifico" Type="Model1.Store.Cientificos" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Cientifico">
+        <PropertyRef Name="Id_Cientifico" />
+      </Principal>
+      <Dependent Role="ProyectoCientifico">
+        <PropertyRef Name="Cientifico_Id_Cientifico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cientificos" EntityType="Model1.Cientifico" />
+          <EntitySet Name="Proyectos" EntityType="Model1.Proyecto" />
+          <AssociationSet Name="ProyectoCientifico" Association="Model1.ProyectoCientifico">
+            <End Role="Proyecto" EntitySet="Proyectos" />
+            <End Role="Cientifico" EntitySet="Cientificos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Cientifico">
+          <Key>
+            <PropertyRef Name="Id_Cientifico" />
+          </Key>
+          <Property Name="Id_Cientifico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DNI" Type="String" Nullable="false" />
+          <Property Name="Nombre_Apellido" Type="String" Nullable="false" />
+          <NavigationProperty Name="Proyecto" Relationship="Model1.ProyectoCientifico" FromRole="Cientifico" ToRole="Proyecto" />
+        </EntityType>
+        <EntityType Name="Proyecto">
+          <Key>
+            <PropertyRef Name="Id_Proyecto" />
+          </Key>
+          <Property Name="Id_Proyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <Property Name="Horas" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cientifico" Relationship="Model1.ProyectoCientifico" FromRole="Proyecto" ToRole="Cientifico" />
+        </EntityType>
+        <Association Name="ProyectoCientifico">
+          <End Type="Model1.Proyecto" Role="Proyecto" Multiplicity="*" />
+          <End Type="Model1.Cientifico" Role="Cientifico" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Cientificos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Cientifico)">
+        <MappingFragment StoreEntitySet="Cientificos">
+          <ScalarProperty Name="Id_Cientifico" ColumnName="Id_Cientifico" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Nombre_Apellido" ColumnName="Nombre_Apellido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proyectos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Proyecto)">
+        <MappingFragment StoreEntitySet="Proyectos">
+          <ScalarProperty Name="Id_Proyecto" ColumnName="Id_Proyecto" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Horas" ColumnName="Horas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ProyectoCientifico" TypeName="Model1.ProyectoCientifico" StoreEntitySet="ProyectoCientifico">
+      <EndProperty Name="Proyecto">
+        <ScalarProperty Name="Id_Proyecto" ColumnName="Proyecto_Id_Proyecto" />
+      </EndProperty>
+      <EndProperty Name="Cientifico">
+        <ScalarProperty Name="Id_Cientifico" ColumnName="Cientifico_Id_Cientifico" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
