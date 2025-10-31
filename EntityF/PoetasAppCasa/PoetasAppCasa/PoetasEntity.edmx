@@ -193,6 +193,14 @@
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram DiagramId="8cfd0e49a2c5444d8177392c60f14d35" Name="Diagram1">
+        <EntityTypeShape EntityType="PoetasModel.Meter" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PoetasModel.Poem" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PoetasModel.Poet" Width="1.5" PointX="0.5" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="PoetasModel.FK_Poem_Meter" ManuallyRouted="false" />
+        <AssociationConnector Association="PoetasModel.FK_Poem_Poet" ManuallyRouted="false" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>
