@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EcoFitness" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SOFIAR\SQLEXPRESS;Initial Catalog=EcoFitness;Integrated Security=True;Encrypt=False" SettingsObjectName="EcoFitness.Properties.Settings" SettingsPropertyName="EcoFitnessConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categories" Member="Categories">
+    <Type Name="Categories">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="Categories_Classes" Member="Classes" ThisKey="CategoryID" OtherKey="CategoryID" Type="Classes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Trainers" Member="Trainers">
+    <Type Name="Trainers">
+      <Column Name="TrainerID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Specialty" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Trainers_Classes" Member="Classes" ThisKey="TrainerID" OtherKey="TrainerID" Type="Classes" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Classes" Member="Classes">
+    <Type Name="Classes">
+      <Column Name="ClassID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClassName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TrainerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Association Name="Classes_Enrollments" Member="Enrollments" ThisKey="ClassID" OtherKey="ClassID" Type="Enrollments" />
+      <Association Name="Classes_Payments" Member="Payments" ThisKey="ClassID" OtherKey="ClassID" Type="Payments" />
+      <Association Name="Categories_Classes" Member="Categories" ThisKey="CategoryID" OtherKey="CategoryID" Type="Categories" IsForeignKey="true" />
+      <Association Name="Trainers_Classes" Member="Trainers" ThisKey="TrainerID" OtherKey="TrainerID" Type="Trainers" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Enrollments" Member="Enrollments">
+    <Type Name="Enrollments">
+      <Column Name="EnrollmentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MemberID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClassID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EnrollmentDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Classes_Enrollments" Member="Classes" ThisKey="ClassID" OtherKey="ClassID" Type="Classes" IsForeignKey="true" />
+      <Association Name="Members_Enrollments" Member="Members" ThisKey="MemberID" OtherKey="MemberID" Type="Members" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Members" Member="Members">
+    <Type Name="Members">
+      <Column Name="MemberID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Members_Enrollments" Member="Enrollments" ThisKey="MemberID" OtherKey="MemberID" Type="Enrollments" />
+      <Association Name="Members_Payments" Member="Payments" ThisKey="MemberID" OtherKey="MemberID" Type="Payments" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payments" Member="Payments">
+    <Type Name="Payments">
+      <Column Name="PaymentID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MemberID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClassID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Classes_Payments" Member="Classes" ThisKey="ClassID" OtherKey="ClassID" Type="Classes" IsForeignKey="true" />
+      <Association Name="Members_Payments" Member="Members" ThisKey="MemberID" OtherKey="MemberID" Type="Members" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

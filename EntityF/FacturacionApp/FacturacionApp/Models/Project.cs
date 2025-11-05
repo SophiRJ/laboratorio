@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FacturacionApp.Models
 {
-    public class Project
+    public class Project // este es el muchos del uno por lo tanto
+                         // tengo que defini r quien es el 1: Cliente
     {
         public int ID { get; set; }
         public string? Title { get; set; }

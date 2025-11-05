@@ -11,6 +11,7 @@ public class Program
         //si hay migraciones pendients las detecta y si las hay las ejecuta
         await context.Database.MigrateAsync();
 
+        //instancias del repositorio donde manejamos todos los datos
         var animalRepo = new RepositoryEF<Animal>(context);
         var adopterRepo = new RepositoryEF<Adopter>(context);
         var adoptionRepo= new RepositoryEF<Adoption>(context);
@@ -18,7 +19,7 @@ public class Program
         Console.WriteLine("Datos inicialescargados con exito..");
 
         //Mostrar nombre de animales adoptados y adoptadores
-        var adoptions = await context.Adoption
+        var adoptions = await context.Adoption// si lanzamos desde el n include, si es desde el 1 then include
             .Include(a => a.Animal)
             .Include(a => a.Adopter)
             .Select(a => new
@@ -34,9 +35,9 @@ public class Program
                 $"adoptado por {item.Adopter}" +
                 $"el {Convert.ToDateTime(item.F_Adop).ToShortDateString()}");
 
-        //Mostrar animales sin adoptar
+        //Mostrar animales sin adoptar. usamos la lista de arriba listamos los nombres
         var adoptedAnimals = adoptions.Select(a => a.Animal).ToList();
-
+        //usamos el metodo del repositorio con el db set Animal. Comprueba si No existe el nombre en la lista de arriba
         var notAdopted = await animalRepo.FindAsync(a => !adoptedAnimals.Contains(a.Name));
 
         Console.WriteLine("Animales no adoptados");

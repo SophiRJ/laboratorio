@@ -10,11 +10,12 @@ using System.Threading.Tasks;
 namespace RefugioAnimalesApp.Reposotories
 {
     public class RepositoryEF<T> : IRepository<T> where T : class
-    {
-        //dbSet-> objeto
+    {   
+        //Necesitamos el contexto de datos-> lo instanciamos en una variable
         private readonly ShelterContext? _context;
-        private readonly DbSet<T>? _dbSet;
+        private readonly DbSet<T>? _dbSet;//dbSet->objeto generico. Variable que me permite manejar la coleccion 
 
+        //constructor ctor
         public RepositoryEF(ShelterContext context)
         {
             _context = context;
@@ -29,23 +30,25 @@ namespace RefugioAnimalesApp.Reposotories
 
         public async Task DeleteAsync(int id)
         {
-            var entity= await GetByIdAsync(id);
-            if (entity != null)
+            var entity= await GetByIdAsync(id);//encontramos la entidad, localizar la entidad
+            if (entity != null)//si encuentra la entidad
             {
                 _dbSet.Remove(entity);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();//guardar los datos en bd
             }
         }
 
-        public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate) 
+        public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> predicate) //si la expresion es encontrada
+                                                                                         //me devuelve un true y ejecuta el
+                                                                                         //findAsync devolviendo una lista
             =>await _dbSet.Where(predicate).ToListAsync();
         
 
         public async Task<IEnumerable<T>> GetAllAsync() 
-            => await _dbSet.ToListAsync();
+            => await _dbSet.ToListAsync();//Espera a que el dbset le devuelva todos los registros
 
         public async Task<T?> GetByIdAsync(int id) 
-            => await _dbSet.FindAsync(id);
+            => await _dbSet.FindAsync(id);//encuentra la entidad de este id
         
         public async Task UpdateAsync(T entity)
         {

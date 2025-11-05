@@ -44,14 +44,14 @@ namespace FacturacionApp
     {
         static void Main(string[] args)
         {
-            //CrearDatos();
+           //CrearDatos();
             //Consultas
             //1. Obtener todos los clientes
-            Clientes();
+            //Clientes();
             //2. Obtener proyectos de un cliente especifico
-            Proyectos_Cliente_Especifico();
+            //Proyectos_Cliente_Especifico();
             //3. Obtener facturas vencidas
-            Facturas_Vencidas();
+            //Facturas_Vencidas();
             //4. Obtener clientes con Proyectos
             Clientes_Proyectos();
 
@@ -61,22 +61,39 @@ namespace FacturacionApp
         {
             using (var context = new AppDBContext())
             {
-                var query4 = (from p in context.Projects
-                              join c in context.Clients
-                              on p.ClientID equals c.ID
+                var query4 = (from c in context.Clients
+                              where c.Projects.Count() > 0
                               select new
                               {
                                   Cliente = c.FirstName + " " + c.LastName,
+                                  Pedidos = c.Projects.ToList()
 
                               }).ToList();
+                foreach (var p in query4)
+                {
+                    Console.WriteLine($"{p.Cliente}");
+                    foreach (var p2 in p.Pedidos)
+                    {
+                        Console.WriteLine($"{p2.EndDate.ToShortDateString()} {p2.StartDate.ToShortDateString()} {p2.Title}");
+                    }
+                }
+
                 var clientesPorProyectos = context.Clients
                     .Include(c => c.Projects)
                     .ThenInclude(p => p.Invoices).ToList();
 
-                foreach( var cliente in clientesPorProyectos)
+                foreach (var cliente in clientesPorProyectos)
                 {
                     Console.WriteLine($"Cliente: {cliente.FirstName} {cliente.LastName}");
-                    //falta codigo foto 
+                    foreach(var projecto in cliente.Projects)
+                    {
+                        Console.WriteLine($"Proyecto: {projecto.Title}");
+                        foreach(var invoice in projecto.Invoices)
+                        {
+                            Console.WriteLine($"Factura: {invoice.AmountDue} Vence: {invoice.DueDate.ToShortDateString()}");
+                        }
+                    }
+                   
                 }
             }
         }
@@ -87,7 +104,22 @@ namespace FacturacionApp
             {
                 var query3 = (from i in context.Invoices
                               where i.DueDate < DateTime.Now
-                              select i).ToList();
+                              select new
+                              {
+                                  Proyecto = i.Project.Title,
+                                  Cliente = i.Project.Client.FirstName + " " + i.Project.Client.LastName,
+                                  Monto = i.AmountDue,
+                                  FechaVencimiento = i.DueDate,
+                                  //DiasVencida = (DateTime.Now - i.DueDate).Days
+                              }).ToList();
+                foreach ( var f in query3)
+                {
+                    Console.WriteLine(
+                       $"Cliente: {f.Cliente}, Proyecto: {f.Proyecto} | " +
+                       $"Vencimiento: {f.FechaVencimiento:d} | " +
+                       $"Monto: {f.Monto:C}"
+                        );
+                }
             }
         }
 

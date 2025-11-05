@@ -14,7 +14,7 @@ namespace FacturacionApp.Data
         public DbSet <Project> Projects { get; set; }
         public DbSet <Invoice> Invoices { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {//cadena de coneccion
+        {//cadena de conexion
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=EFCodeFirstDemoDB;Trusted_Connection=True;");
         }
 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36518.9 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoFitness", "EcoFitness\EcoFitness.csproj", "{8C3E184D-972B-4444-A1E4-690105AD38AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoFitness", "EcoFitness\EcoFitness.csproj", "{7887C35E-E5DB-4934-981D-80B5ED80024C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8C3E184D-972B-4444-A1E4-690105AD38AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C3E184D-972B-4444-A1E4-690105AD38AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C3E184D-972B-4444-A1E4-690105AD38AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C3E184D-972B-4444-A1E4-690105AD38AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7887C35E-E5DB-4934-981D-80B5ED80024C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7887C35E-E5DB-4934-981D-80B5ED80024C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7887C35E-E5DB-4934-981D-80B5ED80024C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7887C35E-E5DB-4934-981D-80B5ED80024C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E78361E5-D673-4FB4-AF9F-865F178649A6}
+		SolutionGuid = {5FC900A6-C64F-4BE7-961D-61536A3BD151}
 	EndGlobalSection
 EndGlobal

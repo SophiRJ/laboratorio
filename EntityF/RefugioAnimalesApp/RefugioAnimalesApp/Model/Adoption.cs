@@ -12,12 +12,12 @@ namespace RefugioAnimalesApp.Model
         //Foreing key con animal
         public int AnimalId { get; set; }
         //Propiedad navegacion para animal
-        public virtual Animal Animal { get; set; } = null!;
+        public virtual Animal Animal { get; set; } = null!;//No puede admitir valores nulos
 
         //foreing key Adopter
         public int AdoterId { get; set; }
         //propiedad navegacion Adopter
-        public virtual Adopter Adopter { get; set; } = null!;
+        public virtual Adopter Adopter { get; set; } = null!;//No puede admitir valores nulos
         public DateTime AdoptionDate { get; set; }
 
     }

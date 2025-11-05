@@ -9,7 +9,7 @@ namespace FacturacionApp.Models
     public class Client
     {
         public int ID{ get; set; }
-        public string? FirstName { get; set; }
+        public string? FirstName { get; set; }//Para que admita valores nulos
         public string? LastName { get; set; }
         public virtual ICollection<Project> Projects { get; set; }//Prop navegacion
     }

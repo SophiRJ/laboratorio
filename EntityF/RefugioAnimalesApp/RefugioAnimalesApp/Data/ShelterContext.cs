@@ -22,16 +22,16 @@ namespace RefugioAnimalesApp.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Relaciones
-            modelBuilder.Entity<Adoption>()
-                .HasOne(a => a.Animal)
-                .WithMany(an => an.Adoptions)
-                .HasForeignKey(a => a.AnimalId);
+            //Relaciones -> me establazco en la intermedia 
+            modelBuilder.Entity<Adoption>()//clase Adoption
+                .HasOne(a => a.Animal)//tiene relacion de 1 con Animal
+                .WithMany(an => an.Adoptions)// mediante la prop en la clase Animal -> Adoptions<- la prop de nav en animal
+                .HasForeignKey(a => a.AnimalId);//la foranea es AnimalId
 
-            modelBuilder.Entity<Adoption>()
-                .HasOne(a => a.Adopter)
-                .WithMany(ad => ad.Adoptions)
-                .HasForeignKey(a => a.AdoterId);
+            modelBuilder.Entity<Adoption>()//clase Adoption
+                .HasOne(a => a.Adopter)//tiene ralacion de 1 con Adopter
+                .WithMany(ad => ad.Adoptions)//mediante la prop de nav de la class Adopter-> Adoptions 
+                .HasForeignKey(a => a.AdoterId); //7foranea adopterId
 
             //Semilla de datos 
             modelBuilder.Entity<Animal>().HasData(
