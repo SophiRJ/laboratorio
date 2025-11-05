@@ -1,0 +1,53 @@
+﻿/*grid-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items:center;*/ /*alinea centrado verticlmente*/
+    /*justify-items:stretch;*/ /*los elementos se estiran horizontalmente*/
+
+/*}*/
+
+/*para evitar la repeticion de columnas y filas*/
+/*.grid-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(2,100px);
+}*/
+/*grid explicito -implicito*/
+/*explicito -> el navegador coloca automaticamente los elementos q t e definido 
+    si hay elmentos de mas no entran
+    el implcito inventa nuevas columnas para q quepan
+*/
+/*Implicito no le defino las filas el se las inventa segun los datos que le ponga*/
+/*grid-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+*/
+
+/*Auto fit : hace lo mismo pero si sobran columnas las ajusta para que quepa todo
+    Auto fill:intenta rellenar el contenedor con tantas columnas como sea posible*/
+
+/*.grid-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));*/
+    /*Creame tantas columnas de ese tamaño como sea posible*/
+    /*gap:10px;
+}*/
+
+/*SubGrid:elementos anidados*/
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    
+    gap:10px;
+}
+.grid-child{
+    display:subgrid;
+    grid-template-rows:subgrid; /* subgrid hereda las filas del padre*/
+}
+/*Layouts responsivos*/
+
+
+
+

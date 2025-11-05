@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container{
+            display:grid;
+            grid-template-columns:1fr;
+            gap:1rem;
+            max-width:400px;
+            margin:2rem auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="form-container card p-4 shadow">
+            <h3 class="text-center mb-4">
+                Registro de Usuarios
+            </h3>
+            <form id="registerForm">
+                <!-- Campo de Nombre -->
+                <div class="form-group mb-3">
+                    <label class="form-label">Nombre:</label>
+                    <input name="nombre" type="text" class="form-control" placeholder="Ingresa tu nombre" required />
+                </div>
+                <!-- Campo de Correo -->
+                <div class="form-group mb-3">
+                    <label class="form-label">Correo Electrónico:</label>
+                    <input name="correo" type="email" class="form-control" placeholder="Ingresa tu correo" required />
+                </div>
+                <!-- Campo de Contraseña -->
+                <div class="form-group mb-3">
+                    <label class="form-label">Contraseña:</label>
+                    <input name="password" type="password" class="form-control" placeholder="Ingresa tu contraseña" required />
+                </div>
+                <!-- Botón de Enviar -->
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const form = document.querySelector("#registerForm");
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(e.target);
+        const nombre = data.get('nombre')?.trim();
+        const correo = data.get('correo')?.trim();
+        const password = data.get('password')?.trim();
+
+        if (![nombre, correo, password].every(Boolean)) {
+            alert('Por favor rellena todos los campos');
+            return;
+        }
+
+        const params = new URLSearchParams({ nombre, correo });
+        window.location.href = `process.html?${params}`;
+
+    })
+</script>
