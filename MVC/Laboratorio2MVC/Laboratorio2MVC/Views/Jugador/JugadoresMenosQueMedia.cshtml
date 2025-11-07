@@ -1,0 +1,31 @@
+﻿@using Laboratorio2MVC.Models
+@model List<Jugador>
+@{
+    ViewBag.Title = "JugadoresMenosQueMedia";
+}
+
+<h2>JugadoresMenosQueMedia</h2>
+<h3>Media de los Sueldos: @ViewBag.MediaSueldo</h3>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Jugador</th>
+            <th>Posicion</th>
+            <th>Sueldo</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Jugador j in Model)
+        {
+            <tr>
+                <td>@j.JugadorId</td>
+                <td>@j.NombreApellidos</td>
+                <td>@j.Posicion</td>
+                <td>@j.Sueldo</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

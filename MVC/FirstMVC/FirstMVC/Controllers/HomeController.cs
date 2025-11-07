@@ -44,7 +44,7 @@ namespace FirstMVC.Controllers
             return View("Index", (object)myDict["apple"]);//aqui falla por que le estamos mandando un int 
 
         }
-        public ViewResult CreateList()//revisar no funciona
+        public ViewResult CreateList()
         {
             //tipo anonimo -> segun los datos que le pasemos adquiere el tipo
             //esto se llama encapsular un tipo anonimo
