@@ -1,11 +1,10 @@
-﻿using Laboratorio2MVC.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
-namespace Laboratorio2MVC.Controllers
+using Lab3.Models;
+namespace Lab3.Controllers
 {
     public class JugadorController : Controller
     {
@@ -23,20 +22,21 @@ namespace Laboratorio2MVC.Controllers
             ViewBag.TotalSueldos = TotalSueldos();
             return View(jugadores);
         }
-        public ViewResult JugadorMasGana() {
-            var jugadorMasGana= jugadores.OrderByDescending(j=>j.Sueldo).FirstOrDefault();
+        public ViewResult JugadorMasGana()
+        {
+            var jugadorMasGana = jugadores.OrderByDescending(j => j.Sueldo).FirstOrDefault();
             return View(jugadorMasGana);
         }
         public int TotalSueldos()
         {
-            var totalS= jugadores.Sum(j=>j.Sueldo);
-            
+            var totalS = jugadores.Sum(j => j.Sueldo);
+
             return totalS;
         }
         public ActionResult AñadirJugador()
         {
             var nuevoJugador = new Jugador(5, "Vini Vinicius", "Delantero", 430000);
-            if(!jugadores.Any(j=>j.JugadorID== nuevoJugador.JugadorId))
+            if (!jugadores.Any(j => j.JugadorId == nuevoJugador.JugadorId))
             {
                 jugadores.Add(nuevoJugador);
             }
@@ -51,7 +51,7 @@ namespace Laboratorio2MVC.Controllers
         {
             var tresQueMenosGanan = jugadores.OrderBy(j => j.Sueldo).Take(3).ToList();
             ViewBag.Titulo = "Tres que ganan menos";
-            return View("ListarJugadores", jugadores);
+            return View("ListarJugadores", tresQueMenosGanan);
         }
 
 
@@ -59,7 +59,7 @@ namespace Laboratorio2MVC.Controllers
         public ActionResult JugadoresMenosQueMedia()
         {
             var mediaSueldo = jugadores.Average(j => j.Sueldo);
-            
+
             var jugadoresMenosQueMedia = jugadores.Where(j => j.Sueldo < mediaSueldo).ToList();
 
             ViewBag.Titulo = "Jugadores que ganan menos que la media";

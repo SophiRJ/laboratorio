@@ -1,4 +1,4 @@
-﻿@using Laboratorio2MVC.Models
+﻿@using Lab3.Models
 @model List<Jugador>
 
 @{
@@ -24,7 +24,7 @@
         @foreach (var jugador in Model)
         {
             <tr>
-                <td>@jugador.JugadorID</td>
+                <td>@jugador.JugadorId</td>
                 <td>@jugador.NombreApellidos</td>
                 <td>@jugador.Posicion</td>
                 <td>@jugador.Sueldo</td>
@@ -40,3 +40,4 @@
     <strong>Media Sueldos: @Convert.ToDecimal(ViewBag.Media) </strong>
 }
 <strong> Total Sueldos: @ViewBag.Totalsueldos</strong>
+

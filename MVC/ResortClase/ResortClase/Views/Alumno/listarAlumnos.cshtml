@@ -1,0 +1,29 @@
+﻿@using ResortClase.Models
+@model List<Alumno>
+@{
+    ViewBag.Title = "listarAlumnos";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>@ViewBag.Titulo</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Trabaja</th>
+            <th>Nota</th>
+        </tr>
+    </thead>
+    <tbody>  
+        @foreach(var alumno in Model)
+            {
+                <tr>
+                    <td>@alumno.Nombre</td>
+                    <td>@alumno.Edad</td>
+                    <td><input type="checkbox" checked=@alumno.Trabaja/></td>
+                    <td>@alumno.Nota</td>
+                </tr>
+            }
+    </tbody>
+</table>

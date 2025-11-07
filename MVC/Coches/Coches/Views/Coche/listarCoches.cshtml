@@ -1,0 +1,28 @@
+﻿@model List<Coches.Models.Coche>
+@{
+    ViewBag.Title = "listarCoches";
+}
+
+
+<h3>@ViewBag.Titulo</h3>
+<table border="1">
+    <thead>
+        <tr><th>Marca</th><th>Modelo</th><th>Color</th><th>Precio</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var coche in Model)
+        {
+            <tr>
+                <td>@coche.Marca</td>
+                <td>@coche.Modelo</td>
+                <td>@coche.Color</td>
+                <td>@coche.Precio</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<p style="color:green">Media de precios: <strong>@ViewBag.MediaPrecio</strong></p>
+<p style="color:red">@ViewBag.Mensaje</p>
+
+
