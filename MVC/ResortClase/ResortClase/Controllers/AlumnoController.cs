@@ -58,7 +58,5 @@ namespace ResortClase.Controllers
             ViewBag.Titulo = "Nota media";
             return View("listarAlumnos", alumnos);
         }
-       
-        
     }
 }
