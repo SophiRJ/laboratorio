@@ -15,5 +15,9 @@ namespace UrlsAndRoutes.Controllers
             ViewBag.Action = "Index";
             return View("ActionName");
         }
+        public void MetodoRedireccionado(int valor)
+        {
+            //variables
+        }
     }
 }
