@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @{ 
+            DateTime hoy = ViewBag.Date;
+        }
+        <p>El dia de hoy es: @hoy.DayOfWeek</p>
+        <p>El mensaje es: @ViewBag.Mensaje</p>
+        @{ 
+            int edad = Convert.ToInt32(ViewData["Edad"]);
+        }
+        <p>La edad es: @edad</p>
+        @{ 
+            int cantidad = 3;
+            decimal precio = Convert.ToDecimal(ViewData["Precio"]) * cantidad;
+
+        }
+        <p>El precio es: $@precio</p>
+
+    </div>
+</body>
+</html>
