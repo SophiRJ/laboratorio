@@ -20,9 +20,11 @@ public class Program
         //Consultas
         // ranking de usuarios por saldo
         var ranking = await context.Usuarios
+            
             .OrderByDescending(u => u.SaldoVirtual)
             .Select(u => new
             {
+               
                 u.Nombre,
                 u.SaldoVirtual
             }).ToListAsync();
@@ -60,5 +62,37 @@ public class Program
                 Usuario = g.Key,
                 ValorTotal = g.Sum(P => P.CantidadActual * P.Criptomoneda.ValorActual)
             }).OrderByDescending(v=>v.ValorTotal).ToListAsync();
+        //Muestra el nombre de cada usuario, y debajo una lista de sus criptomonedas con las cantidades que posee.
+        var query4 = await context.Usuarios
+            .Include(u => u.Portafolios)
+            .ThenInclude(p => p.Criptomoneda)
+            .Select(u => new
+            {
+                nombre= u.Nombre,
+                cript= u.Portafolios.Select(p => new
+                {
+                    nombrec=p.Criptomoneda.Nombre,
+                    CantidadC= p.CantidadActual,
+                }).ToList(),
+            }).ToListAsync();
+        //Determina qué usuario tiene la suma más alta de CantidadActual entre todas sus criptomonedas.
+        var query5 = await context.Portafolios
+            .GroupBy(p => p.Usuario.Nombre)
+            .Select(g => new
+            {
+                nombreU = g.Key,
+                cantidadCriptomax = g.Sum(x => x.CantidadActual)
+            }).OrderByDescending(x=>x.cantidadCriptomax).FirstOrDefaultAsync();
+
+        //Muestra la criptomoneda que aparece en más portafolios distintos (más usuarios la tienen).
+        //var query6 = await context.Portafolios
+        //    .GroupBy(p => p.Criptomoneda.Nombre)
+        //    .Select(g => new
+        //    {
+        //        nombreC = g.Key,
+        //        //cantidadU = g.Distinct().Count(x => x.UsuarioId)
+        //    }).OrderByDescending(x => x.cantidadU).FirstOrDefaultAsync();
+            
+            
     }
 }

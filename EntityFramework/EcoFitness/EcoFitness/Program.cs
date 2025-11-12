@@ -26,19 +26,58 @@ namespace EcoFitness
             //5.Entrenadores y número de clases que dan
             Entrenadores_Num_Clases(cadena);
             //6.Filtrado avanzado: pagos mayores a 15 en 2025
+            Pagos_Mayores(cadena);
             //7.Miembros con más inscripciones
             Miembros_Con_MAs_Inscripciones(cadena);
             //8.Clases sin inscripciones
+            Clases_Sin_Inscripciones(cadena);
             //9.Ingresos totales por miembro
             Ingresos_totales_Por_Miembro(cadena);
             //10.Entrenadores con ingresos generados por sus clases
             Entrenadores_Ingresos_Clases(cadena);
 
+           
+            Console.ReadKey();
+        }
+
+        private static void Pagos_Mayores(string cadena)
+        {
             using (DataClasses1DataContext db = new DataClasses1DataContext(cadena))
             {
-
+                var query6 = db.Payments
+                    .Where(p => p.Amount > 15 && p.PaymentDate.Year == 2025)
+                    .Select(p => new
+                    {
+                        nombreMiembroPAgador = p.Members.FullName,
+                        clasePagada = p.Classes.ClassName,
+                        montoPagado = p.Amount,
+                        fechaDePago = p.PaymentDate.ToShortDateString()
+                    }).ToList();
+                Console.WriteLine("\nPagos mayores a 15 en 2025");
+                foreach (var item in query6)
+                {
+                    Console.WriteLine($"Miembro pagador: {item.nombreMiembroPAgador}, " +
+                        $"Clase Pagada: {item.clasePagada}, Monto: {item.montoPagado}, Fecha: {item.fechaDePago}");
+                }
             }
-            Console.ReadKey();
+        }
+
+        private static void Clases_Sin_Inscripciones(string cadena)
+        {
+            using (DataClasses1DataContext db = new DataClasses1DataContext(cadena))
+            {
+                var query8 = db.Classes
+                    .Where(c=>!c.Enrollments.Any())
+                    .Select(c => new
+                    {
+                        nombre=c.ClassName,
+                    }).ToList();
+                Console.WriteLine("\nClases sin inscripcones");
+                foreach (var item in query8)
+                {     
+                    Console.WriteLine($"Nombre Clase: {item.nombre}");
+                }
+            }
         }
 
         private static void Entrenadores_Ingresos_Clases(string cadena)
@@ -54,7 +93,8 @@ namespace EcoFitness
                         Entrenador = $"{g.Key.FirstName} {g.Key.LastName}",
                         Ingresos = g.Sum(x => x.Amount)
                     }).ToList();
-                foreach(var item in query10)
+                Console.WriteLine("\nEntrenadores con ingresos generados por sus clases");
+                foreach (var item in query10)
                 {
                     Console.WriteLine($"Entrenador: {item.Entrenador}- Ingresos: {item.Ingresos}");
                 }
@@ -81,7 +121,11 @@ namespace EcoFitness
                         Miembro = g.Key.FullName,
                         TotalIngresos = g.Sum(x => x.Amount)
                     }).ToList();
-                foreach(var item in query9)
+
+
+                Console.WriteLine("\nEIngresos totales por miembro");
+
+                foreach (var item in query9)
                 {
                     Console.WriteLine($"Nombre: {item.Miembro}- IngresoTotal: {item.TotalIngresos}");
                 }
@@ -101,6 +145,7 @@ namespace EcoFitness
                         NumeroInscripciones = g.Count()
                     }).ToList().Take(3);
 
+                Console.WriteLine("\nMiembros con mas inscripciones");
                 foreach (var item in query7)
                 {
                     Console.WriteLine($"Miembro {item.Miembro} Inscripciones: {item.NumeroInscripciones}");
@@ -120,21 +165,24 @@ namespace EcoFitness
                         Trainer = $"{g.Key.FirstName} {g.Key.LastName}",
                         NumeroClases = g.Count()
                     }).ToList();
+
+                Console.WriteLine("\nEntrenadores y numero de clases que dan");
+
                 foreach (var item in query5)
                 {
                     Console.WriteLine($"Entrenador: {item.Trainer} Numero Clases: {item.NumeroClases}");
                 }
-                var query5a = (from c in db.Classes
-                               group c.ClassName by c.Trainers into g
-                               select new
-                               {
-                                   Trainer = g.Key.FirstName + " " + g.Key.LastName,
-                                   NumeroClases = g.Count()
-                               }).ToList();
-                foreach (var item in query5a)
-                {
-                    Console.WriteLine($"Entrenador-: {item.Trainer} Numero Clases: {item.NumeroClases}");
-                }
+                //var query5a = (from c in db.Classes
+                //               group c.ClassName by c.Trainers into g
+                //               select new
+                //               {
+                //                   Trainer = g.Key.FirstName + " " + g.Key.LastName,
+                //                   NumeroClases = g.Count()
+                //               }).ToList();
+                //foreach (var item in query5a)
+                //{
+                //    Console.WriteLine($"Entrenador-: {item.Trainer} Numero Clases: {item.NumeroClases}");
+                //}
                              
                              
             }
@@ -156,7 +204,9 @@ namespace EcoFitness
                                   Ingreso = g.Sum()
                               }).ToList();
 
-                foreach(var item in query4)
+                Console.WriteLine("\nIngresos por categoria de clases");
+
+                foreach (var item in query4)
                 {
                     Console.WriteLine($"Categoria: {item.Categoria}");
                     Console.WriteLine($"Ingresos Totales: {item.Ingreso}");
@@ -176,6 +226,9 @@ namespace EcoFitness
                                   NombreClase = g.Key.ClassName,
                                   NumeroInscripciones = g.Count()
                               }).ToList().Take(2);
+
+                Console.WriteLine("\nClases mas populares");
+
                 foreach (var e in query3)
                 {
                     Console.WriteLine($"Nombre Clase {e.NombreClase}");
@@ -195,7 +248,9 @@ namespace EcoFitness
                 var query2 = (from e in db.Enrollments
                              group e.Classes.ClassName by e.Members into grupo
                              where grupo.Key.MemberID==1
-                             select grupo ).ToList();  
+                             select grupo ).ToList();
+
+                Console.WriteLine("\nClases de un miembro especifico");
 
                 foreach (var item in query2)
                 {
@@ -222,6 +277,9 @@ namespace EcoFitness
                                   Ciudad = g.Key,
                                   Miembros = g.ToList()
                               }).ToList();
+
+                Console.WriteLine("\nListado de miembros por ciudad");
+
                 foreach (var item in query1)
                 {
                     Console.WriteLine($"{item.Ciudad}");

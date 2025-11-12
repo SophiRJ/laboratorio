@@ -23,10 +23,10 @@ public class Program
             .Select(x => new
             {
                 LibroP = x.Libro.Titulo,
-                BibliotecarioP= x.Bibliotecario.Nombre,
+                BibliotecarioP = x.Bibliotecario.Nombre,
                 UsuarioP = x.Usuario.Nombre,
-                FechaP= x.FechaPrestamo,
-                FechaD= x.FechaDevolucion
+                FechaP = x.FechaPrestamo,
+                FechaD = x.FechaDevolucion
             }).ToListAsync();
 
         //2.	Libros más populares (mayor cantidad de préstamos)
@@ -71,6 +71,18 @@ public class Program
         //6.	Libros no prestados nunca
         var query6 = await context.Libros
             .Where(l => !l.Prestamos.Any()).ToListAsync();
+        var query6b = await context.Prestamos
+            .Include(p => p.Libro)
+            .Select(p => new
+            {
+                nombre=p.Libro.Titulo
+            }).ToListAsync();
+        var librosprestados = query6b.Select(p => p.nombre).ToList();
+        var noPrestados = await libroRepo.FindAsync(l => !librosprestados.Contains(l.Titulo));
+        foreach(var l in noPrestados)
+        {
+            Console.WriteLine($"{l.Titulo} {l.Genero}");
+        }
 
         //7.	Usuarios con préstamos vencidos (más de 30 días sin devolución)
         var fechaLimite = DateTime.UtcNow.AddDays(-30);

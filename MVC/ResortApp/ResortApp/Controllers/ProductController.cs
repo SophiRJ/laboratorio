@@ -22,7 +22,6 @@ namespace ResortApp.Controllers
         // GET: Product
         public ActionResult Index()
         {
-
             return View(myProduct);
         }
         public ActionResult NameAndPrice()

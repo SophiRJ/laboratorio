@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoSimApp", "CryptoSimApp\CryptoSimApp.csproj", "{3A0B5ED8-FC86-4383-9D37-D02D0F42865B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A0B5ED8-FC86-4383-9D37-D02D0F42865B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0B5ED8-FC86-4383-9D37-D02D0F42865B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0B5ED8-FC86-4383-9D37-D02D0F42865B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0B5ED8-FC86-4383-9D37-D02D0F42865B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D5DC318-DC45-40C1-A5A8-57E019F9BB59}
+	EndGlobalSection
+EndGlobal
