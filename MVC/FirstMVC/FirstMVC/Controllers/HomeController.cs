@@ -65,6 +65,29 @@ namespace FirstMVC.Controllers
             }
             return View("Index", (object)string.Format("Total Soccer>20: {0}",total));
         }
+
+        //Consulta link con Fitro
+        public ViewResult CreateListFilter()
+        {
+            Product[] productArray =
+            {
+                 new Product {Name="Kayak",Category="Watersports",Price=275M},
+                 new Product {Name="Lifejacket",Category="Watersports",Price=48.95M},
+                 new Product {Name="Soccer Ball",Category="Soccer",Price=19.50M},
+                 new Product {Name="Corner Flag",Category="Soccer",Price=34.95M},
+            };
+            decimal total = 0;
+            //filtro
+            foreach (Product prod in productArray.Where(prod => prod.Category
+            == "Soccer"))
+            {
+            }
+            total += prod.Price;
+            return View("Index", (object)String.Format("Total Soccer:{0}",
+            total));
+        }
+
+        //Tipos anonimos
         public ViewResult CreateAnonArray()
         {
             var oddsAndEnds = new[]

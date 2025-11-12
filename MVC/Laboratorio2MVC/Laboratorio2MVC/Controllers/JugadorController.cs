@@ -36,7 +36,7 @@ namespace Laboratorio2MVC.Controllers
         public ActionResult AñadirJugador()
         {
             var nuevoJugador = new Jugador(5, "Vini Vinicius", "Delantero", 430000);
-            if(!jugadores.Any(j=>j.JugadorID== nuevoJugador.JugadorId))
+            if(!jugadores.Any(j=>j.JugadorId== nuevoJugador.JugadorId))
             {
                 jugadores.Add(nuevoJugador);
             }
