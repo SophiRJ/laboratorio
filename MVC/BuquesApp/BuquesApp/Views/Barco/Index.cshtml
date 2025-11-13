@@ -1,0 +1,35 @@
+﻿@using BuquesApp.Models
+@model List<Barco>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Listado de Barcos</h2>
+@Html.ActionLink("Regresar al Menu","Index","Home")
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr class="btn-dark">
+            <th>BARCO</th><th>A.CONST</th><th>COSTE</th><th>U.REVISION</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Barco b in Model)
+            {
+                <tr>
+                    <td><em>@b.NombreBarco</em></td>
+                    <td>@b.AñoConstruccion</td>
+                    <td>$@b.CosteConstruccion</td>
+                    <td>@b.FechaUltimaReparacion.ToShortDateString()</td>
+                    <td>
+                        @Html.ActionLink("Tripulantes","Index","Tripulante",
+                       new { id = b.BarcoId, nombre = b.NombreBarco },
+                       new {@class = "btn btn-dark"})
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+

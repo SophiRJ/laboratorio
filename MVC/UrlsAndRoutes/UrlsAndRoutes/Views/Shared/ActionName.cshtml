@@ -14,13 +14,15 @@
     <div> The controller is: @ViewBag.Controller</div>
     <div> The action is: @ViewBag.Action</div>
     <div>
+        @Html.ActionLink("Esto es una url de salida", "Index","Admin")<br />
+
         @Html.ActionLink("Esto es una url de salida", "CustomVariable", new { id = "Hello" })<br />
 
-        @Html.ActionLink("Esta es otra url de salida", "CustomVariable", new { id = "Hola" }
-        , new { id = "myId" }) <br />
-        @Html.ActionLink("Esta es otra url de salida", "CustomVariable", null
-        , new { id = "myId" , @class="myCSSClass"}) <br />
-        @Html.ActionLink("Redireccionamos a otro sitio","MyActionMethod",new {id=2})
+        @Html.ActionLink("Esta es otra url de salida", "CustomVariable", new { id = "Hola" }, new { id = "myId" }) <br />
+
+        @Html.ActionLink("Esta es otra url de salida", "CustomVariable", null, new { id = "myId", @class = "myCSSClass" }) <br />
+
+        @Html.ActionLink("Redireccionamos a otro sitio", "MyActionMethod", new { id = 2 })
     </div>
 </body>
 </html>

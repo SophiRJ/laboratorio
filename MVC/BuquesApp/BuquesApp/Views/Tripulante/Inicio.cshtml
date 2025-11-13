@@ -1,0 +1,40 @@
+﻿@using BuquesApp.Models
+@model List<Barco>
+@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
+}
+
+<h2>Plantel de marinería</h2>
+@Html.ActionLink("Principal","Index","Home")
+<br />
+
+<table>
+    @foreach(Barco b in Model)
+            {
+                <tr><td align="center"><b>@b.NombreBarco</b></td></tr>
+                <tr>
+                    <td>
+                        <table>
+                            <thead>
+                                <tr><th>Marinero</th><th>Cargo</th><th>Fecha Título</th></tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var m in b.tripulacion)
+                                    {
+                                        <tr>
+                                            <td>@m.NombreTripulante</td>
+                                            <td>@m.Cargo</td>
+                                            <td>@m.FechaTituloNavegacion.ToShortDateString()</td>
+                                        </tr>
+                                    }
+
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            }
+
+    
+</table>
+

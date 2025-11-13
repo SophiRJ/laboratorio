@@ -1,0 +1,28 @@
+﻿@using BuquesApp.Models
+@model List<Tripulante> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Tripulacion del barco : @ViewBag.Barco</h2>
+
+<br />
+@Html.ActionLink("Atras","Index","Barco")
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr class="btn-dark"><th>Marinero</th><th>Cargo</th><th>Fecha Titulo</th></tr>
+    </thead>
+    <tbody>
+        @foreach (Tripulante t in Model)
+        {
+            <tr>
+                <td>@t.NombreTripulante</td>
+                <td>@t.Cargo</td>
+                <td>@t.FechaTituloNavegacion.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
