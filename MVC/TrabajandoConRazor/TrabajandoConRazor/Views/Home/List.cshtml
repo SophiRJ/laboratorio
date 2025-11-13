@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <div> 
+        <h3>This is the gwneral view</h3>
+        @Html.Partial("Partial1")
+        <h2>This is the partial typed</h2>
+        @Html.Partial("PartialTipada", new[] {"Apple","Orange","Pear"} )
+    </div>
+</body>
+</html>

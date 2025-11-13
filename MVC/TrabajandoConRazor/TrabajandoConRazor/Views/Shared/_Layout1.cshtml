@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+</head>
+<body>
+
+    @RenderSection("Header")
+    <div style="background-color:aliceblue">
+        This is part of the layout
+    </div>
+
+    @RenderSection("Body")
+    <div style="background-color:aliceblue">
+        This is part of the layout
+    </div>
+
+
+
+
+    @if (IsSectionDefined("Footer"))
+    {
+        @RenderSection("Footer")
+    }
+    else
+    {
+        <h4>This is the default section</h4>
+    }
+
+    @RenderSection("scripts", false)
+
+    <div style="background-color:aliceblue">
+        This is part of the layout
+    </div>
+</body>
+</html>
