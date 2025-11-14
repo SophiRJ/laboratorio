@@ -1,14 +1,28 @@
-﻿
+﻿@using EventoFotografos.Models
+@model List<Fotografo>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
 <h2>Lista Fotografos</h2>
-<table>
+@Html.ActionLink("Regresar al menu","Index","Home")
+<table class="table table-striped">
     <thead>
-        <tr></tr>
+        <tr class="btn-dark">
+            <th>Nombre</th><th>Direccion</th><th>TotalSueldo</th><th>Eventos</th>
+        </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+        @foreach(var f in Model)
+            {
+                <tr>
+                    <td>@f.Nombre</td><td>@f.Direccion</td><td>@f.TotalSueldo</td>
+                    <td>@Html.ActionLink("Eventos", "Index", "Evento", 
+                       new {id=f.Id ,nombre=f.Nombre}, 
+                       new {@class="btn btn-dark"})</td>
+                </tr>
+            }
+    </tbody>
 </table>
 

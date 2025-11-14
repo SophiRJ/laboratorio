@@ -10,7 +10,7 @@ namespace EventoFotografos.Models
         public int Id { get; set; }
         public string Descripcion { get; set; }
         public DateTime Fecha { get; set; }
-        public decimal Pago { get; set; }
+        public decimal Coste { get; set; }
 
         public int FotografoId { get; set; }
         public Fotografo Fotografo { get; set; }

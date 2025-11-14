@@ -18,6 +18,11 @@ namespace EventoFotografos.Controllers
             new Fotografo { Id = 3, Nombre = "Juan Ramírez", Direccion = "Calle Olivo 22" },
             new Fotografo { Id = 4, Nombre = "Laura Sánchez", Direccion = "Paseo del Río 8" }
         };
+            var eventos = EventoController.ObtenerEventos();
+            foreach(var f in lista)
+            {
+                f.Eventos = eventos.Where(e => e.FotografoId == f.Id).ToList();
+            }
 
             return lista;
         }
@@ -25,6 +30,7 @@ namespace EventoFotografos.Controllers
         public ActionResult Index()
         {
             var lista= ObtenerFotografos();
+            
             return View(lista);
         }
     }

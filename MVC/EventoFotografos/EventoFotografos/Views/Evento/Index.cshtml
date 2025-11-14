@@ -1,0 +1,27 @@
+﻿@using EventoFotografos.Models
+@model List<Evento>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Eventos del fotografo: @ViewBag.Nombre</h2>
+<br />
+@Html.ActionLink("Volver","Index","Fotografo")
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr class="btn-dark"><th>Descripcion</th><th>Fecha</th><th>Coste</th></tr>
+    </thead>
+    <tbody>
+        @foreach(Evento e in Model)
+            {
+                <tr>
+                    <td>@e.Descripcion</td>
+                    <td>@e.Fecha.ToShortDateString()</td>
+                    <td>@e.Coste</td>
+                </tr>
+            }
+    </tbody>
+</table>
+

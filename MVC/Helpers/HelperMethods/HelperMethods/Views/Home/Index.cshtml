@@ -1,0 +1,22 @@
+﻿@using HelperMethods.Infraestructure
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        Here are the fruits:@Html.ListArrayItems((string[])ViewBag.Fruits)
+    </div>
+    <div>
+        Here are the cities:@Html.ListArrayItems((string[])ViewBag.Cities)
+
+    </div>
+</body>
+</html>

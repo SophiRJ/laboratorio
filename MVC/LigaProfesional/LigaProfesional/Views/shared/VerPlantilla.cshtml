@@ -1,0 +1,28 @@
+﻿@using LigaProfesional.Models
+@model List<Jugador>
+
+@if(Model != null && Model.Any())
+{
+    <table>
+        
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Posición</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach(var jugador in Model)
+                {
+                    <tr>
+                        <td>@jugador.NombreJugador</td>
+                        <td>@jugador.Posicion</td>
+                        <td>@jugador.Edad</td>
+                    </tr>
+                }
+        </tbody>
+    </table>
+}

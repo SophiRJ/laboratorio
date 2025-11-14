@@ -3,11 +3,13 @@
 <head>
     <title>@Page.Title</title>
     @RenderSection("head", required: false)
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
-    
+    <div class="container">
+        <div class="col-md-7 offset-3 text-center">
+            @RenderBody()
+        </div>
+    </div>    
 </body>
 </html>

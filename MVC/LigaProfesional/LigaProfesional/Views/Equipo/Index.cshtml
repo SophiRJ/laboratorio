@@ -1,0 +1,29 @@
+﻿@using LigaProfesional.Models
+@model List<Equipo>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <div>
+            @foreach (var equipo in Model)
+            {
+                <h4>@equipo.NombreEquipo</h4>
+                <div>
+                    @Html.Action("VerPlantilla", "Equipo", new { id = equipo.IdEquipo })
+                    @* Aqui llamamos a la vista parcial que tiene los jugadores de este equipo *@
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
