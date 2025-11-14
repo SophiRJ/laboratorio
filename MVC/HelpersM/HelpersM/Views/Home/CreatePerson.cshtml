@@ -1,0 +1,49 @@
+﻿@using HelpersM.Models
+@model Person
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreatePerson</title>
+</head>
+<body>
+    <div> 
+
+        @using (Html.BeginForm("CreatePerson","Home",
+            new { id = Model.PersonId }, FormMethod.Post, 
+            new {@class="form-horizontal",id="personForm"}))
+            { 
+                <div>
+                    @*<label>PersonId</label>*@
+                    @Html.LabelFor(m=>m.PersonId)
+                    @*@Html.TextBox("PersonId")*@
+                    @Html.TextBox("PersonId",Model.PersonId)
+                    @*<input type="number" name="PersonId" value="@Model.PersonId" />*@
+                </div>
+                <div>
+                    @*<label>PersonId</label>*@
+                    @*@Html.TextBox("FirstName")*@
+                    @Html.LabelFor(m=>m.FirstName)
+                    @Html.TextBoxFor(m=>m.FirstName)
+                    @*<input type="text" name="FirstName" value="@Model.FirstName" />*@
+                </div>
+                <div>
+                    @*<label>LastName</label>*@
+                    @*@Html.TextBox("LastName")*@
+                    @Html.LabelFor(m=>m.LastName)
+                    @Html.EditorFor(m=>m.LastName)
+                    @*<input type="text" name="LastName" value="@Model.LastName" />*@
+                </div>
+                @*<input type="hidden" value="3" name="valor"/>*@
+                @*@Html.Hidden("valor",3)*@
+                
+                <input type="submit" value="Submit" />
+            }
+    </div>
+</body>
+</html>

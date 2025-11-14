@@ -1,0 +1,50 @@
+﻿@using HelpersM.Models
+@model Person
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pruebas</title>
+</head>
+<body>
+    <div> 
+        @*Helpers Input*@
+        @*Checkbooks*@
+
+        @Html.CheckBox("myCheckBox",false)
+
+        @*Hidden*@
+        @Html.Hidden("myHidden", "val")
+
+        @*RadioButton*@
+        @Html.RadioButton("myRadioButtom","val",true) 
+
+        @*Password*@
+        @Html.Password("myPassword","val")
+
+        @*TextArea*@
+        @Html.TextArea("myTextArea","val",5,20,null)
+
+        @*Textbox*@
+        @Html.TextBox("myTextBox","val")
+
+        @Html.TextBoxFor(m=>m.LastName)
+
+        @*Drop-down list*@
+        @Html.DropDownList("myList",new SelectList(new[] {"A","B"}),"Choose")
+
+        @Html.DropDownListFor(m=>m.Gender,new SelectList(new[] {"M","F"}),"Choose")
+
+        @*multiple Select*@
+        @Html.ListBox("myList1",new MultiSelectList(new[] {"A","B","C"}))
+        @Html.ListBoxFor(m=>m.Gender,new MultiSelectList(new[] {"M","F","E"}))
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@using HelpersM.Models
+@model ComboPaisesViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+            {
+                @Html.DropDownListFor(m=>m.SelectedPais,
+               new SelectList(Model.Paises,"IdPais","Nombre"),"-Choose")
+            <input type="submit" value="Enviar Pais"/>
+            }
+
+        @*@Html.DropDownList("Pais", ViewData["Paises"] as List<SelectListItem>)*@ 
+    </div>
+</body>
+</html>

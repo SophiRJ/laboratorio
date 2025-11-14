@@ -1,0 +1,54 @@
+﻿
+@using Newtonsoft.Json
+@model HelpersM.Models.LocationViewModel
+@{
+       Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h2>Seleccione Pais y Ciudad</h2>
+        <div>
+            <label>Pais</label>
+            @Html.DropDownListFor(m => m.SelectedCountryId,
+           Model.Countries, "Choose", new { id = "CountryDropDown" })
+        </div>
+        <div>
+            <label>Ciudades</label>
+            @Html.DropDownListFor(m => m.SelectedCityId,
+           Model.Cities, "Choose", new { id = "CityDropDown" })
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    (() => {
+        const countryDropDown = document.querySelector("#CountryDropDown")
+        const cityDropDown = document.querySelector("#CityDropDown")
+
+        if (!countryDropDown || !cityDropDown) return;
+
+        //serializamos todas las ciudades con el CountryId
+
+        const allCities = @Html.Raw(JsonConvert.SerializeObject(Model.AllCities));
+        countryDropDown.addEventListener("change", () => {
+            const countryId = parseInt(countryDropDown.value)
+
+            cityDropDown.innerHTML = `<option value="">Choose</option>`;
+            allCities.filter(city => city.CountryId === countryId)
+                .forEach(city => {
+                    const option = document.createElement("option");
+                    option.value = city.Id
+                    option.text = city.Name
+                    cityDropDown.appendChild(option)
+                });
+        });
+    })();
+</script>

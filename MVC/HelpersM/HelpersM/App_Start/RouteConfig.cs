@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace BuquesApp
+namespace HelpersM
 {
     public class RouteConfig
     {
@@ -16,7 +16,7 @@ namespace BuquesApp
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index2", id = UrlParameter.Optional }
+                defaults: new { controller = "Location", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

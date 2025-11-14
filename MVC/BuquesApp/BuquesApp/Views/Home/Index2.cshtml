@@ -1,0 +1,24 @@
+﻿@using BuquesApp.Models
+@model ComboBarcosViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index2</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+            {
+                @Html.DropDownListFor(b=>b.SelectedBarco,
+               new SelectList(Model.Barcos,"BarcoId","NombreBarco"),"-Choose")
+            <input type="submit" value="Enviar Barco"/>
+            }
+    </div>
+</body>
+</html>
