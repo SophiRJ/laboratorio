@@ -1,0 +1,138 @@
+﻿@using GetPeople.Models
+@model PeopleViewModel
+@{
+    ViewBag.Title = "GetPeople";
+}
+
+<div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+        <h2>Get People</h2>
+        <table class="table table-striped" id="peopleTable">
+            <thead>
+                <tr><th>First</th><th>Last</th><th>Role</th></tr>
+            </thead>
+            <tbody>
+                @foreach(var p in Model.People)
+            {
+                <tr>
+                    <td>@p.FirstName</td>
+                    <td>@p.LastName</td>
+                    <td>@p.Role</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "filterForm" }))
+            {
+                @Html.AntiForgeryToken()
+                <div>
+                    @Html.EnumDropDownListFor(m=>m.SelectedRole,"All",
+                   new {@class="form-select", id= "roleSelect"})
+                    <button type="button" class="btn btn-success" 
+                            id="submitBtn">Filtrar</button>
+                </div>
+            }
+
+    <div>
+        <a href="#" class="filter-link" data-role="">All</a>
+        <a href="#" class="filter-link" data-role="0">Admin</a>
+        <a href="#" class="filter-link" data-role="1">User</a>
+        <a href="#" class="filter-link" data-role="2">Guest</a>
+
+        @*<a href="#"
+           class="filter-link btn btn-outline-primary btn-sm me-2"
+           data-role="">All</a>
+        <a href="#"
+           class="filter-link btn btn-outline-primary btn-sm me-2"
+           data-role="Admin">Admin</a>
+        <a href="#"
+           class="filter-link btn btn-outline-primary btn-sm me-2"
+           data-role="User">User</a>*@
+    </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const submitBtn = document.querySelector('#submitBtn')
+        const roleSelect = document.querySelector('#roleSelect')
+        const peopleTableBody = document.querySelector('#peopleTable tbody')
+        const overlay = document.querySelector('#overlay')
+
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value
+
+        //function showOverlay{ }
+
+        //hideOverlay();
+
+        //Boton submit
+
+        submitBtn.addEventListener("click", async () => {
+            //filter
+            await filterPeople(roleSelect.value)
+        })
+
+        //gestion de enlaces
+        document.querySelectorAll('.filter-link').forEach(link => {
+            link.addEventListener('click', async e => {
+                e.preventDefault()
+                const role = link.dataset.role;
+                roleSelect.value = role;
+
+                //Filter
+                await filterPeople(roleSelect.value)
+            });
+        })
+        async function filterPeople(selectedRole) {
+            showOverlay();
+            submitBtn.disabled = true;
+
+            const startTime = Date.now();
+
+            //metodo del controlador
+            try {
+                const response = await fetch('@Url.Action("FilterPeople","People")', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: new URLSearchParams({
+                        selectedRole: selectedRole,
+                        __RequestVerificationToken: token
+                    })
+                });
+                if (!response.ok) throw new Error("Error en servidor");
+
+                const people = await response.json();
+
+                peopleTableBody.innerHTML = "";
+                people.forEach(p => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${p.firstName}</td>
+                        <td>${p.lastName}</td>
+                        <td>${p.role}</td>`;
+
+
+                    peopleTableBody.appendChild(row);
+
+                });
+            }
+            catch (err) {
+                alert("Hubo un error al cargar los datos")
+                console.log(err);
+            } finally {
+                const elapsed = Date.now() - startTime;
+                const remaining = 500 - elapsed;
+                if (remaining > 0){
+                    setTimeout(() => { hideOverlay(); submitBtn.disabled = false; }, remaining);
+                } else {
+                    hideOverlay();
+                    submitBtn.disabled = false;
+                }
+            }
+        }
+
+    })
+</script>
+
