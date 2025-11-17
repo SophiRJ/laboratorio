@@ -1,24 +1,49 @@
-﻿@using BuquesApp.Models
-@model ComboBarcosViewModel
+﻿@using Newtonsoft.Json
+@model BuquesApp.ViewModels.BarcoTripulanteViewModel
 @{
-    Layout = null;
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_Layout3.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index2</title>
-</head>
+<h2>Index2</h2>
 <body>
-    <div> 
-        @using (Html.BeginForm())
-            {
-                @Html.DropDownListFor(b=>b.SelectedBarco,
-               new SelectList(Model.Barcos,"BarcoId","NombreBarco"),"-Choose")
-            <input type="submit" value="Enviar Barco"/>
-            }
+    <div>
+        <h2>Seleccione un barco</h2>
+        <div>
+            @Html.Label("Barco")
+            @Html.DropDownListFor(m => m.SelectedBarcoId, Model.Barcos,"Choose",
+           new {id="BarcoDropDown"})
+        </div>
+        <div>
+            @Html.Label("Tripulantes")
+            @Html.DropDownListFor(m => m.SelectedTripulantesId,Model.Tripulantes, "Choose", 
+           new {id="TripulantesDropdown"})
+        </div>
     </div>
 </body>
-</html>
+<script>
+       (() => {
+        const barcoDropDown = document.querySelector("#BarcoDropDown")
+        const tripulanteDropDown = document.querySelector("#TripulantesDropdown") // corregido
+
+        if (!barcoDropDown || !tripulanteDropDown) return;
+
+        const allTripulantes = @Html.Raw(JsonConvert.SerializeObject(Model.AllTripulantes));
+
+        barcoDropDown.addEventListener("change", () => {
+            const barcoId = parseInt(barcoDropDown.value);
+
+            tripulanteDropDown.innerHTML = `<option value="">Choose</option>`; // corregido
+
+            allTripulantes.filter(t => t.BarcoId === barcoId) // corregido
+                .forEach(t => {
+                    const option = document.createElement("option");
+                    option.value = t.TripulanteId;
+                    option.text = t.NombreTripulante;
+                    tripulanteDropDown.appendChild(option); // corregido
+                });
+        });
+    })();
+
+</script>
+

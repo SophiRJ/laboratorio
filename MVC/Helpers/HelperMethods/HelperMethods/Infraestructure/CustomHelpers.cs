@@ -20,7 +20,6 @@ namespace HelperMethods.Infraestructure
                 tag.InnerHtml += itemTag.ToString();
             }
             return new MvcHtmlString(tag.ToString());
-
         }
 
     }

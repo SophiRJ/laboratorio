@@ -65,6 +65,10 @@ namespace HelpersM.Controllers
         {
             return View();
         }
+        public ActionResult Pruebas2()
+        {
+            return View();
+        }
         public ActionResult CreatePerson()
         {
             return View(new Person());

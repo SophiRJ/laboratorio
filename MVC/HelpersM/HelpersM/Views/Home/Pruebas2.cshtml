@@ -13,8 +13,6 @@
         new SelectListItem{Text="Maria",Value="3",Group=group2},
         new SelectListItem{Text="Pepa",Value="4",Group=group2},
     };
-
-
     //List<SelectListItem> listItems = new List<SelectListItem>();
     //listItems.Add(new SelectListItem { Text = "One", Value = "1" });
     //listItems.Add(new SelectListItem { Text = "Dos", Value = "2" });
@@ -22,7 +20,6 @@
     //listItems.Add(new SelectListItem { Text = "Cuatro", Value = "4" });
 
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -31,9 +28,11 @@
     <title>Pruebas2</title>
 </head>
 <body>
-    <div> 
+    <div>
         <label>Lista</label>
-        @Html.DropDownList("MyList1",new SelectList(items,"Value","Text"),"Choose")
+        @Html.DropDownList("MyList1", items, "Choose")
+
+        @*@Html.DropDownList("MyList1", new SelectList(items, "Value", "Text"), "Choose")*@
     </div>
 </body>
 </html>

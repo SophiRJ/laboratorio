@@ -22,6 +22,8 @@ namespace BuquesApp.Controllers
             return View(query);
         }
 
+
+
         private static List<Tripulante> CrearTripulacion()
         {
             List<Tripulante> tripulacion = new List<Tripulante>

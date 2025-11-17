@@ -52,7 +52,7 @@ namespace TrabajandoConRazor.Controllers
                 AllProducts = productsInUpperCase,
                 ProductsAtEvenPosition = productsEvenPositions,
             };
-            return View();
+            return View(vm);
         }
     }
 }

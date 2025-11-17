@@ -79,7 +79,8 @@ namespace GestionAlumnos.Controllers
             {
                 NombreAlumno = a.Nombre,
                 NombreCurso = Cursos.FirstOrDefault(c => c.Id == a.CursoId).Nombre,
-                NombreProfesor = Profesores.FirstOrDefault(p => p.Id == Cursos.FirstOrDefault(c => c.Id == a.CursoId).ProfesorId).Nombre
+                NombreProfesor = Profesores.FirstOrDefault(p => p.Id == 
+                Cursos.FirstOrDefault(c => c.Id == a.CursoId).ProfesorId).Nombre
             }).OrderByDescending(x => x.NombreProfesor).ToList();
             return View(vm);
         }
