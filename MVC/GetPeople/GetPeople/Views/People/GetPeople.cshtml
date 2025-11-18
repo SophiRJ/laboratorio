@@ -33,22 +33,26 @@
                 </div>
             }
 
-    <div>
-        <a href="#" class="filter-link" data-role="">All</a>
-        <a href="#" class="filter-link" data-role="0">Admin</a>
-        <a href="#" class="filter-link" data-role="1">User</a>
-        <a href="#" class="filter-link" data-role="2">Guest</a>
+        <div>
+            @*<a href="#" class="filter-link" data-role="">All</a>
+            <a href="#" class="filter-link" data-role="0">Admin</a>
+            <a href="#" class="filter-link" data-role="1">User</a>
+            <a href="#" class="filter-link" data-role="2">Guest</a>*@
 
-        @*<a href="#"
-           class="filter-link btn btn-outline-primary btn-sm me-2"
-           data-role="">All</a>
-        <a href="#"
-           class="filter-link btn btn-outline-primary btn-sm me-2"
-           data-role="Admin">Admin</a>
-        <a href="#"
-           class="filter-link btn btn-outline-primary btn-sm me-2"
-           data-role="User">User</a>*@
-    </div>
+            <a href="#"
+               class="filter-link btn btn-outline-primary btn-sm me-2"
+               data-role="">All</a>
+            <a href="#"
+               class="filter-link btn btn-outline-primary btn-sm me-2"
+               data-role="Admin">Admin</a>
+            <a href="#"
+               class="filter-link btn btn-outline-primary btn-sm me-2"
+               data-role="User">User</a>
+            <a href="#" 
+               class="filter-link btn btn-outline-primary btn-sm me-2" 
+               data-role="Guest">Guest</a>
+   
+        </div>
     </div>
 </div>
 <script>
@@ -70,18 +74,30 @@
             //filter
             await filterPeople(roleSelect.value)
         })
-
-        //gestion de enlaces
+        //Gestion del enlaces con el rol
         document.querySelectorAll('.filter-link').forEach(link => {
             link.addEventListener('click', async e => {
-                e.preventDefault()
+                e.preventDefault();
+
                 const role = link.dataset.role;
                 roleSelect.value = role;
 
-                //Filter
-                await filterPeople(roleSelect.value)
+                //FILTRO para la tabla con el rol de usuarios
+                await filterPeople(role);
+
             });
-        })
+        });
+        ////gestion de enlaces
+        //document.querySelectorAll('.filter-link').forEach(link => {
+        //    link.addEventListener('click', async e => {
+        //        e.preventDefault()
+        //        const role = link.dataset.role;
+        //        roleSelect.value = role;
+
+        //        //Filter
+        //        await filterPeople(roleSelect)
+        //    });
+        //})
         async function filterPeople(selectedRole) {
             showOverlay();
             submitBtn.disabled = true;

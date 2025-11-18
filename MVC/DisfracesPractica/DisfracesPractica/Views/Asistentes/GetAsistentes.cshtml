@@ -9,7 +9,125 @@
     <div class="col-md-6 offset-md-3">
         <h2>Get Asistentes</h2>
         <table class="table table-striped" id="asistentesTable">
-
+            <thead>
+                <tr><th>Nombre</th><th>Acompañado</th><th>Tema</th></tr>
+            </thead>
+            <tbody>
+                @foreach (var d in Model.Asistentes)
+                {
+                <tr>
+                    <td>@d.Nombre</td>
+                    <td>@{
+                        var acompañado = (d.Acompañado == true) ? "Si" : "No";
+                        }
+                        @acompañado
+                        </td>
+                    <td>@d.Tema</td>
+                </tr>
+                }
+            </tbody>           
         </table>
+        @using(Html.BeginForm(null,null,FormMethod.Post,new { id = "filterForm" }))
+            {
+                @Html.AntiForgeryToken()
+            <div>
+                @Html.EnumDropDownListFor(m => m.SelectedTema,"All",
+               new {@class="form-select",id="temaSelect"})
+                <button type="button" class="btn btn-success" 
+                        id="submitBtn">Filtrar</button>
+            </div>
+            }
+    <div>
+        <a href=""
+           class="filter-link btn btn-outline-primary btn-sm me-2"
+           data-tema="">All</a>
+        <a href=""
+           class="filter-link btn btn-outline-primary btn-sm me-2"
+           data-tema="Vampiros">Vampiros</a>
+        <a href=""
+           class="filter-link btn btn-outline-primary btn-sm me-2"
+           data-tema="Zombies">Zombies</a>
+        <a href=""
+           class="filter-link btn btn-outline-primary btn-sm me-2"
+           data-tema="Brujas">Brujas</a>
+        <a href=""
+           class="filter-link btn btn-outline-primary btn-sm me-2"
+           data-tema="Otros">Otros</a>
+    </div>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const submitBtn = document.querySelector("#submitBtn")
+        const temaSelect = document.querySelector('#temaSelect')
+        const asistentesTableBody = document.querySelector('#asistentesTable tbody')
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value
+
+        //boton Submit
+        submitBtn.addEventListener("click", async () => {
+            //metodo filtrado
+            await filterPeople(temaSelect.value)
+        })
+        //enlaces
+        document.querySelectorAll('.filter-link').forEach(link => {
+            link.addEventListener('click', async e => {
+                e.preventDefault();
+
+                const tema = link.dataset.tema;
+                temaSelect.value = tema;
+
+                //metodo filtrado
+                await filterPeople(tema)
+            })
+        })
+
+        async function filterPeople(selectedTema) {
+            showOverlay()
+            submitBtn.disabled = true;
+            const startTime = Date.now();
+
+            //metodo controlador
+            try {
+                const response = await fetch('@Url.Action("FilterAsistentes","Asistentes")', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+,
+                    //lo que enviamos
+                    body: new URLSearchParams({
+                        selectedTema: selectedTema,
+                        __RequestVerificationToken: token
+                    })
+                });
+                if (!response.ok) throw new Error("Error en servidor");
+                const asistentes = await response.json();
+
+                asistentesTableBody.innerHTML = "";
+                asistentes.forEach(a => {
+                    const row = document.createElement("tr")
+                    row.innerHTML = `
+                    <td>${a.nombre}</td>
+                    <td>${a.acompañado === true ? "Si" : "No"}</td>
+                    <td>${a.tema}</td>
+                    `;
+                    asistentesTableBody.appendChild(row);
+                });
+            }
+            catch (err) {
+                alert("Hubo un error al cargar los datos")
+                console.log(err)
+            } finally {
+                const elapsed = Date.now() - startTime;
+                const remaining = 500 - elapsed;
+                if (remaining > 0) {
+                    setTimeout(() => { hideOverlay(); submitBtn.disabled = false; }, remaining);
+                } else {
+                    hideOverlay();
+                    submitBtn.disabled = false;
+                }
+            }
+        }
+    })
+</script>

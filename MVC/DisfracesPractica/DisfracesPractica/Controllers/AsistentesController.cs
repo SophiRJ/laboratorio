@@ -32,5 +32,21 @@ namespace DisfracesPractica.Controllers
             };
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public JsonResult FilterAsistentes(TemaDisfraz? selectedTema)
+        {
+            var filtered= !selectedTema.HasValue
+                ? asistentesData: asistentesData.Where(a=>a.Tema==selectedTema);
+
+            var resultado = filtered.Select(a => new
+            {
+                nombre = a.Nombre,
+                acompañado = a.Acompañado,
+                tema = a.Tema.ToString()
+            });
+            return Json(resultado);
+        }
     }
 }

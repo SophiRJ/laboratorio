@@ -16,7 +16,7 @@ namespace DisfracesPractica
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Asistentes", action = "GetAsistentes", id = UrlParameter.Optional }
             );
         }
     }
