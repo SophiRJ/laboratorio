@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "View";
+}
+<h2>Courses</h2>
+<p><a asp-controller="Course" asp-action="AddCourse">Add a new course</a></p>
+<h3>Avaiable Course List</h3>
+<ol>
+    @if(ViewData["Courses"] is List<string> courses)
+    {
+        foreach(var course in courses)
+        {
+            <li>@course</li>
+        }
+    }
+</ol>

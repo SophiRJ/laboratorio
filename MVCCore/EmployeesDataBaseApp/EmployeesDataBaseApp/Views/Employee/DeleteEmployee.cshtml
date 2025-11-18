@@ -1,0 +1,22 @@
+﻿@using EmployeesDataBaseApp.Models
+@model Employee
+<h3>Delete the Employee</h3>
+<p>Are you sure you want to delete this employee?</p>
+
+<form asp-controller="Employee" asp-action="DeleteEmployee" method="post">
+    <input asp-for="EmployeeId" type="hidden" />
+
+
+    <label asp-for="EmployeeName"></label>
+    <input readonly asp-for="EmployeeName" />
+
+    <br />
+
+    <label asp-for="PricePerHour"></label>
+    <input readonly asp-for="PricePerHour" />
+
+    <br />
+
+    <button type="submit" class="btn btn-dark">Yes Delete<</button>
+</form>
+<p><a asp-controller="Employee" asp-action="AllEmployee">No</a></p>

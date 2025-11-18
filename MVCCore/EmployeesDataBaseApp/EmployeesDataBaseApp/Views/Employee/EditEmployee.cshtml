@@ -1,0 +1,15 @@
+﻿@using EmployeesDataBaseApp.Models
+@model Employee
+
+<h3>Edit the Employee</h3>
+
+<form asp-controller="Employee"  asp-action="EditEmployee" method="post">
+    <input asp-for="EmployeeId" type="hidden"/>
+    <label asp-for="EmployeeName"></label>
+    <input asp-for="EmployeeName"/>
+    <br />
+    <label asp-for="PricePerHour"></label>
+    <input asp-for="PricePerHour"/>
+    <br />
+    <button type="submit" class="btn btn-dark">Edit Employee</button>
+</form>

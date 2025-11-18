@@ -1,0 +1,31 @@
+﻿@using ProyectoEmpleadosGeneral.ViewModel
+@model EmployeeAllEmployesViewModel
+
+<div class="container">
+
+    <form asp-controller="Employee" asp-action="AddEmployee" method="post">
+        <div class="col-md-5 offset-sm3">
+            <label asp-for="Employee.EmployeeId"></label>
+            <input asp-for="Employee.EmployeeId" class="form-control" />
+        </div>
+        <div class="col-md-5 offset-sm3">
+            <label asp-for="Employee.EmployeeName"></label>
+            <input asp-for="Employee.EmployeeName" class="form-control" />
+        </div>
+        <div class="col-md-5 offset-sm3">
+            <label asp-for="Employee.PricePerHour"></label>
+            <input asp-for="Employee.PricePerHour" class="form-control" />
+        </div>
+        <div class="col-md-5 offset-sm3">
+            <label asp-for="Departament.DepartamentName"></label>
+            <select asp-for="Departament.DepartamentId" asp-items="@Model.DepartamentList" class="form-select">
+                <option value="" disabled selected>-Choose-</option>
+            </select>
+        </div>
+        <div class="col-md-5 offset-sm3">
+            <button type="submit" class="btn btn-dark">Add a Employee</button>
+        </div>
+
+    </form>
+
+</div>

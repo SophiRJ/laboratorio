@@ -1,0 +1,29 @@
+﻿@using StudentCoreApp.ViewModel
+@model StudentAllStudentViewModel
+
+<div class="container">
+    <form asp-controller="Student" asp-action="AddStudent" method="post">
+        <div class="col-md-5 offset-sm-3" >
+            <label asp-for="Student.StudentId"></label>
+            <input asp-for="Student.StudentId" class="form-control"/>
+        </div>
+        <div class="col-md-5 offset-sm-3">
+            <label asp-for="Student.StudentName"></label>
+            <input asp-for="Student.StudentName" class="form-control" />
+        </div>
+        <div class="col-md-5 offset-sm-3">
+            <label asp-for="Student.GPA"></label>
+            <input asp-for="Student.GPA" class="form-control" />
+        </div>
+        <div class="col-md-5 offset-sm-3">
+            <label asp-for="Major.MajorName"></label>
+            <select asp-for="Major.MajorId" asp-items="@Model.MajorList" class="form-select">
+                <option value="" disabled selected>-Choose-</option>
+            </select>
+        </div>
+
+        <div class="col-md-5 offset-sm-3">
+            <button type="submit" class="btn btn-dark">Add a student</button>
+        </div>
+    </form>
+</div>

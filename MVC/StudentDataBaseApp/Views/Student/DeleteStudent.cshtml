@@ -1,0 +1,25 @@
+﻿@using StudentDataBaseApp.Models
+@model Student
+<h3>Delete the Student</h3>
+<p>Are you sure you want to delete this student?</p>
+
+<form asp-controller="Student" asp-action="DeleteStudent" method="post">
+
+    <input asp-for="studentId" type="hidden" />
+    
+
+    <label asp-for="StudentName"></label>
+    <input readonly asp-for="StudentName" />
+
+    <br />
+
+    <label asp-for="GPA"></label>
+    <input readonly asp-for="GPA" />
+
+    <br />
+
+    <button type="submit" class="btn btn-dark">Yes Delete<</button>
+
+</form>
+
+<p><a asp-controller="Student" asp-action="AllStudent">No</a></p>

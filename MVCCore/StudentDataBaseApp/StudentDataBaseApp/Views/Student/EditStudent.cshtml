@@ -1,0 +1,20 @@
+﻿@using StudentDataBaseApp.Models
+@model Student
+
+<h3>Edit the Student</h3>
+
+<form asp-controller="Student" asp-action="EditStudent" method="post">
+
+    <input asp-for="StudentId" type="hidden" />
+    <label asp-for="StudentName"></label>
+    <input asp-for="StudentName" />
+    <br />
+
+    <label asp-for="GPA"></label>
+    <input asp-for="GPA" />
+
+    <br />
+
+    <button type="submit" class="btn btn-dark">Edit Student</button>
+
+</form>

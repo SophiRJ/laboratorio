@@ -1,0 +1,52 @@
+﻿@using StudentDataBaseApp.Data
+@model IEnumerable<Student>
+
+<p>
+    <a asp-controller="Student" asp-action="AddStudent" class="btm btn-dark">
+        Add a new Student
+    </a>
+</p>
+
+<h3>All Students List</h3>
+@{
+    @if (Model.Count() < 1)
+    {
+        <p>No Student yet</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+
+                <tr class="table-dark">
+                    <th>Student Id</th>
+                    <th>Student Name</th>
+                    <th>GPA</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+
+
+            </thead>
+
+            <tbody>
+                @{
+                    foreach (var student in Model)
+                    {
+                        <tr>
+                            <td>@student.studentId</td>
+                            <td>@student.StudentName</td>
+                            <td>@student.GPA</td>
+                            <td><a asp-action="EditStudent" asp-route-id="@student.studentId">Edit</a></td>
+                            <td><a asp-action="DeleteStudent" asp-route-id="@student.studentId">Delete</a></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+
+        </table>
+    }
+
+}
+

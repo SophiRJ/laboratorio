@@ -1,0 +1,42 @@
+﻿@using StudentCoreApp.Models
+@model List<Student>
+
+<p>
+    <a asp-controller="Student" asp-action="AddStudent" class="btn btn-dark">
+        Add a new student
+    </a>
+</p>
+<h3>All Students List</h3>
+@{
+    if (Model.Count < 1)
+    {
+        <p>No Student yet</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-dark">
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>GPA</th>
+                    <td>Major</td>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    @foreach (var student in Model)
+                    {
+                        <tr>
+                            <td>@student.StudentId</td>
+                            <td>@student.StudentName</td>
+                            <td>@student.GPA</td>
+                            <td>@student.Major?.MajorName</td>
+                        </tr>
+                    }
+                }
+                
+            </tbody>
+        </table>
+    }
+}

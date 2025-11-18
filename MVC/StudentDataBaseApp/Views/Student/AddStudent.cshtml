@@ -1,0 +1,34 @@
+﻿@using StudentDataBaseApp.Models
+@model Student
+
+<div class="container">
+
+    <form asp-controller="Student" asp-action="AddStudent" method="post">
+
+       @*  <div class="col-md-5 offset-sm-3">
+            <label asp-for="studentId" class="form-label">StudentId</label>
+            <input asp-for="studentId" class="form-control" />
+        </div>
+ *@
+
+        <div class="col-md-5 offset-sm-3">
+            <label asp-for="StudentName" class="form-label">Name</label>
+            <input asp-for="StudentName" class="form-control" />
+        </div>
+
+
+        <div class="col-md-5 offset-sm-3">
+            <label asp-for="GPA" class="form-label">GPA</label>
+            <input asp-for="GPA" class="form-control" />
+        </div>
+
+       
+
+        <div class="col-md-5 offset-sm-3">
+            <button type="submit" class="btn btn-dark">Add a Student</button>
+        </div>
+
+
+    </form>
+
+</div>

@@ -1,0 +1,37 @@
+﻿@using ProyectoEmpleadosGeneral.Models
+@model List<Employee>
+
+    
+
+<p>
+    <a asp-controller="Employee" asp-action="AddEmployee" class="btn btn-dark">
+        Add a new employee
+    </a>
+</p>
+
+<h2>All Employee List</h2>
+@{
+    if(Model.Count < 1)
+    {
+        <p>Not Employees yet</p>
+    }
+    else
+    {
+        <table class="table table-stripped">
+            <thead><tr class="table-dark"><th>Employee Id</th><th>Employee Name</th><th>Amount</th></tr></thead>
+            <tbody>
+                @{
+                    foreach (var emp in Model)
+                    {
+                        <tr>
+                            <td>@emp.EmployeeId</td>
+                            <td>@emp.EmployeeName</td>
+                            <td>@emp.PricePerHour</td>
+                        </tr>
+                    }
+
+                }
+            </tbody>
+        </table>
+    }
+}
