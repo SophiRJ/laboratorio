@@ -1,0 +1,23 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using MultiplesTablesApp.ViewModels
+@model CourseAddCourseViewModel
+
+<form asp-action="AddCourse" method="post">
+    <label asp-for="Course.CourseTitle"></label>
+    <input asp-for="Course.CourseTitle" />
+    <br />
+    <label asp-for="Course.SeatCapacity"></label>
+    <input asp-for="Course.SeatCapacity" />
+    <br />
+    <label asp-for="Instructor.InstructorName">
+
+    </label>
+    <select asp-for="Instructor.InstructorId" asp-items="@Model.InstructorList">
+        <option value="">--Choose</option>
+    </select>
+    <button type="submit">Add Course</button>
+</form>

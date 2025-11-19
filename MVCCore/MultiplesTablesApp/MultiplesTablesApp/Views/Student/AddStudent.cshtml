@@ -1,0 +1,12 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Student
+<form asp-controller="Student" asp-action="AddStudent" method="post">
+    <label asp-for="StudentName"></label>
+    <input asp-for="StudentName" />
+    <br />
+    <button type="submit">Add Student</button>
+</form>

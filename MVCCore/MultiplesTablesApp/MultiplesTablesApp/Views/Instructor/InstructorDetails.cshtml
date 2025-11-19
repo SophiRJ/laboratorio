@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Instructor
+
+<h3>@Model.InstructorName</h3>
+<table class="table table-striped">
+    <tr>
+        <th>Instructor Id</th>
+        <td>@Model.InstructorId</td>
+    </tr>
+    <tr>
+        <th>Instructor Name</th>
+        <td>@Model.InstructorName</td>
+    </tr>
+    <tr>
+        <th>Phone</th>
+        <td>@Model.Phone</td>
+    </tr>
+    <tr>
+        <th>Office</th>
+        <td>@Model.Office</td>
+    </tr>
+</table>
+
+<a asp-controller="Course" asp-action="AllCourse">Back to the course list</a>

@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using MultiplesTablesApp.ViewModels
+@model StudentAddEnrollmentViewModel
+
+<h2>Course Information</h2>
+<table class="table table-striped">
+    <tr>
+        <th>Course Id</th>
+        <th>Course Name</th>
+        <th>Remaining Seats</th>
+    </tr>
+    <tr>
+        <td>@ViewBag.Course.CourseId</td>
+        <td>@ViewBag.Course.CourseTitle</td>
+        <td>@ViewBag.Course.SeatCapacity</td>
+    </tr>
+</table>
+
+@{
+    if (ViewBag.Course.SeatCapacity < 1)
+    {
+        <p>This course is full. Try at different time</p>
+        <p><a asp-controller="Course" asp-action="AllCourse">Back to the course list</a></p>
+    }
+    else
+    {
+        <form asp-controller="Student" asp-action="EnrollCourse" method="post">
+            <label asp-for="Enrollment.Student.StudentName"></label>
+            <select asp-for="Enrollment.Student.StudentId" asp-items="@Model.StudentList">
+                <option value="">Choose yourself</option>
+            </select>
+            <input asp-for="Enrollment.Course.CourseId" type="hidden" 
+            value="@ViewBag.Course.CourseId"/>
+            <button type="submit">Register Course</button>
+        </form>
+    }
+}

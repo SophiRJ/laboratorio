@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using MultiplesTablesApp.Models
+@model IEnumerable<Course>
+@{
+    ViewData["Title"] = "AllCourse";
+}
+
+<p>
+    <a asp-action="AddCourse">Add  an Course</a>
+</p>
+
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No Course in database yet</p>
+    }
+    else
+    {
+        <h3>All Courses</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Course ID</th>
+                    <th>Course Name</th>               
+                    <th>Seat Capacity</th>
+                    <th>Instructor Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var course in Model)
+                {
+                    <tr>
+                        <td>
+                        <a asp-controller="Student" asp-action="EnrollCourse" asp-route-id="@course.CourseId">
+                       @course.CourseId
+                       </a>
+                       </td>
+                        <td>@course.CourseTitle</td>
+                        <td>
+                            <a asp-controller="Student" asp-action="AllClassmate"
+                            asp-route-id="@course.CourseId">
+                            @course.SeatCapacity
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-controller="Instructor"
+                               asp-action="InstructorDetails"
+                               asp-route-id="@course.Instructor!.InstructorId">
+                                @course.Instructor!.InstructorName
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}

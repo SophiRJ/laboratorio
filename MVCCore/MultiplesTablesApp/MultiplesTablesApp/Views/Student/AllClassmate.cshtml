@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Student>
+
+    <h2>@ViewData["Course"]</h2>
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No Student registered in this course</p>
+
+    }
+    else
+    {
+        <h3>All Enrollment Students</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var student in Model)
+                {
+                    <tr>
+                        <td>@student.StudentName</td>
+                    </tr>
+                    
+                }
+            </tbody>
+        </table>
+    }
+}
+<p><a asp-controller="Course" asp-action="AllCourse">Back to the course list</a></p>

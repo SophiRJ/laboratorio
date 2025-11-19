@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using MultiplesTablesApp.Models
+@model IEnumerable<Instructor>
+
+@{
+    ViewData["Title"] = "AllInstructor";
+}
+<p>
+    <a asp-action="AddInstructor">Add  an Instructor</a>
+</p>
+
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No instructor in database yet</p>
+    }
+    else
+    {
+        <h3>All instructors</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr><th>Instructor ID</th><th>Instructor Name</th></tr>
+            </thead>
+            <tbody>
+                @foreach(var instructor in Model)
+                {
+                    <tr>
+                    <td>@instructor.InstructorId</td>
+                    <td>@instructor.InstructorName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
