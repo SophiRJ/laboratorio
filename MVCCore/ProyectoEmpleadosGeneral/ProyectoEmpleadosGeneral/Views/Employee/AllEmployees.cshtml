@@ -17,21 +17,40 @@
     }
     else
     {
-        <table class="table table-stripped">
-            <thead><tr class="table-dark"><th>Employee Id</th><th>Employee Name</th><th>Amount</th></tr></thead>
-            <tbody>
-                @{
-                    foreach (var emp in Model)
-                    {
-                        <tr>
-                            <td>@emp.EmployeeId</td>
-                            <td>@emp.EmployeeName</td>
-                            <td>@emp.PricePerHour</td>
-                        </tr>
+        <p>Average hourly wage of all employees: @ViewBag.Media</p>
+        <br />
+        <form asp-action="DeleteEmployees" method="post">
+            <table class="table table-stripped">
+                <thead>
+                    <tr class="table-dark">
+                        <th>Employee Id</th>
+                        <th>Employee Name</th>
+                        <th>Amount</th>
+                        <th>Department</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (var emp in Model)
+                        {
+                            <tr>
+                                <td>@emp.EmployeeId</td>
+                                <td>@emp.EmployeeName</td>
+                                <td>@emp.PricePerHour</td>
+                                <td>@emp.Departament?.DepartamentName</td>
+                                <td>
+                                    <input type="checkbox" name="selectedId" value="@emp.EmployeeId" />
+                                </td>
+                            </tr>
+                        }
                     }
-
-                }
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+            <button type="submit">Deleted Selected Employees</button>
+        </form>
+        
+        <br />
+        
     }
 }

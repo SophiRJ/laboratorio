@@ -14,8 +14,16 @@ namespace ProyectoEmpleadosGeneral.Controllers
             new Departament(){DepartamentId=2,DepartamentName="Information Technology"},
             new Departament(){DepartamentId=3,DepartamentName="Marketing"}
         };
+        public decimal CalcularMedia()
+        {
+            decimal media= allEmployees.Count == 0? 0: allEmployees.Average(e => e.PricePerHour);
+            
+            return media;
+        }
         public IActionResult AllEmployees()
         {
+            ViewBag.Media = CalcularMedia(); 
+            
             return View(allEmployees);
         }
 
@@ -36,6 +44,23 @@ namespace ProyectoEmpleadosGeneral.Controllers
             return RedirectToAction("AllEmployees");
             //allEmployees.Add(employee);
             //return RedirectToAction("AllEmployees");
+        }
+        [HttpPost]
+        public IActionResult DeleteEmployees(List<int> selectedId)
+        {
+            allEmployees.RemoveAll(e => selectedId.Contains(e.EmployeeId));
+            return RedirectToAction("AllEmployees");
+            //    var toDelete = allEmployees
+            //      .Where(e => selectedId.Contains(e.EmployeeId))
+            //      .ToList();
+
+            //    foreach (var emp in toDelete)
+            //    {
+            //        allEmployees.Remove(emp);
+            //    }
+
+            //    return RedirectToAction("AllEmployees");
+
         }
 
     }
