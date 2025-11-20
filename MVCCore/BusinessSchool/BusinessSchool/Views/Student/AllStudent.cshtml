@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using BusinessSchool.Models
+@model IEnumerable<Student>
+
+@{
+    ViewData["Title"] = "AllStudent";
+}
+<p><a asp-action="AddStudent">Add an student</a></p>
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No students in database yet</p>
+    }
+    else
+    {
+        <h3>All Students</h3>
+        <table class="table table-striped">
+            <tr>
+                <th>Student Id</th>
+                <th>Student Name</th>
+            </tr>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentId</td>
+                    <td>@student.StudentName</td>
+                </tr>
+            }
+        </table>
+    }
+}
+<p><a asp-controller="Club" asp-action="AllClub">Return to the club list</a></p>
+

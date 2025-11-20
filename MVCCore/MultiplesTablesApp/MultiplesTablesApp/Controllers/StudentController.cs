@@ -32,14 +32,18 @@ namespace MultiplesTablesApp.Controllers
         public async Task<IActionResult> EnrollCourse(int? id)
         {
             var studentDisplay = await _db.Students
-        .Select(x => new { Id = x.StudentId, Value = x.StudentName })
-        .ToListAsync();
+                .Select(x => new 
+                { 
+                    Id = x.StudentId, 
+                    Value = x.StudentName 
+                }).ToListAsync();
 
             var course = await _db.Courses.SingleOrDefaultAsync(c => c.CourseId == id);
 
             StudentAddEnrollmentViewModel vm = new StudentAddEnrollmentViewModel();
 
-            vm.StudentList = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(studentDisplay, "Id", "Value");
+            vm.StudentList = new Microsoft.AspNetCore.Mvc.Rendering.
+                SelectList(studentDisplay, "Id", "Value");
 
             // ---- SOLUCIÓN ----
             vm.Enrollment = new Enrollment

@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using BusinessSchool.Models
+@model IEnumerable<Department>
+
+@{
+    ViewData["Title"] = "AllDepartment";
+}
+<p><a asp-action="AddDepartment">Add a department</a></p>
+
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No department in database yet</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+        <thead>
+                <tr>
+                    <th>Department Id</th>
+                    <th>Department Name</th>
+                </tr>
+        </thead>
+        <tbody>
+                @foreach(var department in Model)
+                {
+                    <tr>
+                        <td>@department.DepartmentId</td>
+                        <td>@department.DepartmentName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}

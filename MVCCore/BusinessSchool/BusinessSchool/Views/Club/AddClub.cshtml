@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using BusinessSchool.ViewModels
+@model ClubAddClubViewModel
+
+<form asp-action="AddClub" method="post">
+    <label asp-for="Club.ClubName"></label>
+    <input asp-for="Club.ClubName"/>
+    <br />
+    <label asp-for="Club.NumberOfStudents"></label>
+    <input asp-for="Club.NumberOfStudents"/>
+    <br />
+    <label asp-for="Department.DepartmentName"></label>
+    <select asp-for="Department.DepartmentId" asp-items="@Model.DepartmentList">
+        <option value="">--Chosee--</option>
+    </select>
+    <button type="submit">Add Club</button>
+</form>

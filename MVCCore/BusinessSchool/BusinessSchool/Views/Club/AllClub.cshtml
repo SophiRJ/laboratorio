@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Club>
+@{
+    ViewData["Title"] = "AllClub";
+}
+<p><a asp-action="AddClub">Add a club</a></p>
+<br />
+@{
+    if (Model.Count() < 1)
+    {
+        <p>No club in database yet</p>
+    }
+    else
+    {
+        <h3>All Clubs</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Club Id</th>
+                    <th>Club Name</th>
+                    <th>Number of students</th>
+                    <th>Department Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var club in Model)
+                {
+                    <tr>
+                        <td>@club.ClubId</td>
+                        <td>@club.ClubName</td>
+                        <td>@club.NumberOfStudents</td>
+                        <td><a asp-controller="Department" 
+                            asp-action="DepartmentDetails" 
+                            asp-route-id="@club.Department!.DepartmentId">@club.Department!.DepartmentName</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+
+

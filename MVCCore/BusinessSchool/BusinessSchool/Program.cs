@@ -1,12 +1,12 @@
+using BusinessSchool.Data;
 using Microsoft.EntityFrameworkCore;
-using MultiplesTablesApp.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<SchoolDbContext>(options =>
+builder.Services.AddDbContext<BusinessSchoolDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
@@ -31,4 +31,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.Run();
