@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAuthenticationApp", "CoreAuthenticationApp\CoreAuthenticationApp.csproj", "{815EB48B-A5E7-49D1-A884-BC962B489569}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{815EB48B-A5E7-49D1-A884-BC962B489569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815EB48B-A5E7-49D1-A884-BC962B489569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815EB48B-A5E7-49D1-A884-BC962B489569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{815EB48B-A5E7-49D1-A884-BC962B489569}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA7F2D14-F6D6-4E6E-AF60-6E5925DB4031}
+	EndGlobalSection
+EndGlobal

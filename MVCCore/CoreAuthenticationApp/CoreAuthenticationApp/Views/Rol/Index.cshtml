@@ -1,0 +1,69 @@
+﻿@using Microsoft.AspNetCore.Identity
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<IdentityRole>
+
+    <h2 class="mb-4">
+        Gestion de Roles
+    </h2>
+    <div class="row">
+
+
+        @* Crear Role Nuevo *@
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Crear Nuevo Rol
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="Create">
+                        <div class="mb-3">
+                            <input type="text" name="roleName" 
+                                class="form-control"
+                                placeholder="Nuevo Rol" required/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Crear rol</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                Roles Existentes
+            </div>      
+                <div class="card-body">
+                    <ul class="list-group">
+                    @foreach (var role in Model)
+                    {
+                        <li class="list-group.item">@role.Name</li>
+                    }
+                    </ul>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                Asignar Usuario a Rol
+            </div>
+            <div class="card-body">
+                <form method="post" asp-action="AddUserToRole">
+                    <div class="mb-3">
+                        <input type="email" name="userEmail" class="form-control" placeholder="Email de usuario" required />
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="roleName" class="form-control" placeholder="Rol a asignar" required />
+                    </div>
+                    <button type="submit" class="btn btn-success">Asignar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
